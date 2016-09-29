@@ -1,0 +1,55 @@
+﻿<IBIS>
+  <ObjectCache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <cache_id>38608</cache_id>
+    <object_relationship_path>6 16 9039</object_relationship_path>
+    <serverTime>2016-06-02T12:25:30.713</serverTime>
+    <last_access>2016-06-02T12:25:30.713</last_access>
+    <access_interval>0</access_interval>
+    <poll_start>2016-06-02T12:22:02.393</poll_start>
+    <poll_end>2016-06-02T12:22:24.443</poll_end>
+    <current_poll>0</current_poll>
+    <poller>IBIS-SRVUSD: 10.90.0.49, 192.168.1.129, </poller>
+
+
+    <DataPointValues>
+      <relationship_path>8 9 10 11 12 14 15</relationship_path>
+      <data>521.8</data>
+      <status/>
+      <update_time>2016-06-02T19:23:32.393</update_time>
+      <deviceTime xsi:nil="true"/>
+      <age>118</age>
+    </DataPointValues>
+
+
+    <DataPointValues>
+      <relationship_path>8 9 10 11 12 14 24</relationship_path>
+      <data>7819149</data>
+      <status/>
+      <update_time>2016-06-02T19:23:32.393</update_time>
+      <deviceTime xsi:nil="true"/>
+      <age>118</age>
+    </DataPointValues>
+
+
+    <DataPointValues>
+      <relationship_path>8 9 10 11 12 14 51</relationship_path>
+      <data>781</data>
+      <status/>
+      <update_time>2016-06-02T19:23:47.400</update_time>
+      <deviceTime xsi:nil="true"/>
+      <age>103</age>
+    </DataPointValues>
+
+
+    <DataPointValues>
+      <relationship_path>8 9 10 11 12 14 52</relationship_path>
+      <data>9162</data>
+      <status/>
+      <update_time>2016-06-02T19:23:47.463</update_time>
+      <deviceTime xsi:nil="true"/>
+      <age>103</age>
+    </DataPointValues>
+  </ObjectCache>
+
+</IBIS>

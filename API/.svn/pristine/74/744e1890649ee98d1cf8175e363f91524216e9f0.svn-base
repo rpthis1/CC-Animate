@@ -1,0 +1,242 @@
+﻿using Ninject;
+using Ninject.Web.Common;
+using WebApi.Data.MySql.QueryProcessors.Bia;
+using WebApiBia.Common;
+using WebApiBia.Common.Json;
+using WebApiBia.Dashboard.Core.ContentTreeFetchExtractor;
+using WebApiBia.Dashboard.Core.ContentTreeFetchMobileExtractor;
+using WebApiBia.Dashboard.Core.ContentTreeTemplateOwnerPostProcessor;
+using WebApiBia.Dashboard.Core.DecoratorProcessor;
+using WebApiBia.Dashboard.Core.DecoratorProcessor.Chart;
+using WebApiBia.Dashboard.Core.DecoratorProcessor.Controls;
+using WebApiBia.Dashboard.Core.FormatterProcessor;
+using WebApiBia.Dashboard.Core.NavigationTreeFetchExtractor;
+using WebApiBia.Dashboard.Core.NavigationTreePostProcessor;
+using WebApiBia.Dashboard.Core.PropertyValuesProcessor;
+using WebApiBia.Data.OrientDb.Clients;
+using WebApiBia.Data.OrientDb.Commands;
+using WebApiBia.Data.OrientDb.QueryProcessors.Bia;
+using WebApiBia.Data.Postgres.QueryProcessors.Bia;
+using WebApiBia.Data.QueryProcessors.Bia;
+using WebApiBia.Data.Reports;
+using WebApiBia.Data.Reports.Core.DataProcessor;
+using WebApiBia.Web.Api.Core.Processors.Controllers.Bia;
+using WebApiBia.Web.Api.Core.Processors.Controllers.BiaAdmin;
+using WebApiBia.Web.Api.Core.Processors.Controllers.BiaMobile;
+using WebApiBia.Web.Api.Core.Processors.Controllers.IBIS;
+using WebApiBia.Web.Models.Factory.DataMapper;
+using WebApiBia.Web.Models.Factory.TreeMenu.TemplateLibrary;
+using WebApiBia.Web.Models.TreeMenu.TemplateLibrary;
+
+
+namespace WebApiBia.Web.Api
+{
+    public class NinjectConfigurator
+    {
+        public void Configure(IKernel container)
+        {
+            AddBindings(container);
+        }
+
+        private void AddBindings(IKernel container)
+        {
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            // IMPORTANT NOTE! *Never* configure a type as singleton if it depends upon ISession!!! This is because
+            // ISession is disposed of at the end of every request. For the same reason, make sure that types
+            // dependent upon such types aren't configured as singleton.
+            ///////////////////////////////////////////////////////////////////////////////////////////////////////////
+            ConfigureQueryClients(container);
+            ConfigureQueryProcessors(container);
+            ConfigureDataProcessors(container);
+            ConfigurePropertyValuesProcessors(container);
+            ConfigureControllersProcessors(container);
+            ConfigureFormattersProcessors(container);
+            ConfigureDataDecoratorsProcessors(container);
+            ConfigureCommon(container);
+            ConfigureFactories(container);
+            ConfigureLog4net(container);
+            ConfigureUserSession(container);
+            ConfigureNHibernate(container);
+            ConfigureDependenciesOnlyUsedForLegacyProcessing(container);
+            ConfigureAutoMapper(container);
+
+
+            container.Bind<IDateTime>().To<DateTimeAdapter>().InRequestScope();
+        }
+
+        private void ConfigureDataDecoratorsProcessors(IKernel container)
+        {
+            container.Bind<IDecoratorProcessor>().To<DecoratorProcessor>().InRequestScope();
+            container.Bind<IDesktopPlatformContentTreeFetchControlsDecorator>().To<DesktopPlatformContentTreeFetchControlsDecorator>().InRequestScope();
+            container.Bind<IControlsDecoratorProcessor>().To<ControlsDecoratorProcessor>().InRequestScope();
+        }
+
+        private void ConfigureFormattersProcessors(IKernel container)
+        {
+            container.Bind<IFormatterProcessor>().To<FormatterProcessor>().InRequestScope();
+        }
+
+       
+        private void ConfigurePropertyValuesProcessors(IKernel container)
+        {
+            container.Bind<IReportPropertyValuesProcessor>().To<ReportPropertyValuesProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchExtractor>().To<ContentTreeFetchExtractor>().InRequestScope();
+            container.Bind<INavigationTreeFetchExtractor>().To<NavigationTreeFetchExtractor>().InRequestScope();
+            container.Bind<IContentTreeTemplateOwnerPostProcessor>().To<ContentTreeTemplateOwnerPostProcessor>().InRequestScope();
+            container.Bind<INavigationTreePostProcessor>().To<NavigationTreePostProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchMobileExtractor>().To<ContentTreeFetchMobileExtractor>().InRequestScope();
+           
+        }
+
+         private void ConfigureDataProcessors(IKernel container)
+        {
+            container.Bind<IDataProcessor>().To<ReportDataProcessor>().InRequestScope();
+            container.Bind<IReportHydratorProcessor>().To<ReportHydratorProcessor>().InRequestScope();
+             
+        }
+
+        private void ConfigureFactories(IKernel container)
+        {
+            container.Bind<ITemplateLibraryMenuFactory>().To<TemplateLibraryMenuFactory>().InRequestScope();
+            container.Bind<ITemplateLibraryActionsMenu>().To<TemplateLibraryActionsMenu>().InRequestScope();
+            container.Bind<IDataMapper>().To<DataMapper>().InRequestScope();
+        
+        }
+
+        private void ConfigureCommon(IKernel container)
+        {
+            container.Bind<IJsonHelper>().To<JsonHelper>().InRequestScope();
+            container.Bind<IDateUtility>().To<DateUtility>().InRequestScope();
+            
+        }
+
+        private void ConfigureQueryClients(IKernel container)
+        {
+            container.Bind<IGenericCommands>().To<GenericCommands>().InRequestScope();
+            container.Bind<IOrientClient>().To<OrientClient>().InRequestScope();
+            container.Bind<IVerticesClient>().To<VerticesClient>().InRequestScope();
+            container.Bind<IProjectsTreeClient>().To<ProjectsTreeClient>().InRequestScope();
+            container.Bind<IGenericTreeClient>().To<GenericTreeClient>().InRequestScope();
+            container.Bind<ITemplateNodeClient>().To<TemplateNodeClient>().InRequestScope();
+            container.Bind<ITemplateTabNavigatorClient>().To<TemplateTabNavigatorClient>().InRequestScope();
+            container.Bind<ITemplateTabClient>().To<TemplateTabClient>().InRequestScope();
+            container.Bind<ITemplateReportClient>().To<TemplateReportClient>().InRequestScope();
+            container.Bind<IReportPropertyClient>().To<ReportPropertyClient>().InRequestScope();
+            container.Bind<INavigationTreeClient>().To<NavigationTreeClient>().InRequestScope();
+            container.Bind<IProjectsTreeStageTagClient>().To<ProjectsTreeStageTagClient>().InRequestScope();
+            container.Bind<INavigationTreeNodeClient>().To<NavigationTreeNodeClient>().InRequestScope();
+            container.Bind<IContentTreeClient>().To<ContentTreeClient>().InRequestScope();
+            container.Bind<IEdgesClient>().To<EdgesClient>().InRequestScope();
+            container.Bind<IReportPropertyOverrideClient>().To<ReportPropertyOverrideClient>().InRequestScope();
+            container.Bind<INavigationTemplateClient>().To<NavigationTemplateClient>().InRequestScope();
+            container.Bind<IReportPropertiesClient>().To<ReportPropertiesClient>().InRequestScope();
+            container.Bind<IContentTreeFetchClient>().To<ContentTreeFetchClient>().InRequestScope();
+            container.Bind<INavigationTreeFetchClient>().To<NavigationTreeFetchClient>().InRequestScope();
+            container.Bind<ILogicalEdgeClient>().To<LogicalEdgeClient>().InRequestScope();
+            container.Bind<IContentTreeTemplateOwnerClient>().To<ContentTreeTemplateOwnerClient>().InRequestScope();
+            container.Bind<IReorderTreeClient>().To<ReorderTreeClient>().InRequestScope();
+        }
+
+        private void ConfigureControllersProcessors(IKernel container)
+        {
+            container.Bind<IVerticesProcessor>().To<VerticesProcessor>().InRequestScope();
+            container.Bind<IProjectsTreeProcessor>().To<ProjectsTreeProcessor>().InRequestScope();
+            container.Bind<IGenericTreeProcessor>().To<GenericTreeProcessor>().InRequestScope();
+            container.Bind<ITemplateNodeProcessor>().To<TemplateNodeProcessor>().InRequestScope();
+            container.Bind<ITemplateTabNavigatoreProcessor>().To<TemplateTabNavigatoreProcessor>().InRequestScope();
+            container.Bind<ITemplateTabProcessor>().To<TemplateTabProcessor>().InRequestScope();
+            container.Bind<ITemplateReportProcessor>().To<TemplateReportProcessor>().InRequestScope();
+            container.Bind<IReportPropertyProcessor>().To<ReportPropertyProcessor>().InRequestScope();
+            container.Bind<INavigaionTreeProcessor>().To<NavigaionTreeProcessor>().InRequestScope();
+            container.Bind<IProjectsTreeStageTagProcessor>().To<ProjectsTreeStageTagProcessor>().InRequestScope();
+            container.Bind<INavigationTreeNodeProcessor>().To<NavigationTreeNodeProcessor>().InRequestScope();
+            container.Bind<IContentTreeProcessor>().To<ContentTreeProcessor>().InRequestScope();
+            container.Bind<IEdgesProcessor>().To<EdgesProcessor>().InRequestScope();
+            container.Bind<INavigationTemplateProcessor>().To<NavigationTemplateProcessor>().InRequestScope();
+            container.Bind<IReportPropertyOverrideProcessor>().To<ReportPropertyOverrideProcessor>().InRequestScope();
+            container.Bind<IReportPropertiesProcessor>().To<ReportPropertiesProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchProcessor>().To<ContentTreeFetchProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchAllProcessor>().To<ContentTreeFetchAllProcessor>().InRequestScope();
+            container.Bind<INavigationTreeFetchProcessor>().To<NavigationTreeFetchProcessor>().InRequestScope();
+            container.Bind<ILogicalEdgeProcessor>().To<LogicalEdgeProcessor>().InRequestScope();
+            container.Bind<IContentTreeTemplateOwnerProcessor>().To<ContentTreeTemplateOwnerProcessor>().InRequestScope();
+            container.Bind<IReorderTreeProcessor>().To<ReorderTreeProcessor>().InRequestScope();
+            container.Bind<INavigationTreeFetchMobileProcessor>().To<NavigationTreeFetchMobileProcessor>().InRequestScope();
+            container.Bind<IReportPropertiesMobileProcessor>().To<ReportPropertiesMobileProcessor>().InRequestScope();
+            container.Bind<IRealTimeTrendsContinuousCommissioningProcessor>().To<RealTimeTrendsContinuousCommissioningProcessor>().InRequestScope();
+            container.Bind<IFcGetAvailableDatesProcessor>().To<FcGetAvailableDatesProcessor>().InRequestScope();
+            container.Bind<IFcGetForecastByDateProcessor>().To<FcGetForecastByDateProcessor>().InRequestScope();
+            container.Bind<IGetCompressedObjectDataProcessor>().To<GetCompressedObjectDataProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchAllPropertiesListProcessor>().To<ContentTreeFetchAllPropertiesListProcessor>().InRequestScope();
+            container.Bind<IContentTreeFetchEnabledParameterListProcessor>().To<ContentTreeFetchEnabledParameterListProcessor>().InRequestScope();
+            container.Bind<IUtbGetEntitiesProcessor>().To<UtbGetEntitiesProcessor>().InRequestScope();
+            container.Bind<IUtbGetConfigurationProcessor>().To<UtbGetConfigurationProcessor>().InRequestScope();
+            container.Bind<IUtbEntriesProcessor>().To<UtbEntriesProcessor>().InRequestScope();
+            
+
+
+
+
+
+        }
+
+    private void ConfigureQueryProcessors(IKernel container)
+        {
+            container.Bind<IVerticesQueryProcessor>().To<VerticesQueryProcessorPg>().InRequestScope();
+            container.Bind<IProjectsTreeQueryProcessor>().To<ProjectsTreeQueryProcessorPg>().InRequestScope();
+            container.Bind<IProjectsTreeStageTagQueryProcessor>().To<ProjectsTreeStageTagQueryProcessorPg>().InRequestScope();
+            container.Bind<INavigationTreeQueryProcessor>().To<NavigationTreeQueryProcessorPq>().InRequestScope();
+            container.Bind<INavigationTreeNodeQueryProcessor>().To<NavigationTreeNodeQueryProcessorPq>().InRequestScope();
+            container.Bind<IReportPropertyQueryProcessor>().To<ReportPropertyQueryProcessorPq>().InRequestScope();
+            container.Bind<ILogicalEdgeQueryProcessor>().To<LogicalEdgeQueryProcessorPq>().InRequestScope();
+            container.Bind<IReorderTreeQueryProcessor>().To<ReorderTreeQueryProcessorPq>().InRequestScope();
+            container.Bind<IGenericTreeQueryProcessor>().To<GenericTreeQueryProcessorPq>().InRequestScope();
+            container.Bind<IContentTreeTemplateOwnerQueryProcessor>().To<ContentTreeTemplateOwnerQueryProcessorPq>().InRequestScope();
+            container.Bind<ITemplateNodeQueryProcessor>().To<TemplateNodeQueryProcessorPq>().InRequestScope();
+            container.Bind<ITemplateTabNavigatorQueryProcessor>().To<TemplateTabNavigatoreQueryProcessorPq>().InRequestScope();
+            container.Bind<ITemplateTabQueryProcessor>().To<TemplateTabQueryProcessorPq>().InRequestScope();
+            container.Bind<ITemplateReportQueryProcessor>().To<TemplateReportQueryProcessorPq>().InRequestScope();
+            container.Bind<IReportPropertiesQueryProcessor>().To<ReportPropertiesQueryProcessorPq>().InRequestScope();
+            container.Bind<INavigationTemplateQueryProcessor>().To<NavigationTemplateQueryProcessorPq>().InRequestScope();
+            container.Bind<IContentTreeQueryProcessor>().To<ContentTreeQueryProcessorPq>().InRequestScope();
+            container.Bind<IReportPropertyOverrideQueryProcessor>().To<ReportPropertyOverrideQueryProcessorPq>().InRequestScope();
+            container.Bind<INavigationTreeFetchQueryProcessor>().To<NavigationTreeFetchQueryProcessorPq>().InRequestScope();
+            container.Bind<IContentTreeFetchQueryProcessor>().To<ContentTreeFetchQueryProcessorPq>().InRequestScope();
+            container.Bind<IExportTemplateProcessor>().To<ExportTemplateProcessor>().InRequestScope();
+            container.Bind<ITemplateExportQueryProcessor>().To<TemplateExportQueryProcessor>().InRequestScope();
+
+            
+
+
+            container.Bind<IEdgesQueryProcessor>().To<EdgesQueryProcessor>().InRequestScope();
+            
+
+           
+        }
+
+        private void ConfigureAutoMapper(IKernel container)
+        {
+
+        }
+
+        private void ConfigureUserSession(IKernel container)
+        {
+
+        }
+
+        private void ConfigureNHibernate(IKernel container)
+        {
+
+        }
+
+        private void ConfigureDependenciesOnlyUsedForLegacyProcessing(IKernel container)
+        {
+
+        }
+
+        private void ConfigureLog4net(IKernel container)
+        {
+
+        }
+    }
+}

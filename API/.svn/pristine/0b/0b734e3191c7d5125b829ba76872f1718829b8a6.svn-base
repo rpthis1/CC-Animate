@@ -1,0 +1,341 @@
+﻿<datum>
+  <trend date="9/1/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="2.93083291053772"/>
+        <item name="CDD"
+					  value="3.83708381652832"/>
+        <item name="Avg Temperature"
+					  value="68.6116677920024"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/1/2015 12:00 AM"/>
+        <item name="Avg Demand"
+					  value="78.0006944444444"/>
+        <item name="Max Demand"
+					  value="197.2"
+					  date="9/1/2015 10:00 AM"/>
+        <item name="Cost"
+					  value="325.2306"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/2/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="2.46499962806702"/>
+        <item name="CDD"
+					  value="1.04791701634725"/>
+        <item name="Avg Temperature"
+					  value="65.8237510204315"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/2/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="69.4402777777778"/>
+        <item name="Max Demand"
+					  value="249.3"
+					  date="9/2/2015 10:51 AM"/>
+        <item name="Cost"
+					  value="290.225"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/3/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="3.51583298047384"/>
+        <item name="CDD"
+					  value="0.802083683013916"/>
+        <item name="Avg Temperature"
+					  value="64.3562509695689"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/3/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="70.2138888888889"/>
+        <item name="Max Demand"
+					  value="205.9"
+					  date="9/3/2015 10:21 AM"/>
+        <item name="Cost"
+					  value="330.9458"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/4/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="5.90208274523417"/>
+        <item name="CDD"
+					  value="0.80750036239624"/>
+        <item name="Avg Temperature"
+					  value="61.6566678206126"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/4/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="71.1736111111111"/>
+        <item name="Max Demand"
+					  value="202.8"
+					  date="9/4/2015 3:21 PM"/>
+        <item name="Cost"
+					  value="1992.283"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/5/2015"
+		   isWeekend="true">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="5.31656213204066"/>
+        <item name="CDD"
+					  value="5.5512505531311"/>
+        <item name="Avg Temperature"
+					  value="68.2442719260851"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/5/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="75.7131944444445"/>
+        <item name="Max Demand"
+					  value="201.9"
+					  date="9/5/2015 10:41 AM"/>
+        <item name="Cost"
+					  value="323.0874"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/6/2015"
+		   isWeekend="true">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="4.68333299954732"/>
+        <item name="CDD"
+					  value="6.51208429336548"/>
+        <item name="Avg Temperature"
+					  value="70.2116680781046"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/6/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="47.9236111111111"/>
+        <item name="Max Demand"
+					  value="193.1"
+					  date="9/6/2015 2:51 PM"/>
+        <item name="Cost"
+					  value="316.3006"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/7/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="3.57333308855693"/>
+        <item name="CDD"
+					  value="9.93250077565511"/>
+        <item name="Avg Temperature"
+					  value="75.3604178905487"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/7/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="74.0006944444444"/>
+        <item name="Max Demand"
+					  value="192.7"
+					  date="9/7/2015 10:01 AM"/>
+        <item name="Cost"
+					  value="311.8356"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/8/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="1.82249965667725"/>
+        <item name="CDD"
+					  value="11.6275007565816"/>
+        <item name="Avg Temperature"
+					  value="79.1345846176147"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/8/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="67.0909722222222"/>
+        <item name="Max Demand"
+					  value="186.2"
+					  date="9/8/2015 12:21 PM"/>
+        <item name="Cost"
+					  value="304.513"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/9/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="0.610833183924357"/>
+        <item name="CDD"
+					  value="13.472501150767"/>
+        <item name="Avg Temperature"
+					  value="82.6141682624817"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/9/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="62.1541666666667"/>
+        <item name="Max Demand"
+					  value="188.5"
+					  date="9/9/2015 10:11 AM"/>
+        <item name="Cost"
+					  value="291.118"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/10/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="0"/>
+        <item name="CDD"
+					  value="12.4641676266988"/>
+        <item name="Avg Temperature"
+					  value="83.1304180463155"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/10/2015 1:51 AM"/>
+        <item name="Avg Demand"
+					  value="55.0638888888889"/>
+        <item name="Max Demand"
+					  value="180.6"
+					  date="9/10/2015 11:11 AM"/>
+        <item name="Cost"
+					  value="2046.5774"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/11/2015"
+		   isWeekend="false">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="0.190416622161865"/>
+        <item name="CDD"
+					  value="11.3066675186157"/>
+        <item name="Avg Temperature"
+					  value="81.4600014050802"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/11/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="59.9944444444444"/>
+        <item name="Max Demand"
+					  value="188.9"
+					  date="9/11/2015 10:11 AM"/>
+        <item name="Cost"
+					  value="244.8606"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/12/2015"
+		   isWeekend="true">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="0.71458314259847"/>
+        <item name="CDD"
+					  value="1.91958405176799"/>
+        <item name="Avg Temperature"
+					  value="70.4844459074515"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/12/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="30.8388888888889"/>
+        <item name="Max Demand"
+					  value="146.6"
+					  date="9/12/2015 11:11 AM"/>
+        <item name="Cost"
+					  value="133.4142"/>
+      </item>
+    </parent>
+  </trend>
+  <trend date="9/13/2015"
+		   isWeekend="true">
+    <parent name="Diablo Vista Middle School"
+				id="37">
+      <item id="37"
+				  name="Diablo Vista Middle School"
+				  type="School">
+        <item name="HDD"
+					  value="0.14166652361552"/>
+        <item name="CDD"
+					  value="5.81208397547404"/>
+        <item name="Avg Temperature"
+					  value="74.8220847606659"/>
+        <item name="Min Demand"
+					  value="0"
+					  date="9/13/2015 12:01 AM"/>
+        <item name="Avg Demand"
+					  value="44.4673611111111"/>
+        <item name="Max Demand"
+					  value="165.3"
+					  date="9/13/2015 2:51 PM"/>
+        <item name="Cost"
+					  value="186.9942"/>
+      </item>
+    </parent>
+  </trend>
+</datum>
+

@@ -1,0 +1,39 @@
+﻿<values input_value="62" date="3/13/2016" entityId="10" location_name="100 Oracle Parkway" zip_code="94065" over_use_energy="0" input_rp="102 103 104" output_rp="139 140 141 337 338 347">
+  <corridor>
+    <row minimum="445.73385899430593" maximum="657.16614100569416" variance="105.71614100569411" delta="211.43228201138822" hours="0" offset="-480" dst="false" />
+    <row minimum="450.92903896503026" maximum="652.604294368303" variance="100.83762770163642" delta="201.67525540327279" hours="1" offset="-480" dst="false" />
+    <row minimum="443.32765853165665" maximum="654.27234146834326" variance="105.47234146834333" delta="210.9446829366866" hours="3" offset="-480" dst="false" />
+    <row minimum="444.33442685325952" maximum="657.96557314674044" variance="106.81557314674049" delta="213.63114629348092" hours="4" offset="-480" dst="false" />
+    <row minimum="450.63397024040819" maximum="654.59936309292493" variance="101.98269642625836" delta="203.96539285251674" hours="5" offset="-420" dst="true" />
+    <row minimum="443.42127371697507" maximum="655.71205961635837" variance="106.14539294969165" delta="212.29078589938331" hours="6" offset="-420" dst="true" />
+    <row minimum="445.04709923609676" maximum="655.2862340972365" variance="105.11956743056984" delta="210.23913486113975" hours="7" offset="-420" dst="true" />
+    <row minimum="448.91577822291964" maximum="653.15088844374714" variance="102.11755511041378" delta="204.23511022082749" hours="8" offset="-420" dst="true" />
+    <row minimum="451.7234971953024" maximum="652.74316947136424" variance="100.50983613803093" delta="201.01967227606184" hours="9" offset="-420" dst="true" />
+    <row minimum="450.99700997087967" maximum="655.70299002912066" variance="102.35299002912046" delta="204.70598005824098" hours="10" offset="-420" dst="true" />
+    <row minimum="455.19705481078876" maximum="655.73627852254435" variance="100.26961185587781" delta="200.5392237117556" hours="11" offset="-420" dst="true" />
+    <row minimum="460.40586479132492" maximum="656.92746854200857" variance="98.260801875341855" delta="196.52160375068365" hours="12" offset="-420" dst="true" />
+    <row minimum="466.40815038215516" maximum="653.62518295117809" variance="93.608516284511481" delta="187.21703256902293" hours="13" offset="-420" dst="true" />
+    <row minimum="467.91354675177433" maximum="651.91978658155915" variance="92.003119914892423" delta="184.00623982978482" hours="14" offset="-420" dst="true" />
+    <row minimum="468.51687843792234" maximum="650.54978822874443" variance="91.016454895411059" delta="182.03290979082209" hours="15" offset="-420" dst="true" />
+    <row minimum="465.92546668103688" maximum="648.60786665229648" variance="91.341199985629785" delta="182.6823999712596" hours="16" offset="-420" dst="true" />
+    <row minimum="467.18364083756165" maximum="647.94969249577207" variance="90.383025829105179" delta="180.76605165821042" hours="17" offset="-420" dst="true" />
+    <row minimum="468.99627307755361" maximum="643.870393589113" variance="87.437060255779642" delta="174.87412051155934" hours="18" offset="-420" dst="true" />
+    <row minimum="468.87272639429762" maximum="644.2606069390356" variance="87.693940272369019" delta="175.38788054473798" hours="19" offset="-420" dst="true" />
+    <row minimum="466.45374971068952" maximum="647.21291695597722" variance="90.37958362264385" delta="180.7591672452877" hours="20" offset="-420" dst="true" />
+    <row minimum="454.27619703249371" maximum="649.20380296750636" variance="97.463802967506311" delta="194.92760593501265" hours="21" offset="-420" dst="true" />
+    <row minimum="452.4676909014575" maximum="650.26564243187556" variance="98.898975765209045" delta="197.79795153041806" hours="22" offset="-420" dst="true" />
+    <row minimum="454.1680755694324" maximum="647.03192443056764" variance="96.431924430567648" delta="192.86384886113524" hours="23" offset="-420" dst="true" />
+  </corridor>
+  <days>
+    <row score="87.95737704918028" max_value="62.2" date="5/10/2015" />
+    <row score="86.539890710382565" max_value="61.7" date="5/24/2015" />
+    <row score="81.754098360655746" max_value="63" date="3/5/2016" />
+    <row score="81.398907103825138" max_value="63" date="2/21/2016" />
+    <row score="80.566120218579215" max_value="62.6" date="5/3/2015" />
+    <row score="80.442622950819668" max_value="61" date="1/17/2016" />
+    <row score="80.4153005464481" max_value="63" date="1/16/2016" />
+    <row score="79.295081967213122" max_value="61" date="12/6/2015" />
+    <row score="78.530054644808743" max_value="63" date="11/8/2015" />
+    <row score="70.418579234972654" max_value="63.1" date="3/22/2015" />
+  </days>
+</values>

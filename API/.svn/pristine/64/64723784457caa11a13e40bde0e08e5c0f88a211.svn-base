@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3CB2EFA6-3DD6-4164-A0FE-095DC5A87AAE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Data.OrientDb</RootNamespace>
+    <AssemblyName>WebApiBia.Data.OrientDb</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Clients\ContentTreeClient.cs" />
+    <Compile Include="Clients\IReorderTreeClient.cs" />
+    <Compile Include="Clients\ReorderTreeClient.cs" />
+    <Compile Include="Clients\ContentTreeTemplateOwnerClient.cs" />
+    <Compile Include="Clients\IContentTreeTemplateOwnerClient.cs" />
+    <Compile Include="Clients\ILogicalEdgeClient.cs" />
+    <Compile Include="Clients\LogicalEdgeClient.cs" />
+    <Compile Include="Clients\NavigationTreeFetchClient.cs" />
+    <Compile Include="Clients\IContentTreeClient.cs" />
+    <Compile Include="Clients\INavigationTreeFetchClient.cs" />
+    <Compile Include="Clients\INavigationTemplateClient.cs" />
+    <Compile Include="Clients\IContentTreeFetchClient.cs" />
+    <Compile Include="Clients\INavigationTreeClient.cs" />
+    <Compile Include="Clients\IReportClient.cs" />
+    <Compile Include="Clients\IProjectsTreeStageTagClient.cs" />
+    <Compile Include="Clients\IEdgesClient.cs" />
+    <Compile Include="Clients\IReportPropertiesClient.cs" />
+    <Compile Include="Clients\IReportPropertyOverrideClient.cs" />
+    <Compile Include="Clients\NavigationTemplateClient.cs" />
+    <Compile Include="Clients\ContentTreeFetchClient.cs" />
+    <Compile Include="Clients\NavigationTreeClient.cs" />
+    <Compile Include="Clients\GenericTreeClient.cs" />
+    <Compile Include="Clients\INavigationTreeNodeClient.cs" />
+    <Compile Include="Clients\IGenericTreeClient.cs" />
+    <Compile Include="Clients\IOrientClient.cs" />
+    <Compile Include="Clients\IProjectsTreeClient.cs" />
+    <Compile Include="Clients\IReportPropertyClient.cs" />
+    <Compile Include="Clients\ITemplateNodeClient.cs" />
+    <Compile Include="Clients\ITemplateReportClient.cs" />
+    <Compile Include="Clients\ITemplateTabClient.cs" />
+    <Compile Include="Clients\ITemplateTabNavigatorClient.cs" />
+    <Compile Include="Clients\IVerticesClient.cs" />
+    <Compile Include="Clients\NavigationTreeNodeClient.cs" />
+    <Compile Include="Clients\OrientClient.cs" />
+    <Compile Include="Clients\ProjectsTreeClient.cs" />
+    <Compile Include="Clients\ProjectsTreeStageTagClient.cs" />
+    <Compile Include="Clients\ReportPropertyClient.cs" />
+    <Compile Include="Clients\ReportPropertiesClient.cs" />
+    <Compile Include="Clients\ReportPropertyOverrideClient.cs" />
+    <Compile Include="Clients\TemplateNodeClient.cs" />
+    <Compile Include="Clients\TemplateReportClient.cs" />
+    <Compile Include="Clients\TemplateTabClient.cs" />
+    <Compile Include="Clients\TemplateTabNavigatorClient.cs" />
+    <Compile Include="Clients\EdgesClient.cs" />
+    <Compile Include="Clients\VerticesClient.cs" />
+    <Compile Include="Commands\GenericCommands.cs" />
+    <Compile Include="Commands\IGenericCommands.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeTemplateOwnerQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\LogicalEdgeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeFetchQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTemplateQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeFetchQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeNodeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ReorderTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertyOverrideQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertiesQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertyQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\GenericTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ProjectsTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ProjectsTreeStageTagQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateNodeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateReportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateTabQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateTabNavigatoreQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\EdgesQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\VerticesQueryProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiBia.Common\WebApiBia.Common.csproj">
+      <Project>{ea91976d-b6f1-4a73-8bd8-a4ff354edd54}</Project>
+      <Name>WebApiBia.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Data\WebApiBia.Data.csproj">
+      <Project>{0e76d07b-baf0-42d7-8096-45bff65411ec}</Project>
+      <Name>WebApiBia.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Web.Common\WebApiBia.Web.Common.csproj">
+      <Project>{7051bf69-40a2-4827-8e43-8b52e0bb100e}</Project>
+      <Name>WebApiBia.Web.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Web.Models\WebApiBia.Web.Models.csproj">
+      <Project>{c7c8e5e5-2f1e-4206-bf6d-c9f2f3ac26bf}</Project>
+      <Name>WebApiBia.Web.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,22 @@
+﻿<result>
+  <datum>
+    <trend date="1/1/2013">
+      <parent name="California High School" id="2">
+        <item id="2" name="California High School" type="School" value="1702587.5" />
+      </parent>
+      <parent name="Iron Horse Middle School" id="8">
+        <item id="8" name="Iron Horse Middle School" type="School2" value="554984.42500000109" />
+      </parent>
+    </trend>
+  </datum>
+  <datum>
+    <trend date="1/1/2015">
+      <parent name="California High School" id="2">
+        <item id="2" name="California High School" type="School" value="1019860.5" />
+      </parent>
+      <parent name="Iron Horse Middle School" id="8">
+        <item id="8" name="Iron Horse Middle School" type="School2" value="410398.35" />
+      </parent>
+    </trend>
+  </datum>
+</result>

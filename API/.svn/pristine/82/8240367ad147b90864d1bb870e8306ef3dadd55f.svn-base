@@ -1,0 +1,4007 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.ibs-cal.com/webservices/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.ibs-cal.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.ibs-cal.com/webservices/">
+      <s:element name="TestPoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TestPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TestPointResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteDataPointValues">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WriteDataPointValuesResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteRemoteConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationshipPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteRemoteConfigurationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="AuthenticationHeader" type="tns:AuthenticationHeader" />
+      <s:complexType name="AuthenticationHeader">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Username" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Time" type="s:string" />
+        </s:sequence>
+        <s:anyAttribute />
+      </s:complexType>
+      <s:element name="GetChildrenTreeNodes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parent_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetChildrenTreeNodesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetChildrenTreeNodesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="doLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="doLoginResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="userID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="newPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UserResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserResetPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getSystemUsersList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getSystemUsersListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getSystemUsersListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInformation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getUserInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserInformationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedObject">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedObjectResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompressedObjectResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedObjectData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedObjectDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompressedObjectDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemoteCompressedObjectData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetRemoteCompressedObjectDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetRemoteCompressedObjectDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectDataAdapters">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectDataAdaptersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getObjectDataAdaptersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPathFromDID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPathFromDIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPathFromDIDResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNavigationTree">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUserNavigationTreeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUserNavigationTreeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendRangeByFunction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to_date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="output_function" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendRangeByFunctionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompressedPointTrendRangeByFunctionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendRangeByPoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="data_point" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="from_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to_date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="number_samples" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendRangeByPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompressedPointTrendRangeByPointResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendNonNumeric">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="from_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to_date" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="option" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCompressedPointTrendNonNumericResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCompressedPointTrendNonNumericResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPointTrendProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPointTrendPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPointTrendPropertiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataProviderField">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="field_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="field_value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateDataProviderFieldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateDataProviderFieldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNodeXMLFromPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNodeXMLFromPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNodeXMLFromPathResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNodePathLinks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetNodePathLinksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetNodePathLinksResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatePointTrendProperties">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="poll_interval" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="cov" type="s:double" />
+            <s:element minOccurs="1" maxOccurs="1" name="remove" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatePointTrendPropertiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatePointTrendPropertiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNodeLabel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="node_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="node_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNodeLabelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateNodeLabelResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createSecurityGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="permissionLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="startPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="viewPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createSecurityGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createSecurityGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSecurityGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="user_group_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="groupName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="permissionLevel" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="startPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="viewPath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="topPath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateSecurityGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateSecurityGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nodeID" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="relationship_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="rp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteNodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="invokeCommand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="structureXML" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandValue" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="invokeCommandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="invokeCommandResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNodeXMLAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="node_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="link_xml" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="override_xml" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updateNodeXMLAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updateNodeXMLAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createNewNode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="node_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_label" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createNewNodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createNewNodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createRelationship">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="parent_id" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="node_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createRelationshipResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createRelationshipResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadPoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReadPointsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReadPointsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribePoints">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribePointsResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PushData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PushDataResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckHealth">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckHealthResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckHealthResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoteInvokeCommand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="commandValue" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="credentials" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RemoteInvokeCommandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RemoteInvokeCommandResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentValueByPointId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCurrentValueByPointIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCurrentValueByPointIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alarm_group_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmGroup_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmDefinition_Delete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alarm_definition_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmDefinition_DeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmDefinition_DeleteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alarm_group_id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="alarm_group_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmGroup_UpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_Create">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="alarm_group_name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_CreateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmGroup_CreateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmDefinition_Update">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="alarmDefinitionsXML" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmDefinition_UpdateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmDefinition_UpdateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAlarmDefinition">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="remoteAddress" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAlarmDefinitionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAlarmDefinitionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPointAlarmDefinitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp_relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getPointAlarmDefinitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getPointAlarmDefinitionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointAlarmDefinitionsByDid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dp" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPointAlarmDefinitionsByDidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPointAlarmDefinitionsByDidResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getActiveAlarmsList">
+        <s:complexType />
+      </s:element>
+      <s:element name="getActiveAlarmsListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getActiveAlarmsListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AlarmGroup_List">
+        <s:complexType />
+      </s:element>
+      <s:element name="AlarmGroup_ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AlarmGroup_ListResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAckandActAlarms">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAckandActAlarmsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAckandActAlarmsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmHistoryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmDefinitions">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAlarmDefinitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmDefinitionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmDefinitionById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="alarmDefinitionId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmDefinitionByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmDefinitionByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateAlarmResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAlarm">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAlarmResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteAlarmResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertNoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteNoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyNote">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModifyNoteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModifyNoteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmNotes">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmNotesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmNotesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmGroups">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAlarmGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmGroupsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableUserEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableUserEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableUserEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmUserGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmUserGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmUserGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTimeZones">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTimeZonesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTimeZonesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EnableScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EnableScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableSchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DisableScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DisableScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeToExisting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SubscribeToExistingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SubscribeToExistingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFromExisting">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFromExistingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteFromExistingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleSettings">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetScheduleSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllSchedules">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllSchedulesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllSchedulesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetScheduleByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetScheduleByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmDefinitionsBySchedule">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAlarmDefinitionsByScheduleResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAlarmDefinitionsByScheduleResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPagedAlarmDefinitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="skip" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="sample" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPagedAlarmDefinitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPagedAlarmDefinitionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPagedAlarmDefinitionsSorted">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetPagedAlarmDefinitionsSortedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetPagedAlarmDefinitionsSortedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAlarmDefinitions">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="parameters" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SearchAlarmDefinitionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SearchAlarmDefinitionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCaisoDemand">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCaisoDemandResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCaisoDemandResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCaisoData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetCaisoDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetCaisoDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="relationship_path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getObjectDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getObjectDataResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetLatestForecast">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetLatestForecastResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetLatestForecastResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetForecastByDate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetForecastByDateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetForecastByDateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetAvailableDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableDatesCompressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="location" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableDatesCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetAvailableDatesCompressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableForecasts">
+        <s:complexType />
+      </s:element>
+      <s:element name="FcGetAvailableForecastsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetAvailableForecastsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableForecastsCompressed">
+        <s:complexType />
+      </s:element>
+      <s:element name="FcGetAvailableForecastsCompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetAvailableForecastsCompressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableForecastsByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FcGetAvailableForecastsByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FcGetAvailableForecastsByTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwCreateSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="groupID" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwCreateSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WwCreateSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwUpdatesSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwUpdatesSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WwUpdatesSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwReadSession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="session" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WwReadSessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WwReadSessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WsGetUserGroups">
+        <s:complexType />
+      </s:element>
+      <s:element name="WsGetUserGroupsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WsGetUserGroupsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WsGetGroupsByUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WsGetGroupsByUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WsGetGroupsByUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="TestPointSoapIn">
+    <wsdl:part name="parameters" element="tns:TestPoint" />
+  </wsdl:message>
+  <wsdl:message name="TestPointSoapOut">
+    <wsdl:part name="parameters" element="tns:TestPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="WriteDataPointValuesSoapIn">
+    <wsdl:part name="parameters" element="tns:WriteDataPointValues" />
+  </wsdl:message>
+  <wsdl:message name="WriteDataPointValuesSoapOut">
+    <wsdl:part name="parameters" element="tns:WriteDataPointValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRemoteConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteRemoteConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRemoteConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteRemoteConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteRemoteConfigurationAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetChildrenTreeNodesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetChildrenTreeNodes" />
+  </wsdl:message>
+  <wsdl:message name="GetChildrenTreeNodesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetChildrenTreeNodesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetChildrenTreeNodesAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="doLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:doLogin" />
+  </wsdl:message>
+  <wsdl:message name="doLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:doLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:UserResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="UserResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:UserResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="UserResetPasswordAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="getSystemUsersListSoapIn">
+    <wsdl:part name="parameters" element="tns:getSystemUsersList" />
+  </wsdl:message>
+  <wsdl:message name="getSystemUsersListSoapOut">
+    <wsdl:part name="parameters" element="tns:getSystemUsersListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getSystemUsersListAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserInformation" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserInformationAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedObjectSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompressedObject" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedObjectSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompressedObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedObjectDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompressedObjectData" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedObjectDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompressedObjectDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteCompressedObjectDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetRemoteCompressedObjectData" />
+  </wsdl:message>
+  <wsdl:message name="GetRemoteCompressedObjectDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetRemoteCompressedObjectDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDataAdaptersSoapIn">
+    <wsdl:part name="parameters" element="tns:getObjectDataAdapters" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDataAdaptersSoapOut">
+    <wsdl:part name="parameters" element="tns:getObjectDataAdaptersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPathFromDIDSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPathFromDID" />
+  </wsdl:message>
+  <wsdl:message name="GetPathFromDIDSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPathFromDIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPathFromDIDAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNavigationTreeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUserNavigationTree" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNavigationTreeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUserNavigationTreeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetUserNavigationTreeAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendRangeByFunctionSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendRangeByFunction" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendRangeByFunctionSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendRangeByFunctionResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendRangeByPointSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendRangeByPoint" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendRangeByPointSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendRangeByPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendNonNumericSoapIn">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendNonNumeric" />
+  </wsdl:message>
+  <wsdl:message name="getCompressedPointTrendNonNumericSoapOut">
+    <wsdl:part name="parameters" element="tns:getCompressedPointTrendNonNumericResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPointTrendPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:getPointTrendProperties" />
+  </wsdl:message>
+  <wsdl:message name="getPointTrendPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:getPointTrendPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPointTrendPropertiesAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateDataProviderFieldSoapIn">
+    <wsdl:part name="parameters" element="tns:updateDataProviderField" />
+  </wsdl:message>
+  <wsdl:message name="updateDataProviderFieldSoapOut">
+    <wsdl:part name="parameters" element="tns:updateDataProviderFieldResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDataProviderFieldAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetNodeXMLFromPathSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNodeXMLFromPath" />
+  </wsdl:message>
+  <wsdl:message name="GetNodeXMLFromPathSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNodeXMLFromPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNodePathLinksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetNodePathLinks" />
+  </wsdl:message>
+  <wsdl:message name="GetNodePathLinksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetNodePathLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetNodePathLinksAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="updatePointTrendPropertiesSoapIn">
+    <wsdl:part name="parameters" element="tns:updatePointTrendProperties" />
+  </wsdl:message>
+  <wsdl:message name="updatePointTrendPropertiesSoapOut">
+    <wsdl:part name="parameters" element="tns:updatePointTrendPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatePointTrendPropertiesAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeLabelSoapIn">
+    <wsdl:part name="parameters" element="tns:updateNodeLabel" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeLabelSoapOut">
+    <wsdl:part name="parameters" element="tns:updateNodeLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeLabelAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="createSecurityGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:createSecurityGroup" />
+  </wsdl:message>
+  <wsdl:message name="createSecurityGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:createSecurityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="createSecurityGroupAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateSecurityGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:updateSecurityGroup" />
+  </wsdl:message>
+  <wsdl:message name="updateSecurityGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:updateSecurityGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateSecurityGroupAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteNode" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNodeAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="invokeCommandSoapIn">
+    <wsdl:part name="parameters" element="tns:invokeCommand" />
+  </wsdl:message>
+  <wsdl:message name="invokeCommandSoapOut">
+    <wsdl:part name="parameters" element="tns:invokeCommandResponse" />
+  </wsdl:message>
+  <wsdl:message name="invokeCommandAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeXMLAllSoapIn">
+    <wsdl:part name="parameters" element="tns:updateNodeXMLAll" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeXMLAllSoapOut">
+    <wsdl:part name="parameters" element="tns:updateNodeXMLAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateNodeXMLAllAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="createNewNodeSoapIn">
+    <wsdl:part name="parameters" element="tns:createNewNode" />
+  </wsdl:message>
+  <wsdl:message name="createNewNodeSoapOut">
+    <wsdl:part name="parameters" element="tns:createNewNodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="createNewNodeAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="createRelationshipSoapIn">
+    <wsdl:part name="parameters" element="tns:createRelationship" />
+  </wsdl:message>
+  <wsdl:message name="createRelationshipSoapOut">
+    <wsdl:part name="parameters" element="tns:createRelationshipResponse" />
+  </wsdl:message>
+  <wsdl:message name="createRelationshipAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="ReadPointsSoapIn">
+    <wsdl:part name="parameters" element="tns:ReadPoints" />
+  </wsdl:message>
+  <wsdl:message name="ReadPointsSoapOut">
+    <wsdl:part name="parameters" element="tns:ReadPointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribePointsSoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribePoints" />
+  </wsdl:message>
+  <wsdl:message name="SubscribePointsSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribePointsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PushDataSoapIn">
+    <wsdl:part name="parameters" element="tns:PushData" />
+  </wsdl:message>
+  <wsdl:message name="PushDataSoapOut">
+    <wsdl:part name="parameters" element="tns:PushDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckHealthSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckHealth" />
+  </wsdl:message>
+  <wsdl:message name="CheckHealthSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckHealthResponse" />
+  </wsdl:message>
+  <wsdl:message name="RemoteInvokeCommandSoapIn">
+    <wsdl:part name="parameters" element="tns:RemoteInvokeCommand" />
+  </wsdl:message>
+  <wsdl:message name="RemoteInvokeCommandSoapOut">
+    <wsdl:part name="parameters" element="tns:RemoteInvokeCommandResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentValueByPointIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCurrentValueByPointId" />
+  </wsdl:message>
+  <wsdl:message name="GetCurrentValueByPointIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCurrentValueByPointIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_Delete" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_DeleteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_DeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmDefinition_Delete" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_DeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmDefinition_DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_DeleteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_Update" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_UpdateAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_CreateSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_Create" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_CreateSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_CreateAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_UpdateSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmDefinition_Update" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_UpdateSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmDefinition_UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmDefinition_UpdateAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmDefinitionSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAlarmDefinition" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmDefinitionSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAlarmDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmDefinitionAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="getPointAlarmDefinitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:getPointAlarmDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="getPointAlarmDefinitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:getPointAlarmDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPointAlarmDefinitionsByDidSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPointAlarmDefinitionsByDid" />
+  </wsdl:message>
+  <wsdl:message name="GetPointAlarmDefinitionsByDidSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPointAlarmDefinitionsByDidResponse" />
+  </wsdl:message>
+  <wsdl:message name="getActiveAlarmsListSoapIn">
+    <wsdl:part name="parameters" element="tns:getActiveAlarmsList" />
+  </wsdl:message>
+  <wsdl:message name="getActiveAlarmsListSoapOut">
+    <wsdl:part name="parameters" element="tns:getActiveAlarmsListResponse" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_ListSoapIn">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_List" />
+  </wsdl:message>
+  <wsdl:message name="AlarmGroup_ListSoapOut">
+    <wsdl:part name="parameters" element="tns:AlarmGroup_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAckandActAlarmsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAckandActAlarms" />
+  </wsdl:message>
+  <wsdl:message name="GetAckandActAlarmsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAckandActAlarmsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmHistory" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmHistoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitionById" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionByIdAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAlarm" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAlarmAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAlarm" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAlarmResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAlarmAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="InsertNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertNote" />
+  </wsdl:message>
+  <wsdl:message name="InsertNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertNoteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteNote" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteNoteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="ModifyNoteSoapIn">
+    <wsdl:part name="parameters" element="tns:ModifyNote" />
+  </wsdl:message>
+  <wsdl:message name="ModifyNoteSoapOut">
+    <wsdl:part name="parameters" element="tns:ModifyNoteResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModifyNoteAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmNotesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmNotes" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmNotesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmNotesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmNotesAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmGroups" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmGroupsAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableUserEmail" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableUserEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableUserEmailAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmUserGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmUserGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmUserGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmUserGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmUserGroupAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTimeZones" />
+  </wsdl:message>
+  <wsdl:message name="GetTimeZonesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTimeZonesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateSchedule" />
+  </wsdl:message>
+  <wsdl:message name="CreateScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSchedule" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSchedule" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="EnableScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:EnableSchedule" />
+  </wsdl:message>
+  <wsdl:message name="EnableScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:EnableScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="EnableScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DisableScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:DisableSchedule" />
+  </wsdl:message>
+  <wsdl:message name="DisableScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:DisableScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="DisableScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeToExistingSoapIn">
+    <wsdl:part name="parameters" element="tns:SubscribeToExisting" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeToExistingSoapOut">
+    <wsdl:part name="parameters" element="tns:SubscribeToExistingResponse" />
+  </wsdl:message>
+  <wsdl:message name="SubscribeToExistingAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFromExistingSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFromExisting" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFromExistingSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFromExistingResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFromExistingAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleSettings" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleSettingsAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchedulesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllSchedules" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchedulesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllSchedulesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllSchedulesAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetScheduleById" />
+  </wsdl:message>
+  <wsdl:message name="GetScheduleByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetScheduleByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsByScheduleSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitionsBySchedule" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsByScheduleSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAlarmDefinitionsByScheduleResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAlarmDefinitionsByScheduleAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPagedAlarmDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPagedAlarmDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsSortedSoapIn">
+    <wsdl:part name="parameters" element="tns:GetPagedAlarmDefinitionsSorted" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsSortedSoapOut">
+    <wsdl:part name="parameters" element="tns:GetPagedAlarmDefinitionsSortedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetPagedAlarmDefinitionsSortedAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="SearchAlarmDefinitionsSoapIn">
+    <wsdl:part name="parameters" element="tns:SearchAlarmDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="SearchAlarmDefinitionsSoapOut">
+    <wsdl:part name="parameters" element="tns:SearchAlarmDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="SearchAlarmDefinitionsAuthenticationHeader">
+    <wsdl:part name="AuthenticationHeader" element="tns:AuthenticationHeader" />
+  </wsdl:message>
+  <wsdl:message name="GetCaisoDemandSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCaisoDemand" />
+  </wsdl:message>
+  <wsdl:message name="GetCaisoDemandSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCaisoDemandResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetCaisoDataSoapIn">
+    <wsdl:part name="parameters" element="tns:GetCaisoData" />
+  </wsdl:message>
+  <wsdl:message name="GetCaisoDataSoapOut">
+    <wsdl:part name="parameters" element="tns:GetCaisoDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDataSoapIn">
+    <wsdl:part name="parameters" element="tns:getObjectData" />
+  </wsdl:message>
+  <wsdl:message name="getObjectDataSoapOut">
+    <wsdl:part name="parameters" element="tns:getObjectDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetLatestForecastSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetLatestForecast" />
+  </wsdl:message>
+  <wsdl:message name="FcGetLatestForecastSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetLatestForecastResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetForecastByDateSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetForecastByDate" />
+  </wsdl:message>
+  <wsdl:message name="FcGetForecastByDateSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetForecastByDateResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableDates" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableDatesCompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableDatesCompressed" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableDatesCompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableDatesCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecasts" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecastsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsCompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecastsCompressed" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsCompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecastsCompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecastsByType" />
+  </wsdl:message>
+  <wsdl:message name="FcGetAvailableForecastsByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:FcGetAvailableForecastsByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="WwCreateSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:WwCreateSession" />
+  </wsdl:message>
+  <wsdl:message name="WwCreateSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:WwCreateSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WwUpdatesSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:WwUpdatesSession" />
+  </wsdl:message>
+  <wsdl:message name="WwUpdatesSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:WwUpdatesSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WwReadSessionSoapIn">
+    <wsdl:part name="parameters" element="tns:WwReadSession" />
+  </wsdl:message>
+  <wsdl:message name="WwReadSessionSoapOut">
+    <wsdl:part name="parameters" element="tns:WwReadSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="WsGetUserGroupsSoapIn">
+    <wsdl:part name="parameters" element="tns:WsGetUserGroups" />
+  </wsdl:message>
+  <wsdl:message name="WsGetUserGroupsSoapOut">
+    <wsdl:part name="parameters" element="tns:WsGetUserGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="WsGetGroupsByUserSoapIn">
+    <wsdl:part name="parameters" element="tns:WsGetGroupsByUser" />
+  </wsdl:message>
+  <wsdl:message name="WsGetGroupsByUserSoapOut">
+    <wsdl:part name="parameters" element="tns:WsGetGroupsByUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FlexServiceSoap">
+    <wsdl:operation name="TestPoint">
+      <wsdl:input message="tns:TestPointSoapIn" />
+      <wsdl:output message="tns:TestPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataPointValues">
+      <wsdl:input message="tns:WriteDataPointValuesSoapIn" />
+      <wsdl:output message="tns:WriteDataPointValuesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRemoteConfiguration">
+      <wsdl:input message="tns:DeleteRemoteConfigurationSoapIn" />
+      <wsdl:output message="tns:DeleteRemoteConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenTreeNodes">
+      <wsdl:input message="tns:GetChildrenTreeNodesSoapIn" />
+      <wsdl:output message="tns:GetChildrenTreeNodesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <wsdl:input message="tns:doLoginSoapIn" />
+      <wsdl:output message="tns:doLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UserResetPassword">
+      <wsdl:input message="tns:UserResetPasswordSoapIn" />
+      <wsdl:output message="tns:UserResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUsersList">
+      <wsdl:input message="tns:getSystemUsersListSoapIn" />
+      <wsdl:output message="tns:getSystemUsersListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <wsdl:input message="tns:getUserInformationSoapIn" />
+      <wsdl:output message="tns:getUserInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObject">
+      <wsdl:input message="tns:getCompressedObjectSoapIn" />
+      <wsdl:output message="tns:getCompressedObjectSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObjectData">
+      <wsdl:input message="tns:getCompressedObjectDataSoapIn" />
+      <wsdl:output message="tns:getCompressedObjectDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCompressedObjectData">
+      <wsdl:input message="tns:GetRemoteCompressedObjectDataSoapIn" />
+      <wsdl:output message="tns:GetRemoteCompressedObjectDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDataAdapters">
+      <wsdl:input message="tns:getObjectDataAdaptersSoapIn" />
+      <wsdl:output message="tns:getObjectDataAdaptersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPathFromDID">
+      <wsdl:input message="tns:GetPathFromDIDSoapIn" />
+      <wsdl:output message="tns:GetPathFromDIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNavigationTree">
+      <wsdl:input message="tns:GetUserNavigationTreeSoapIn" />
+      <wsdl:output message="tns:GetUserNavigationTreeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByFunction">
+      <wsdl:input message="tns:getCompressedPointTrendRangeByFunctionSoapIn" />
+      <wsdl:output message="tns:getCompressedPointTrendRangeByFunctionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByPoint">
+      <wsdl:input message="tns:getCompressedPointTrendRangeByPointSoapIn" />
+      <wsdl:output message="tns:getCompressedPointTrendRangeByPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendNonNumeric">
+      <wsdl:input message="tns:getCompressedPointTrendNonNumericSoapIn" />
+      <wsdl:output message="tns:getCompressedPointTrendNonNumericSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPointTrendProperties">
+      <wsdl:input message="tns:getPointTrendPropertiesSoapIn" />
+      <wsdl:output message="tns:getPointTrendPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDataProviderField">
+      <wsdl:input message="tns:updateDataProviderFieldSoapIn" />
+      <wsdl:output message="tns:updateDataProviderFieldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNodeXMLFromPath">
+      <wsdl:input message="tns:GetNodeXMLFromPathSoapIn" />
+      <wsdl:output message="tns:GetNodeXMLFromPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNodePathLinks">
+      <wsdl:input message="tns:GetNodePathLinksSoapIn" />
+      <wsdl:output message="tns:GetNodePathLinksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatePointTrendProperties">
+      <wsdl:input message="tns:updatePointTrendPropertiesSoapIn" />
+      <wsdl:output message="tns:updatePointTrendPropertiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeLabel">
+      <wsdl:input message="tns:updateNodeLabelSoapIn" />
+      <wsdl:output message="tns:updateNodeLabelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createSecurityGroup">
+      <wsdl:input message="tns:createSecurityGroupSoapIn" />
+      <wsdl:output message="tns:createSecurityGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateSecurityGroup">
+      <wsdl:input message="tns:updateSecurityGroupSoapIn" />
+      <wsdl:output message="tns:updateSecurityGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNode">
+      <wsdl:input message="tns:DeleteNodeSoapIn" />
+      <wsdl:output message="tns:DeleteNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="invokeCommand">
+      <wsdl:input message="tns:invokeCommandSoapIn" />
+      <wsdl:output message="tns:invokeCommandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeXMLAll">
+      <wsdl:input message="tns:updateNodeXMLAllSoapIn" />
+      <wsdl:output message="tns:updateNodeXMLAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createNewNode">
+      <wsdl:input message="tns:createNewNodeSoapIn" />
+      <wsdl:output message="tns:createNewNodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createRelationship">
+      <wsdl:input message="tns:createRelationshipSoapIn" />
+      <wsdl:output message="tns:createRelationshipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReadPoints">
+      <wsdl:input message="tns:ReadPointsSoapIn" />
+      <wsdl:output message="tns:ReadPointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribePoints">
+      <wsdl:input message="tns:SubscribePointsSoapIn" />
+      <wsdl:output message="tns:SubscribePointsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PushData">
+      <wsdl:input message="tns:PushDataSoapIn" />
+      <wsdl:output message="tns:PushDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckHealth">
+      <wsdl:input message="tns:CheckHealthSoapIn" />
+      <wsdl:output message="tns:CheckHealthSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoteInvokeCommand">
+      <wsdl:input message="tns:RemoteInvokeCommandSoapIn" />
+      <wsdl:output message="tns:RemoteInvokeCommandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentValueByPointId">
+      <wsdl:input message="tns:GetCurrentValueByPointIdSoapIn" />
+      <wsdl:output message="tns:GetCurrentValueByPointIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Delete">
+      <wsdl:input message="tns:AlarmGroup_DeleteSoapIn" />
+      <wsdl:output message="tns:AlarmGroup_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Delete">
+      <wsdl:input message="tns:AlarmDefinition_DeleteSoapIn" />
+      <wsdl:output message="tns:AlarmDefinition_DeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Update">
+      <wsdl:input message="tns:AlarmGroup_UpdateSoapIn" />
+      <wsdl:output message="tns:AlarmGroup_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Create">
+      <wsdl:input message="tns:AlarmGroup_CreateSoapIn" />
+      <wsdl:output message="tns:AlarmGroup_CreateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Update">
+      <wsdl:input message="tns:AlarmDefinition_UpdateSoapIn" />
+      <wsdl:output message="tns:AlarmDefinition_UpdateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarmDefinition">
+      <wsdl:input message="tns:DeleteAlarmDefinitionSoapIn" />
+      <wsdl:output message="tns:DeleteAlarmDefinitionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getPointAlarmDefinitions">
+      <wsdl:input message="tns:getPointAlarmDefinitionsSoapIn" />
+      <wsdl:output message="tns:getPointAlarmDefinitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAlarmDefinitionsByDid">
+      <wsdl:input message="tns:GetPointAlarmDefinitionsByDidSoapIn" />
+      <wsdl:output message="tns:GetPointAlarmDefinitionsByDidSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getActiveAlarmsList">
+      <wsdl:input message="tns:getActiveAlarmsListSoapIn" />
+      <wsdl:output message="tns:getActiveAlarmsListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_List">
+      <wsdl:input message="tns:AlarmGroup_ListSoapIn" />
+      <wsdl:output message="tns:AlarmGroup_ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAckandActAlarms">
+      <wsdl:input message="tns:GetAckandActAlarmsSoapIn" />
+      <wsdl:output message="tns:GetAckandActAlarmsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmHistory">
+      <wsdl:input message="tns:GetAlarmHistorySoapIn" />
+      <wsdl:output message="tns:GetAlarmHistorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitions">
+      <wsdl:input message="tns:GetAlarmDefinitionsSoapIn" />
+      <wsdl:output message="tns:GetAlarmDefinitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionById">
+      <wsdl:input message="tns:GetAlarmDefinitionByIdSoapIn" />
+      <wsdl:output message="tns:GetAlarmDefinitionByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAlarm">
+      <wsdl:input message="tns:UpdateAlarmSoapIn" />
+      <wsdl:output message="tns:UpdateAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarm">
+      <wsdl:input message="tns:DeleteAlarmSoapIn" />
+      <wsdl:output message="tns:DeleteAlarmSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertNote">
+      <wsdl:input message="tns:InsertNoteSoapIn" />
+      <wsdl:output message="tns:InsertNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <wsdl:input message="tns:DeleteNoteSoapIn" />
+      <wsdl:output message="tns:DeleteNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModifyNote">
+      <wsdl:input message="tns:ModifyNoteSoapIn" />
+      <wsdl:output message="tns:ModifyNoteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmNotes">
+      <wsdl:input message="tns:GetAlarmNotesSoapIn" />
+      <wsdl:output message="tns:GetAlarmNotesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmGroups">
+      <wsdl:input message="tns:GetAlarmGroupsSoapIn" />
+      <wsdl:output message="tns:GetAlarmGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserEmail">
+      <wsdl:input message="tns:DisableUserEmailSoapIn" />
+      <wsdl:output message="tns:DisableUserEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmUserGroup">
+      <wsdl:input message="tns:GetAlarmUserGroupSoapIn" />
+      <wsdl:output message="tns:GetAlarmUserGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <wsdl:input message="tns:GetTimeZonesSoapIn" />
+      <wsdl:output message="tns:GetTimeZonesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedule">
+      <wsdl:input message="tns:CreateScheduleSoapIn" />
+      <wsdl:output message="tns:CreateScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <wsdl:input message="tns:UpdateScheduleSoapIn" />
+      <wsdl:output message="tns:UpdateScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <wsdl:input message="tns:DeleteScheduleSoapIn" />
+      <wsdl:output message="tns:DeleteScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="EnableSchedule">
+      <wsdl:input message="tns:EnableScheduleSoapIn" />
+      <wsdl:output message="tns:EnableScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableSchedule">
+      <wsdl:input message="tns:DisableScheduleSoapIn" />
+      <wsdl:output message="tns:DisableScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToExisting">
+      <wsdl:input message="tns:SubscribeToExistingSoapIn" />
+      <wsdl:output message="tns:SubscribeToExistingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromExisting">
+      <wsdl:input message="tns:DeleteFromExistingSoapIn" />
+      <wsdl:output message="tns:DeleteFromExistingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleSettings">
+      <wsdl:input message="tns:GetScheduleSettingsSoapIn" />
+      <wsdl:output message="tns:GetScheduleSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <wsdl:input message="tns:GetAllSchedulesSoapIn" />
+      <wsdl:output message="tns:GetAllSchedulesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <wsdl:input message="tns:GetScheduleByIdSoapIn" />
+      <wsdl:output message="tns:GetScheduleByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionsBySchedule">
+      <wsdl:input message="tns:GetAlarmDefinitionsByScheduleSoapIn" />
+      <wsdl:output message="tns:GetAlarmDefinitionsByScheduleSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitions">
+      <wsdl:input message="tns:GetPagedAlarmDefinitionsSoapIn" />
+      <wsdl:output message="tns:GetPagedAlarmDefinitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitionsSorted">
+      <wsdl:input message="tns:GetPagedAlarmDefinitionsSortedSoapIn" />
+      <wsdl:output message="tns:GetPagedAlarmDefinitionsSortedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlarmDefinitions">
+      <wsdl:input message="tns:SearchAlarmDefinitionsSoapIn" />
+      <wsdl:output message="tns:SearchAlarmDefinitionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoDemand">
+      <wsdl:input message="tns:GetCaisoDemandSoapIn" />
+      <wsdl:output message="tns:GetCaisoDemandSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoData">
+      <wsdl:input message="tns:GetCaisoDataSoapIn" />
+      <wsdl:output message="tns:GetCaisoDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getObjectData">
+      <wsdl:input message="tns:getObjectDataSoapIn" />
+      <wsdl:output message="tns:getObjectDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetLatestForecast">
+      <wsdl:input message="tns:FcGetLatestForecastSoapIn" />
+      <wsdl:output message="tns:FcGetLatestForecastSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetForecastByDate">
+      <wsdl:input message="tns:FcGetForecastByDateSoapIn" />
+      <wsdl:output message="tns:FcGetForecastByDateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDates">
+      <wsdl:input message="tns:FcGetAvailableDatesSoapIn" />
+      <wsdl:output message="tns:FcGetAvailableDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDatesCompressed">
+      <wsdl:input message="tns:FcGetAvailableDatesCompressedSoapIn" />
+      <wsdl:output message="tns:FcGetAvailableDatesCompressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecasts">
+      <wsdl:input message="tns:FcGetAvailableForecastsSoapIn" />
+      <wsdl:output message="tns:FcGetAvailableForecastsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsCompressed">
+      <wsdl:input message="tns:FcGetAvailableForecastsCompressedSoapIn" />
+      <wsdl:output message="tns:FcGetAvailableForecastsCompressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsByType">
+      <wsdl:input message="tns:FcGetAvailableForecastsByTypeSoapIn" />
+      <wsdl:output message="tns:FcGetAvailableForecastsByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WwCreateSession">
+      <wsdl:input message="tns:WwCreateSessionSoapIn" />
+      <wsdl:output message="tns:WwCreateSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WwUpdatesSession">
+      <wsdl:input message="tns:WwUpdatesSessionSoapIn" />
+      <wsdl:output message="tns:WwUpdatesSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WwReadSession">
+      <wsdl:input message="tns:WwReadSessionSoapIn" />
+      <wsdl:output message="tns:WwReadSessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WsGetUserGroups">
+      <wsdl:input message="tns:WsGetUserGroupsSoapIn" />
+      <wsdl:output message="tns:WsGetUserGroupsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WsGetGroupsByUser">
+      <wsdl:input message="tns:WsGetGroupsByUserSoapIn" />
+      <wsdl:output message="tns:WsGetGroupsByUserSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FlexServiceSoap" type="tns:FlexServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestPoint">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/TestPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataPointValues">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WriteDataPointValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRemoteConfiguration">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteRemoteConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteRemoteConfigurationAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenTreeNodes">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetChildrenTreeNodes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetChildrenTreeNodesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/doLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserResetPassword">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/UserResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UserResetPasswordAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUsersList">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getSystemUsersList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getSystemUsersListAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getUserInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getUserInformationAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObject">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObjectData">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedObjectData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCompressedObjectData">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetRemoteCompressedObjectData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDataAdapters">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getObjectDataAdapters" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPathFromDID">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetPathFromDID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPathFromDIDAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNavigationTree">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetUserNavigationTree" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetUserNavigationTreeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByFunction">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendRangeByFunction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByPoint">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendRangeByPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendNonNumeric">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendNonNumeric" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointTrendProperties">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getPointTrendProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:getPointTrendPropertiesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataProviderField">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/updateDataProviderField" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateDataProviderFieldAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNodeXMLFromPath">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetNodeXMLFromPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNodePathLinks">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetNodePathLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetNodePathLinksAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePointTrendProperties">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/updatePointTrendProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updatePointTrendPropertiesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeLabel">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/updateNodeLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateNodeLabelAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSecurityGroup">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/createSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:createSecurityGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSecurityGroup">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/updateSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateSecurityGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNode">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteNodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeCommand">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/invokeCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:invokeCommandAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeXMLAll">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/updateNodeXMLAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:updateNodeXMLAllAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewNode">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/createNewNode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:createNewNodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationship">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/createRelationship" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:createRelationshipAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPoints">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/ReadPoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribePoints">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/SubscribePoints" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushData">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/PushData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHealth">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/CheckHealth" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoteInvokeCommand">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/RemoteInvokeCommand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentValueByPointId">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetCurrentValueByPointId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Delete">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlarmGroup_DeleteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Delete">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmDefinition_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlarmDefinition_DeleteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Update">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlarmGroup_UpdateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Create">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlarmGroup_CreateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Update">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmDefinition_Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:AlarmDefinition_UpdateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarmDefinition">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteAlarmDefinition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteAlarmDefinitionAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointAlarmDefinitions">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getPointAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAlarmDefinitionsByDid">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetPointAlarmDefinitionsByDid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveAlarmsList">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getActiveAlarmsList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_List">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAckandActAlarms">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAckandActAlarms" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmHistory">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitions">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionById">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmDefinitionByIdAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAlarm">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/UpdateAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateAlarmAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarm">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteAlarm" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteAlarmAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNote">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/InsertNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:InsertNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyNote">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/ModifyNote" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:ModifyNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmNotes">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmNotes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmNotesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmGroups">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmGroupsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserEmail">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DisableUserEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DisableUserEmailAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmUserGroup">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmUserGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmUserGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetTimeZones" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/CreateSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:CreateScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/UpdateSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:UpdateScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableSchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/EnableSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:EnableScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DisableSchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DisableScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToExisting">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/SubscribeToExisting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SubscribeToExistingAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromExisting">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/DeleteFromExisting" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:DeleteFromExistingAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleSettings">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetScheduleSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetScheduleSettingsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAllSchedules" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAllSchedulesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetScheduleById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionsBySchedule">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitionsBySchedule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetAlarmDefinitionsByScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitions">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetPagedAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPagedAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitionsSorted">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetPagedAlarmDefinitionsSorted" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:GetPagedAlarmDefinitionsSortedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlarmDefinitions">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/SearchAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+        <soap:header message="tns:SearchAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoDemand">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetCaisoDemand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoData">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/GetCaisoData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectData">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/getObjectData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetLatestForecast">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetLatestForecast" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetForecastByDate">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetForecastByDate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDates">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDatesCompressed">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableDatesCompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecasts">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecasts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsCompressed">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecastsCompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsByType">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecastsByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwCreateSession">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WwCreateSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwUpdatesSession">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WwUpdatesSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwReadSession">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WwReadSession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsGetUserGroups">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WsGetUserGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsGetGroupsByUser">
+      <soap:operation soapAction="http://www.ibs-cal.com/webservices/WsGetGroupsByUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FlexServiceSoap12" type="tns:FlexServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="TestPoint">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/TestPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WriteDataPointValues">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WriteDataPointValues" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRemoteConfiguration">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteRemoteConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteRemoteConfigurationAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetChildrenTreeNodes">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetChildrenTreeNodes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetChildrenTreeNodesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doLogin">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/doLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UserResetPassword">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/UserResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UserResetPasswordAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSystemUsersList">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getSystemUsersList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getSystemUsersListAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserInformation">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getUserInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getUserInformationAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObject">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedObject" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedObjectData">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedObjectData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRemoteCompressedObjectData">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetRemoteCompressedObjectData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectDataAdapters">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getObjectDataAdapters" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPathFromDID">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetPathFromDID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPathFromDIDAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserNavigationTree">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetUserNavigationTree" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetUserNavigationTreeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByFunction">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendRangeByFunction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendRangeByPoint">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendRangeByPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCompressedPointTrendNonNumeric">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getCompressedPointTrendNonNumeric" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointTrendProperties">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getPointTrendProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:getPointTrendPropertiesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateDataProviderField">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/updateDataProviderField" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateDataProviderFieldAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNodeXMLFromPath">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetNodeXMLFromPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNodePathLinks">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetNodePathLinks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetNodePathLinksAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePointTrendProperties">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/updatePointTrendProperties" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updatePointTrendPropertiesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeLabel">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/updateNodeLabel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateNodeLabelAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createSecurityGroup">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/createSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createSecurityGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateSecurityGroup">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/updateSecurityGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateSecurityGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNode">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteNodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeCommand">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/invokeCommand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:invokeCommandAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNodeXMLAll">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/updateNodeXMLAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:updateNodeXMLAllAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createNewNode">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/createNewNode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createNewNodeAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createRelationship">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/createRelationship" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:createRelationshipAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReadPoints">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/ReadPoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribePoints">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/SubscribePoints" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PushData">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/PushData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckHealth">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/CheckHealth" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoteInvokeCommand">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/RemoteInvokeCommand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCurrentValueByPointId">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetCurrentValueByPointId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Delete">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlarmGroup_DeleteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Delete">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmDefinition_Delete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlarmDefinition_DeleteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Update">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlarmGroup_UpdateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_Create">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_Create" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlarmGroup_CreateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmDefinition_Update">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmDefinition_Update" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:AlarmDefinition_UpdateAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarmDefinition">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteAlarmDefinition" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteAlarmDefinitionAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointAlarmDefinitions">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getPointAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPointAlarmDefinitionsByDid">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetPointAlarmDefinitionsByDid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getActiveAlarmsList">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getActiveAlarmsList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AlarmGroup_List">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/AlarmGroup_List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAckandActAlarms">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAckandActAlarms" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmHistory">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitions">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionById">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitionById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmDefinitionByIdAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAlarm">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/UpdateAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateAlarmAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAlarm">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteAlarm" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteAlarmAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertNote">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/InsertNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:InsertNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNote">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModifyNote">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/ModifyNote" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:ModifyNoteAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmNotes">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmNotes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmNotesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmGroups">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmGroupsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUserEmail">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DisableUserEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DisableUserEmailAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmUserGroup">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmUserGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmUserGroupAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeZones">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetTimeZones" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/CreateSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:CreateScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/UpdateSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:UpdateScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EnableSchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/EnableSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:EnableScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableSchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DisableSchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DisableScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SubscribeToExisting">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/SubscribeToExisting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SubscribeToExistingAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFromExisting">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/DeleteFromExisting" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:DeleteFromExistingAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleSettings">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetScheduleSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetScheduleSettingsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSchedules">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAllSchedules" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAllSchedulesAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetScheduleById">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetScheduleById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAlarmDefinitionsBySchedule">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetAlarmDefinitionsBySchedule" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetAlarmDefinitionsByScheduleAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitions">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetPagedAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPagedAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPagedAlarmDefinitionsSorted">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetPagedAlarmDefinitionsSorted" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:GetPagedAlarmDefinitionsSortedAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchAlarmDefinitions">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/SearchAlarmDefinitions" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+        <soap12:header message="tns:SearchAlarmDefinitionsAuthenticationHeader" part="AuthenticationHeader" use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoDemand">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetCaisoDemand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCaisoData">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/GetCaisoData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getObjectData">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/getObjectData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetLatestForecast">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetLatestForecast" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetForecastByDate">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetForecastByDate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDates">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableDatesCompressed">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableDatesCompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecasts">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecasts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsCompressed">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecastsCompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FcGetAvailableForecastsByType">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/FcGetAvailableForecastsByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwCreateSession">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WwCreateSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwUpdatesSession">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WwUpdatesSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WwReadSession">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WwReadSession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsGetUserGroups">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WsGetUserGroups" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WsGetGroupsByUser">
+      <soap12:operation soapAction="http://www.ibs-cal.com/webservices/WsGetGroupsByUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FlexService">
+    <wsdl:port name="FlexServiceSoap" binding="tns:FlexServiceSoap">
+      <soap:address location="http://10.90.0.49/FlexAPI/FlexService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FlexServiceSoap12" binding="tns:FlexServiceSoap12">
+      <soap12:address location="http://10.90.0.49/FlexAPI/FlexService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

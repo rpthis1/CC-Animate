@@ -1,0 +1,13 @@
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll.config
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\EntityFramework.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\MySql.Data.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\mysql.data.entity.EF6.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\MySql.Web.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\EntityFramework.xml
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

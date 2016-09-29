@@ -1,0 +1,43 @@
+﻿
+            /*
+               RETURN OBJECT
+
+            {
+  "processedLinks": [
+    {
+      "hasMatch": true,
+      "hasData": false,
+      "link_parent_relationship_path": "6 16 9038",
+      "element": "parameter",
+      "linkName": "bottom_mc.weather_mc:ibisSetTemperature",
+      "action": "click/other"
+      "data": {
+        "link_map_id": "",
+        "dp_relationship_id": "",
+        "link_to_data_id": "",
+        "link_from_relationship_path": "",
+        "link_to_relationship_path": "",
+        "link_relationship_id": "",
+        "relationship_path": "",
+        "parent_relationship_path": "",
+        "link_recursive": "",
+        "linkPathString": ""
+      }
+    }
+  ],
+  "nodeXmlLinks": [
+    {
+      "link_parent_relationship_path": "6 16 9038",
+      "element": "parameter",
+      "linkName": "bottom_mc.weather_mc:ibisSetTemperature",
+      "action": "click/other",
+      "type": click/IBIS.DataTypes::DataPoint
+    }
+  ],
+  "properties": {
+    "componentType": "HTMLComponent",
+    "path": ""
+  }
+}
+             
+            *

@@ -1,0 +1,90 @@
+﻿using System;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Web.Http;
+using System.Web.Services.Protocols;
+using System.Xml;
+using System.Xml.Linq;
+using IBIS.Infrastructure.Compression;
+using Newtonsoft.Json.Linq;
+using WebApiBia.Data.Reports.FlexService;
+using WebApiBia.Web.Api.Core.Processors.Controllers.IBIS;
+
+namespace WebApiBia.Web.Api.Controllers.IBISRealTime
+{
+    public class TreeController : ApiController
+    {
+        // GET api/ipmvpd
+
+
+        public TreeController()
+        {
+
+        }
+        public HttpResponseMessage Get()
+        {
+            var parameters = Request.RequestUri.ParseQueryString();
+            string nodeId = parameters.Get("id");
+
+
+            FlexServiceSoapClient client = new FlexServiceSoapClient();
+            AuthenticationHeader sh =  new AuthenticationHeader();
+            sh.Username = "administrator";
+            sh.Password = "1b$@dmin!";
+
+
+            string result = client.GetChildrenTreeNodes(null, Convert.ToInt32(nodeId));
+            result = CompressionUtil.UnCompress(result);
+
+
+            JArray arr = new JArray();
+
+            XElement nodes = XElement.Parse(result);
+
+            foreach (var xNode in nodes.Nodes())
+            {
+                var node = (XElement) xNode;
+
+                JObject obj = new JObject
+                {
+                    ["text"] = node.Attribute("label").Value.ToString(),
+                    ["children"] = true,
+                    ["id"] = node.Attribute("dp_node_id").Value.ToString()
+                };
+
+                arr.Add(obj);
+            }
+
+            HttpResponseMessage response = Request.CreateResponse(HttpStatusCode.OK);
+            response.Content = new StringContent(arr.ToString(), Encoding.UTF8, "text/html");
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            return response;
+        }
+
+        // GET api/ipmvpd/5
+        public void Get(int cluster, int record, int clusterowner, int recordowner)
+        {
+  
+        }
+
+        // POST api/ipmvpd
+        public void Post([FromBody]object p)
+        {
+
+        }
+
+        // PUT api/ipmvpd/17/2
+        public void Put(int cluster, int record, [FromBody]object p)
+        {
+
+        }
+
+        // DELETE api/ipmvpd/17/2
+        public void Delete(int cluster, int record)
+        {
+
+        }
+    }
+}

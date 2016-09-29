@@ -1,0 +1,13 @@
+﻿Installing assembly 'C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.InstallLog
+   assemblypath = C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.exe
+Installing service IBIS Reporting UI Maintenance...
+Service IBIS Reporting UI Maintenance has been successfully installed.
+Creating EventLog source IBIS Reporting UI Maintenance in log Application...
+Committing assembly 'C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.exe'.
+Affected parameters are:
+   logtoconsole = 
+   logfile = C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.InstallLog
+   assemblypath = C:\SVN\DOTNET\WebApiBia\src\IBISUIReportingService\bin\Debug\IBISUIReportingService.exe

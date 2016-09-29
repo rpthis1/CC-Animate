@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<repositories>
+  <repository path="..\ClassLibrary1\packages.config" />
+  <repository path="..\IBISReporitngUIMaintenanceConsoleApp\packages.config" />
+  <repository path="..\IBISReportingUIMaintenanceLib\packages.config" />
+  <repository path="..\IBISUIReportingService\packages.config" />
+  <repository path="..\WebApi.Data.MySql\packages.config" />
+  <repository path="..\WebApiBia.Common\packages.config" />
+  <repository path="..\WebApiBia.Dashboard.UiControls\packages.config" />
+  <repository path="..\WebApiBia.Dashboard\packages.config" />
+  <repository path="..\WebApiBia.Data.OrientDb\packages.config" />
+  <repository path="..\WebApiBia.Data.Postgres\packages.config" />
+  <repository path="..\WebApiBia.Data.Reports\packages.config" />
+  <repository path="..\WebApiBia.Data\packages.config" />
+  <repository path="..\WebApiBia.Web.Api\packages.config" />
+  <repository path="..\WebApiBia.Web.Common\packages.config" />
+  <repository path="..\WebApiBia.Web.Models.Factory\packages.config" />
+  <repository path="..\WebApiBia.Web.Models\packages.config" />
+</repositories>

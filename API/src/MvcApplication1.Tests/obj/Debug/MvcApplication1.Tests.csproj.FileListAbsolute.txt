@@ -1,0 +1,2 @@
+C:\SVN\DOTNET\WebApiBia\src\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.csprojResolveAssemblyReference.cache
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\MvcApplication1.Tests\obj\Debug\MvcApplication1.Tests.csprojResolveAssemblyReference.cache

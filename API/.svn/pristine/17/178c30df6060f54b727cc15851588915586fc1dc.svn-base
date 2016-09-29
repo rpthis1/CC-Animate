@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx?wsdl" docRef="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx" xmlns:q1="http://ibis.reporting.ibs-cal.com/" binding="q1:IBISIntelligenceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx" xmlns:q2="http://ibis.reporting.ibs-cal.com/" binding="q2:IBISIntelligenceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

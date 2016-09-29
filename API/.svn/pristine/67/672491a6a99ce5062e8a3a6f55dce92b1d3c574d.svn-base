@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='_LinqUpgradeReport_Files/LinqUpgradeReport.xslt'?>
+<LinqUpgradeLog>
+<Properties>
+<Property Name="Solution" Value="C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.sln"></Property>
+<Property Name="Solution File" Value="C:\SVN\DOTNET_SQL\WebApiBiaMS\src"></Property>
+<Property Name="Date" Value="1/14/2016 9:05:12 PM"></Property>
+</Properties>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="App.config" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Class1.cs" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Data" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="MConnect.cs" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="LINQ" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="DataClasses1.dbml" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="DataClasses1.dbml.layout" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="DataClasses1.designer.cs" Description="Converted"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.edmx" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.Context.tt" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.Context.cs" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.Designer.cs" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.edmx.diagram" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.tt" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Model1.cs" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="packages.config" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="Properties" Description="No need to convert"></Event>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="AssemblyInfo.cs" Description="No need to convert"></Event>
+
+</LinqUpgradeLog>

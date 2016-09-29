@@ -1,0 +1,25 @@
+﻿<NodeXML label="IBIS">
+  <HTMLomponent relationship_path="6 16 9039" dp_node_id="7829" dp_node_name="6" uid="7574937475949373858956uy75">
+    <componentProperties>
+      <componentType>HTMLomponent</componentType>
+      <path>http://localhost:3000/app/oracle/250Details.html</path>
+    </componentProperties>
+    <links>
+      <link linkID="bottom_mc.weather_mc:ibisSetTemperature" type="IBIS.DataTypes::DataPoint">
+        <ModbusRegister relationship_path="8 9 10 11 12 14 15" dp_node_id="15" dp_node_name="kW" type="dataPoint" link_recursive="false" dataPoint_data_id="24" linkTo="8 9 10 11 12 14 15" linkFrom="6 16 9039" dp_relationship_id="9039" valueOffset="0" valueScale=".1" dataType="Integer" modbusDataAddress="30033">
+          <RenderData displayName="Meter MSB-A (kW)" units=" kW" precision="1"/>
+        </ModbusRegister>
+      </link>
+      <link linkID="abottom_mc.weather_mc:ibisSetTemperature" type="IBIS.DataTypes::DataPoint">
+        <ProgramObject relationship_path="8 9 10 11 12 14 24" dp_node_id="24" dp_node_name="Meter (kWh)" type="dataPoint" link_recursive="false" dataPoint_data_id="25" linkTo="8 9 10 11 12 14 24" linkFrom="6 16 9039" dp_relationship_id="9039" debug="true">
+          <RenderData units=" kWh" precision="2" outputFunction="DeTotalized"/>
+          <Parameters>
+            <link linkID="High" optional="true"/>
+            <link linkID="Low" optional="true"/>
+          </Parameters>
+          <Program> Double highWithScale= 0; Double total = 0; if( High != null && Low != null) { highWithScale = Convert.ToDouble(High[0]) * 10000; total = highWithScale + Convert.ToDouble(Low[0]) ; } result = total; </Program>
+        </ProgramObject>
+      </link>
+    </links>
+  </HTMLomponent>
+</NodeXML>

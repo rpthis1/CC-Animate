@@ -1,0 +1,66 @@
+﻿<root>
+  
+  <!-- save unmodified links-->
+  
+<NodeLinks>
+  <LinkID id="bottom_mc.weather_mc:ibisSetTemperature" relationship_path="6 16 9038">
+    <Link link_map_id="15449" 
+          dp_relationship_id="9038" 
+          link_from_data_id="34164"
+          link_to_data_id="34165"
+          link_name="bottom_mc.weather_mc:ibisSetTemperature" 
+          link_path="" 
+          link_from_relationship_path="6 16 9038"
+          link_to_relationship_path="8 9 10 11 12 14 15"
+          link_relationship_id="15"
+          relationship_path="8 9 10 11 12 14 15"
+          parent_relationship_path="6 16 9038" 
+          link_recursive="1" 
+          LinkPathString="Modbus Network | Cal High | Meters | Science Building - B&amp;B | Electrical MSB-A ION Meter | ION8600-Template | kW"/>
+  </LinkID>
+  <LinkID id="total_mc.link_details" relationship_path="6 16 9038"/>
+  <LinkID id="total_mc.kW:ibisSetText" relationship_path="6 16 9038"/>
+  <LinkID id="total_mc.link_box_mc" relationship_path="6 16 9038"/>
+  <LinkID id="total_mc.icon_water_mc" relationship_path="6 16 9038"/>
+  <LinkID id="total_mc.icon_gas_mc" relationship_path="6 16 9038"/>
+</NodeLinks>
+
+  <!-- SAVE DELETED LINKS
+ 
+ -ADD THIS: delete_link="true"
+ -ALWAYS USE: link_recursive="0" NOT 1
+  
+  -->
+
+  <NodeLinks>
+    <LinkID id="bottom_mc.weather_mc:ibisSetTemperature" relationship_path="6 16 9038">
+      <Link link_map_id="15449" dp_relationship_id="9038" link_from_data_id="34164" link_to_data_id="34165" 
+            link_name="bottom_mc.weather_mc:ibisSetTemperature" link_path="" link_from_relationship_path="6 16 9038"
+            link_to_relationship_path="8 9 10 11 12 14 15" link_relationship_id="15" relationship_path="8 9 10 11 12 14 15"
+            parent_relationship_path="6 16 9038" link_recursive="1" LinkPathString="Modbus Network | Cal High | Meters | Science Building - B&amp;B | Electrical MSB-A ION Meter | ION8600-Template | kW" delete_link="true"/>
+    </LinkID>
+  </NodeLinks>
+
+
+
+  <!--  ADD NEW LINK
+ 
+  -->
+
+  <NodeLinks>
+    <LinkID id="bottom_mc.weather_mc:ibisSetTemperature" relationship_path="6 16 9038">
+      <Link link_recursive="1" link_name="bottom_mc.weather_mc:ibisSetTemperature" link_from_relationship_path="6 16 9038"
+            link_to_relationship_path="2610 2613 2621 2694 2703 2230 2242" 
+            relationship_path="2610 2613 2621 2694 2703 2230 2242"
+            LinkPathString="IBIS System | Tridium AX JACE (MVHS_Pool) | Monte Vista Gymnasium | Air Handlers | AHU-1 - Gym | Carrier 2C/2H OAD - TEC UV Template v1 | Display | After Hours HVAC Status"/>
+    </LinkID>
+  </NodeLinks>
+
+
+  <!--  HANDLE CASE WHERE AN ORIGINALLY EMPTY NODE GETS A LINK THEN THAT LINKS GET DELETED
+ 
+  -->
+  
+
+</root>
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='_MigrationReport_Files/MigrationReport.xslt'?>
+<MigrationLog>
+<Properties>
+<Property Name="Solution" Value="WebApiBia.Data.SQ"></Property>
+<Property Name="Solution File" Value="C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\"></Property>
+<Property Name="Date" Value="1/14/2016 9:04:40 PM"></Property>
+</Properties>
+<Event ErrorLevel="3" Project="WebApiBia.Data.SQ" Source="DataClasses1.dbml" Description="File content is not valid."></Event>
+
+</MigrationLog>

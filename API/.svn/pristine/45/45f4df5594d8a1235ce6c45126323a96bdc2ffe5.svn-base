@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Linq;
+using System.Web;
+using System.Web.Http;
+using System.Web.Mvc;
+using System.Web.Optimization;
+using System.Web.Routing;
+using WebApiBia.Web.Api.Core.Filters;
+
+namespace WebApiBia.Web.Api
+{
+    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // visit http://go.microsoft.com/?LinkId=9394801
+
+    public class WebApiApplication : System.Web.HttpApplication
+    {
+        protected void Application_Start()
+        {
+            AreaRegistration.RegisterAllAreas();
+            log4net.Config.XmlConfigurator.Configure();
+            WebApiConfig.Register(GlobalConfiguration.Configuration);
+            FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            GlobalConfiguration.Configuration.Filters.Add(new AddCorsHeaderFilter());
+        }
+
+
+        void Application_PreSendRequestContent(object sender, EventArgs e)
+        {
+            string devMode = ConfigurationManager.AppSettings["devMode"];
+            if (devMode != null && devMode.ToUpper().Equals("TRUE"))
+            {
+               // response.Headers.Remove("Access-Control-Allow-Origin");
+               // response.Headers.Add("Access-Control-Allow-Origin", "http://localhost:1841");
+            }
+        }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
+        {
+
+            string devMode = ConfigurationManager.AppSettings["devMode"];
+            if (devMode != null && devMode.ToUpper().Equals("TRUE"))
+            {
+                if (HttpContext.Current.Request.HttpMethod == "OPTIONS")
+                {
+                    HttpContext.Current.Response.Headers.Remove("Access - Control - Allow - Origin");
+                    HttpContext.Current.Response.Headers["Access-Control-Allow-Origin"] = "http://localhost:1841";
+                    HttpContext.Current.Response.Headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE";
+                    HttpContext.Current.Response.AddHeader("Access-Control-Allow-Headers", "Content-Type, Accept, X-Requested-With");
+                    HttpContext.Current.Response.AddHeader("Access-Control-Max-Age", "1728000");
+                    HttpContext.Current.Response.End();
+                }
+
+            }
+        }
+    }
+}

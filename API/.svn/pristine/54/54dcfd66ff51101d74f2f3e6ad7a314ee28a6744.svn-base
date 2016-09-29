@@ -1,0 +1,18 @@
+﻿<?xml version="1.0"?>
+
+<result>
+  <datum>
+    <trend date="1/1/2013">
+      <parent id="2" name="California High School">
+        <item id="2" name="California High School" value="1702587.5" type="School"/>
+      </parent>
+    </trend>
+  </datum>
+  <datum>
+    <trend date="1/1/2015">
+      <parent id="2" name="California High School">
+        <item id="2" name="California High School" value="1019860.5" type="School"/>
+      </parent>
+    </trend>
+  </datum>
+</result>

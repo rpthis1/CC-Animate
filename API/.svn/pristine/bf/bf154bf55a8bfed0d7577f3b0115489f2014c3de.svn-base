@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{11F725D5-A972-4B2B-B443-FDF6ADD0D51A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Data.Postgres</RootNamespace>
+    <AssemblyName>WebApiBia.Data.Postgres</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\..\lib\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>..\..\lib\Npgsql.2.2.7\lib\net40\Mono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\lib\Npgsql.2.2.7\lib\net40\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Clients\ContentTreeClientPq.cs" />
+    <Compile Include="Clients\ExportTemplateClientPq.cs" />
+    <Compile Include="Clients\ContentTreeFetchClientPq.cs" />
+    <Compile Include="Clients\ContentTreeTemplateOwnerClientPq.cs" />
+    <Compile Include="Clients\GenericTreeClientPq.cs" />
+    <Compile Include="Clients\LogicalEdgeClientPq.cs" />
+    <Compile Include="Clients\NavigationTemplateClientPq.cs" />
+    <Compile Include="Clients\NavigationTreeClientPq.cs" />
+    <Compile Include="Clients\NavigationTreeFetchClientPq.cs" />
+    <Compile Include="Clients\NavigationTreeNodeClientPq.cs" />
+    <Compile Include="Clients\ProjectsTreeClientPg.cs" />
+    <Compile Include="Clients\ProjectsTreeStageTagClientPg.cs" />
+    <Compile Include="Clients\ReorderTreeClientPq.cs" />
+    <Compile Include="Clients\ReportPropertiesClientPq.cs" />
+    <Compile Include="Clients\ReportPropertyClientPq.cs" />
+    <Compile Include="Clients\ReportPropertyOverrideClientPq.cs" />
+    <Compile Include="Clients\TemplateNodeClientPq.cs" />
+    <Compile Include="Clients\TemplateReportClientPq.cs" />
+    <Compile Include="Clients\TemplateTabClientPq.cs" />
+    <Compile Include="Clients\TemplateTabNavigatorClientPq.cs" />
+    <Compile Include="Clients\VerticesClientPg.cs" />
+    <Compile Include="GenericQueries\GenericQueriesPg.cs" />
+    <Compile Include="GenericQueries\GenericWidgetCreators.cs" />
+    <Compile Include="Mapper\ClusterLookUp.cs" />
+    <Compile Include="Mapper\RecordIdMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeFetchQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ContentTreeTemplateOwnerQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\GenericTreeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\LogicalEdgeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTemplateQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeFetchQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeNodeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\NavigationTreeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ProjectsTreeQueryProcessorPg.cs" />
+    <Compile Include="QueryProcessors\Bia\ProjectsTreeStageTagQueryProcessorPg.cs" />
+    <Compile Include="QueryProcessors\Bia\ReorderTreeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertiesQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertyOverrideQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\ReportPropertyQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateExportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateNodeQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateReportQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateTabNavigatoreQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\TemplateTabQueryProcessorPq.cs" />
+    <Compile Include="QueryProcessors\Bia\VerticesQueryProcessorPg.cs" />
+    <Compile Include="WidgetCreators\MvOptionCWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\ContinuousCommissioningWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\HourFilterReportWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\ConsumptionReportOccupancyHoursWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\PowerConsumptionMonthOverYearKwhWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\PowerConsumptionYearlyDeltaKwhWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\PowerConsumptionYearsColorCodedKwhWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\UtilityBillWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\PowerDemandWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\LoadDurationWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\IWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\OccupancyPercentByHourWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\CO2WidgetCreator.cs" />
+    <Compile Include="WidgetCreators\PowerConsumptionKwhWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\OccupancyPercentWidgetCreator.cs" />
+    <Compile Include="WidgetCreators\WidgetConfigGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiBia.Common\WebApiBia.Common.csproj">
+      <Project>{ea91976d-b6f1-4a73-8bd8-a4ff354edd54}</Project>
+      <Name>WebApiBia.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Dashboard.UiControls\WebApiBia.Dashboard.UiControls.csproj">
+      <Project>{E2986C9C-E154-431B-87AF-5C59C737EE20}</Project>
+      <Name>WebApiBia.Dashboard.UiControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Data\WebApiBia.Data.csproj">
+      <Project>{0e76d07b-baf0-42d7-8096-45bff65411ec}</Project>
+      <Name>WebApiBia.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Web.Models\WebApiBia.Web.Models.csproj">
+      <Project>{c7c8e5e5-2f1e-4206-bf6d-c9f2f3ac26bf}</Project>
+      <Name>WebApiBia.Web.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

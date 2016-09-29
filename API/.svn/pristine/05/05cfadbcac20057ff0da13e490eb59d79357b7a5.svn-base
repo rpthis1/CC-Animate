@@ -1,0 +1,302 @@
+﻿<datum>
+  <trend date="1/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="165450.07204323472" />
+    </parent>
+  </trend>
+  <trend date="2/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="148496.31324897328" />
+    </parent>
+  </trend>
+  <trend date="3/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="160291.61156843146" />
+    </parent>
+  </trend>
+  <trend date="4/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="131325.03127733382" />
+    </parent>
+  </trend>
+  <trend date="5/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="154750.25246336986" />
+    </parent>
+  </trend>
+  <trend date="6/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="103028.62158313904" />
+    </parent>
+  </trend>
+  <trend date="7/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="70789.144101454134" />
+    </parent>
+  </trend>
+  <trend date="8/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="122230.49012903744" />
+    </parent>
+  </trend>
+  <trend date="9/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="179957.49352564098" />
+    </parent>
+  </trend>
+  <trend date="10/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="122219" />
+    </parent>
+  </trend>
+  <trend date="11/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="157863" />
+    </parent>
+  </trend>
+  <trend date="12/1/2011">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="164035.5" />
+    </parent>
+  </trend>
+  <trend date="1/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="171640.5" />
+    </parent>
+  </trend>
+  <trend date="2/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="143347" />
+    </parent>
+  </trend>
+  <trend date="3/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="153943.5" />
+    </parent>
+  </trend>
+  <trend date="4/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="138633" />
+    </parent>
+  </trend>
+  <trend date="5/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="170834" />
+    </parent>
+  </trend>
+  <trend date="6/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="129355" />
+    </parent>
+  </trend>
+  <trend date="7/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="75265.5" />
+    </parent>
+  </trend>
+  <trend date="8/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="132065" />
+    </parent>
+  </trend>
+  <trend date="9/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="167099" />
+    </parent>
+  </trend>
+  <trend date="10/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="178010.5" />
+    </parent>
+  </trend>
+  <trend date="11/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="135710.5" />
+    </parent>
+  </trend>
+  <trend date="12/1/2012">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="136335.5" />
+    </parent>
+  </trend>
+  <trend date="1/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="153569" />
+    </parent>
+  </trend>
+  <trend date="2/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="146743.5" />
+    </parent>
+  </trend>
+  <trend date="3/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="134268.5" />
+    </parent>
+  </trend>
+  <trend date="4/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="165279" />
+    </parent>
+  </trend>
+  <trend date="5/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="171937.5" />
+    </parent>
+  </trend>
+  <trend date="6/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="126012" />
+    </parent>
+  </trend>
+  <trend date="7/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="77683" />
+    </parent>
+  </trend>
+  <trend date="8/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="129166" />
+    </parent>
+  </trend>
+  <trend date="9/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="180343.5" />
+    </parent>
+  </trend>
+  <trend date="10/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="173166" />
+    </parent>
+  </trend>
+  <trend date="11/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="136377.5" />
+    </parent>
+  </trend>
+  <trend date="12/1/2013">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="108042" />
+    </parent>
+  </trend>
+  <trend date="1/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="101160" />
+    </parent>
+  </trend>
+  <trend date="2/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="94870" />
+    </parent>
+  </trend>
+  <trend date="3/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="82573" />
+    </parent>
+  </trend>
+  <trend date="4/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="55793" />
+    </parent>
+  </trend>
+  <trend date="5/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="0" />
+    </parent>
+  </trend>
+  <trend date="6/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="64399" />
+    </parent>
+  </trend>
+  <trend date="7/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="52490.5" />
+    </parent>
+  </trend>
+  <trend date="8/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="64066.5" />
+    </parent>
+  </trend>
+  <trend date="9/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="105291.5" />
+    </parent>
+  </trend>
+  <trend date="10/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="109630" />
+    </parent>
+  </trend>
+  <trend date="11/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="87609" />
+    </parent>
+  </trend>
+  <trend date="12/1/2014">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="116202" />
+    </parent>
+  </trend>
+  <trend date="1/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="106920" />
+    </parent>
+  </trend>
+  <trend date="2/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="93329" />
+    </parent>
+  </trend>
+  <trend date="3/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="86332" />
+    </parent>
+  </trend>
+  <trend date="4/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="64929.5" />
+    </parent>
+  </trend>
+  <trend date="5/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="77882" />
+    </parent>
+  </trend>
+  <trend date="6/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="61791" />
+    </parent>
+  </trend>
+  <trend date="7/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="40272" />
+    </parent>
+  </trend>
+  <trend date="8/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="64889" />
+    </parent>
+  </trend>
+  <trend date="9/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="117364" />
+    </parent>
+  </trend>
+  <trend date="10/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="118460" />
+    </parent>
+  </trend>
+  <trend date="11/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="92951" />
+    </parent>
+  </trend>
+  <trend date="12/1/2015">
+    <parent name="California High School" id="2">
+      <item id="2" name="California High School" type="School" value="86377" />
+    </parent>
+  </trend>
+</datum>

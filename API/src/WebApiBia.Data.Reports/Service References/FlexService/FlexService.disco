@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://10.90.0.49/FlexAPI/FlexService.asmx?wsdl" docRef="http://10.90.0.49/FlexAPI/FlexService.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://10.90.0.49/FlexAPI/FlexService.asmx" xmlns:q1="http://www.ibs-cal.com/webservices/" binding="q1:FlexServiceSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://10.90.0.49/FlexAPI/FlexService.asmx" xmlns:q2="http://www.ibs-cal.com/webservices/" binding="q2:FlexServiceSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

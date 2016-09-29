@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0E76D07B-BAF0-42D7-8096-45BFF65411EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Data</RootNamespace>
+    <AssemblyName>WebApiBia.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attrubutes\BiaUiReadOnly.cs" />
+    <Compile Include="Entities\Bia\BiaVBase.cs" />
+    <Compile Include="Entities\Bia\BiaVBasePropertiesNavTreeNodeVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVOverride.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideGradients.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideString.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideDates.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideBaseProperties.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideParameterDecorators.cs" />
+    <Compile Include="Entities\Bia\BiaVOverrideParameters.cs" />
+    <Compile Include="Entities\Bia\BiaVProject.cs" />
+    <Compile Include="Entities\Bia\BiaVBasePropertiesOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVBaseProperty.cs" />
+    <Compile Include="Entities\Bia\BiaVBaseProperties.cs" />
+    <Compile Include="Entities\Bia\BiaVBasePropertiesVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyMVDates.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyGradientsOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyGradient.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyGradients.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyGradientsVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyDate.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameterDecoratorItem.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameterDecorator.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameter.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyDates.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameterDecorators.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameters.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyDatesOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameterDecoratorsOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParametersOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyDatesVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParameterDecoratorsVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyParametersVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyStringVertex.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyString.cs" />
+    <Compile Include="Entities\Bia\BiaVReportPropertyStringOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\BiaVTemplateTree.cs" />
+    <Compile Include="Entities\Bia\BiaVTreeNode.cs" />
+    <Compile Include="Entities\Bia\IBiaVReportPropertyOverrideEDocument.cs" />
+    <Compile Include="Entities\Bia\ResultList.cs" />
+    <Compile Include="Mapper\AutoMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueryProcessors\Bia\ITemplateExportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IReorderTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IContentTreeTemplateOwnerQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ILogicalEdgeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\INavigationTreeFetchQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IContentTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\INavigationTemplateQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IProjectsTreeStageTagQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\INavigationTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\INavigationTreeNodeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IGenericTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IProjectsTreeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IContentTreeFetchQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IReportPropertyOverrideQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IReportPropertiesQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ITemplateReportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IReportPropertyQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ITemplateTabQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ITemplateTabNavigatorQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\ITemplateNodeQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IEdgesQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IReportQueryProcessor.cs" />
+    <Compile Include="QueryProcessors\Bia\IVerticesQueryProcessor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,13 @@
+﻿<!-- 
+
+var token:AsyncToken=DataStore.Instance.ibisService.getOperation("updateNodeXMLAll").
+
+send(relationship_path,
+nodeXML.toXMLString(),
+relationshipXML.toXMLString(),
+nodeLinksXML.toXMLString(), 
+overrideXML.toXMLString())
+
+-->
+
+<root/>

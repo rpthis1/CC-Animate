@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<parameters>
+  <parameter id='normalization' value='None' />
+  <parameter id='hourFilter' value='None' />
+  <parameter id='EntityValueType' value='kWh' />
+  <parameter id='Energy' value='Electricity' />
+  <parameter id='Mode' value='Energy' />
+</parameters>
+
+<parameters>
+  <parameter id='NORMALIZATION'  value='None'  />
+  <parameter id='HOURFILTER'  value='None'  />
+  <parameter id='ENTITYVALUETYPE'  value='kWh'  />
+  <parameter id='Energy'  value='Electricity'  />
+  <parameter id='MODE'  value='Energy'  />
+  <parameter id='parentEntities'  value='1'  />
+  <parameter id='stopDepth'  value='0'  />
+  <parameter id='startDate'  value='01/01/15'  />
+  <parameter id='endDate'  value='12/31/15'  />
+  <parameter id='GRANULARITY'  value='Month'  />
+
+  <parameter id='DDAXIS'  value='None'  />
+  
+ 
+ 
+</parameters>
+
+
+<parameters>
+  <parameter id='normalization'  value='None'  />
+  <parameter id='hourFilter'  value='None'  />
+  <parameter id='EntityValueType'  value='kWh'  />
+  <parameter id='Energy'  value='Electricity'  />
+  <parameter id='Mode'  value='Energy'  />
+  <parameter id='parentEntities'  value='1'  />
+  <parameter id='startDate'  value='1/1/2015'  />
+  <parameter id='endDate'  value='12/31/2015'  />
+  <parameter id='granularity'  value='month'  />
+</parameters>

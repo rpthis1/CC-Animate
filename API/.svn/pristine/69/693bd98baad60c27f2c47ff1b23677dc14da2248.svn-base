@@ -1,0 +1,42 @@
+﻿<datum>
+  <trend date="1/31/2016-2/6/2016">
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="91754.332995559293" />
+    </parent>
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="91754.332995559293" />
+    </parent>
+  </trend>
+  <trend date="2/7/2016-2/13/2016">
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="96272.9364758116" />
+    </parent>
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="96272.9364758116" />
+    </parent>
+  </trend>
+  <trend date="2/14/2016-2/20/2016">
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="92546.291038050782" />
+    </parent>
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="92546.291038050782" />
+    </parent>
+  </trend>
+  <trend date="2/21/2016-2/27/2016">
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="96352.035657015673" />
+    </parent>
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="96352.035657015673" />
+    </parent>
+  </trend>
+  <trend date="2/28/2016-3/5/2016">
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="92345.427745241162" />
+    </parent>
+    <parent name="Building 3" id="3">
+      <item id="3" name="Building 3" type="Building" value="92345.427745241162" />
+    </parent>
+  </trend>
+</datum>

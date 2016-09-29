@@ -1,0 +1,6 @@
+@using WebApiBia.Web.Api.Areas.HelpPage
+@model WebApiBia.Web.Api.Areas.HelpPage.SampleGeneration.TextSample
+
+<pre class="wrapped">
+@Model.Text
+</pre>

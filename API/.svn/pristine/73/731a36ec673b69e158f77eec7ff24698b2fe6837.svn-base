@@ -1,0 +1,2121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://ibis.reporting.ibs-cal.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://ibis.reporting.ibs-cal.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://ibis.reporting.ibs-cal.com/">
+      <s:element name="LoadInitialSettings">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadInitialSettingsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadInitialSettingsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntitiesByType">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEntitiesByTypeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEntitiesByTypeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReport">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBaseEntityReportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReportBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReportBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBaseEntityReportBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReportUncompressed">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="provider" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoadBaseEntityReportUncompressedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoadBaseEntityReportUncompressedResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEffectiveRateHistoryByEntityId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityValueType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEffectiveRateHistoryByEntityIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEffectiveRateHistoryByEntityIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEffectiveRate">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityValueType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEffectiveRateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateEffectiveRateResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetReports">
+        <s:complexType />
+      </s:element>
+      <s:element name="GSO_GetReportsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetReportsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetSites">
+        <s:complexType />
+      </s:element>
+      <s:element name="GSO_GetSitesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetSitesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetReportSites">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="reportId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetReportSitesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetReportSitesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetReportStatus">
+        <s:complexType />
+      </s:element>
+      <s:element name="GSO_GetReportStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetReportStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetCommentsDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetCommentsDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetCommentsDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reportId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetCommentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateComments">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reportId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="statusId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateCommentsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_InsertOrUpdateCommentsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasSpaceCapacityDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasSpaceCapacityDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetIaasSpaceCapacityDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasSpaceCapacity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasSpaceCapacityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetIaasSpaceCapacityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateIaasSpaceCapacity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="siteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="used" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateIaasSpaceCapacityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_InsertOrUpdateIaasSpaceCapacityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasDecomInstallDates">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasDecomInstallDatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetIaasDecomInstallDatesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasDecomInstall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_GetIaasDecomInstallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_GetIaasDecomInstallResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateIaasDecomInstall">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="decommissionedServers" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="installedServers" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GSO_InsertOrUpdateIaasDecomInstallResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GSO_InsertOrUpdateIaasDecomInstallResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModels">
+        <s:complexType />
+      </s:element>
+      <s:element name="Eqst_GetModelsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetModelsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetEntities">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetEntitiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetEntitiesBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetEntitiesBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetEntitiesBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModelForEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModelForEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetModelForEntityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModelForEntityBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModelForEntityBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetModelForEntityBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetModelVariables">
+        <s:complexType />
+      </s:element>
+      <s:element name="Eqst_GetModelVariablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetModelVariablesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedReportingDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedReportingDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetTMY3NormalizedReportingDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedReportingDateRangeBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedReportingDateRangeBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetTMY3NormalizedReportingDateRangeBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedExportAll">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedExportAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetTMY3NormalizedExportAllResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedExportAllBase64">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetTMY3NormalizedExportAllBase64Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetTMY3NormalizedExportAllBase64Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetRealizedSavingsReportingDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Eqst_GetRealizedSavingsReportingDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Eqst_GetRealizedSavingsReportingDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ipmvp_GetEntities">
+        <s:complexType />
+      </s:element>
+      <s:element name="Ipmvp_GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ipmvp_GetEntitiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ipmvp_GetIpmvpModelVariables">
+        <s:complexType />
+      </s:element>
+      <s:element name="Ipmvp_GetIpmvpModelVariablesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ipmvp_GetIpmvpModelVariablesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ipmvp_GetTMY3NormalizedDateRange">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Ipmvp_GetTMY3NormalizedDateRangeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Ipmvp_GetTMY3NormalizedDateRangeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicingSelections">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetInvoicingSelectionsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoicingSelectionsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicingDataWithSqFtgById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicingDataWithSqFtgByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoicingDataWithSqFtgByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistoricalInvoicesById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHistoricalInvoicesByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHistoricalInvoicesByIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicePreview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoicePreviewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoicePreviewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHourlyInvoicePreview">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetHourlyInvoicePreviewResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetHourlyInvoicePreviewResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoiceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateInvoiceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoiceDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateInvoiceDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateInvoiceDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoiceDescription">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvoiceDescriptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvoiceDescriptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetEntity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetEntityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_GetEntityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetEntities">
+        <s:complexType />
+      </s:element>
+      <s:element name="Utb_GetEntitiesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_GetEntitiesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetConfiguration">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetConfigurationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_GetConfigurationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetEntries">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="entityValueType" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_GetEntriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_GetEntriesResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_AddEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_AddEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_AddEntryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_DeleteEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="startDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="endDate" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_DeleteEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_DeleteEntryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_UpdateEntry">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utbEntityId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldEndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newStartDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newEndDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="value" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_UpdateEntryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_UpdateEntryResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_ProcessImportFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filenameOnServer" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Utb_ProcessImportFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Utb_ProcessImportFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoadInitialSettingsSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadInitialSettings" />
+  </wsdl:message>
+  <wsdl:message name="LoadInitialSettingsSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadInitialSettingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEntitiesByTypeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEntitiesByType" />
+  </wsdl:message>
+  <wsdl:message name="GetEntitiesByTypeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEntitiesByTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReport" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReportBase64" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReportBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportUncompressedSoapIn">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReportUncompressed" />
+  </wsdl:message>
+  <wsdl:message name="LoadBaseEntityReportUncompressedSoapOut">
+    <wsdl:part name="parameters" element="tns:LoadBaseEntityReportUncompressedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEffectiveRateHistoryByEntityIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEffectiveRateHistoryByEntityId" />
+  </wsdl:message>
+  <wsdl:message name="GetEffectiveRateHistoryByEntityIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEffectiveRateHistoryByEntityIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEffectiveRateSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEffectiveRate" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEffectiveRateSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEffectiveRateResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportsSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetReports" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportsSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetReportsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetSitesSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetSites" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetSitesSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportSitesSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetReportSites" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportSitesSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetReportSitesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetReportStatus" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetReportStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetReportStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetCommentsDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetCommentsDates" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetCommentsDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetCommentsDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetComments" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateCommentsSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateComments" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateCommentsSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateCommentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasSpaceCapacityDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasSpaceCapacityDates" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasSpaceCapacityDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasSpaceCapacityDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasSpaceCapacitySoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasSpaceCapacity" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasSpaceCapacitySoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasSpaceCapacityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateIaasSpaceCapacitySoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateIaasSpaceCapacity" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateIaasSpaceCapacitySoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateIaasSpaceCapacityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasDecomInstallDatesSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasDecomInstallDates" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasDecomInstallDatesSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasDecomInstallDatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasDecomInstallSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasDecomInstall" />
+  </wsdl:message>
+  <wsdl:message name="GSO_GetIaasDecomInstallSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_GetIaasDecomInstallResponse" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateIaasDecomInstallSoapIn">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateIaasDecomInstall" />
+  </wsdl:message>
+  <wsdl:message name="GSO_InsertOrUpdateIaasDecomInstallSoapOut">
+    <wsdl:part name="parameters" element="tns:GSO_InsertOrUpdateIaasDecomInstallResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelsSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModels" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelsSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetEntities" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetEntitiesBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetEntitiesBase64" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetEntitiesBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetEntitiesBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelForEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelForEntity" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelForEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelForEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelForEntityBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelForEntityBase64" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelForEntityBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelForEntityBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelVariablesSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelVariables" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetModelVariablesSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetModelVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedReportingDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedReportingDateRange" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedReportingDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedReportingDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedReportingDateRangeBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedReportingDateRangeBase64" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedReportingDateRangeBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedReportingDateRangeBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedExportAllSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedExportAll" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedExportAllSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedExportAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedExportAllBase64SoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedExportAllBase64" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetTMY3NormalizedExportAllBase64SoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetTMY3NormalizedExportAllBase64Response" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetRealizedSavingsReportingDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Eqst_GetRealizedSavingsReportingDateRange" />
+  </wsdl:message>
+  <wsdl:message name="Eqst_GetRealizedSavingsReportingDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Eqst_GetRealizedSavingsReportingDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetEntities" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetIpmvpModelVariablesSoapIn">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetIpmvpModelVariables" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetIpmvpModelVariablesSoapOut">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetIpmvpModelVariablesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetTMY3NormalizedDateRangeSoapIn">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetTMY3NormalizedDateRange" />
+  </wsdl:message>
+  <wsdl:message name="Ipmvp_GetTMY3NormalizedDateRangeSoapOut">
+    <wsdl:part name="parameters" element="tns:Ipmvp_GetTMY3NormalizedDateRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicingSelectionsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoicingSelections" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicingSelectionsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoicingSelectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicingDataWithSqFtgByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoicingDataWithSqFtgById" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicingDataWithSqFtgByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoicingDataWithSqFtgByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoricalInvoicesByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHistoricalInvoicesById" />
+  </wsdl:message>
+  <wsdl:message name="GetHistoricalInvoicesByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHistoricalInvoicesByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicePreviewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoicePreview" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoicePreviewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoicePreviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetHourlyInvoicePreviewSoapIn">
+    <wsdl:part name="parameters" element="tns:GetHourlyInvoicePreview" />
+  </wsdl:message>
+  <wsdl:message name="GetHourlyInvoicePreviewSoapOut">
+    <wsdl:part name="parameters" element="tns:GetHourlyInvoicePreviewResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInvoice" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceDescription" />
+  </wsdl:message>
+  <wsdl:message name="UpdateInvoiceDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateInvoiceDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceDescriptionSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDescription" />
+  </wsdl:message>
+  <wsdl:message name="GetInvoiceDescriptionSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntitySoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntity" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntitySoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntityResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntitiesSoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntities" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntitiesSoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetConfigurationSoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_GetConfiguration" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetConfigurationSoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_GetConfigurationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntriesSoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntries" />
+  </wsdl:message>
+  <wsdl:message name="Utb_GetEntriesSoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_GetEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_AddEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_AddEntry" />
+  </wsdl:message>
+  <wsdl:message name="Utb_AddEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_AddEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_DeleteEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_DeleteEntry" />
+  </wsdl:message>
+  <wsdl:message name="Utb_DeleteEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_DeleteEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_UpdateEntrySoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_UpdateEntry" />
+  </wsdl:message>
+  <wsdl:message name="Utb_UpdateEntrySoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_UpdateEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="Utb_ProcessImportFileSoapIn">
+    <wsdl:part name="parameters" element="tns:Utb_ProcessImportFile" />
+  </wsdl:message>
+  <wsdl:message name="Utb_ProcessImportFileSoapOut">
+    <wsdl:part name="parameters" element="tns:Utb_ProcessImportFileResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IBISIntelligenceSoap">
+    <wsdl:operation name="LoadInitialSettings">
+      <wsdl:input message="tns:LoadInitialSettingsSoapIn" />
+      <wsdl:output message="tns:LoadInitialSettingsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEntitiesByType">
+      <wsdl:input message="tns:GetEntitiesByTypeSoapIn" />
+      <wsdl:output message="tns:GetEntitiesByTypeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReport">
+      <wsdl:input message="tns:LoadBaseEntityReportSoapIn" />
+      <wsdl:output message="tns:LoadBaseEntityReportSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportBase64">
+      <wsdl:input message="tns:LoadBaseEntityReportBase64SoapIn" />
+      <wsdl:output message="tns:LoadBaseEntityReportBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportUncompressed">
+      <wsdl:input message="tns:LoadBaseEntityReportUncompressedSoapIn" />
+      <wsdl:output message="tns:LoadBaseEntityReportUncompressedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEffectiveRateHistoryByEntityId">
+      <wsdl:input message="tns:GetEffectiveRateHistoryByEntityIdSoapIn" />
+      <wsdl:output message="tns:GetEffectiveRateHistoryByEntityIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEffectiveRate">
+      <wsdl:input message="tns:UpdateEffectiveRateSoapIn" />
+      <wsdl:output message="tns:UpdateEffectiveRateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReports">
+      <wsdl:input message="tns:GSO_GetReportsSoapIn" />
+      <wsdl:output message="tns:GSO_GetReportsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetSites">
+      <wsdl:input message="tns:GSO_GetSitesSoapIn" />
+      <wsdl:output message="tns:GSO_GetSitesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportSites">
+      <wsdl:input message="tns:GSO_GetReportSitesSoapIn" />
+      <wsdl:output message="tns:GSO_GetReportSitesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportStatus">
+      <wsdl:input message="tns:GSO_GetReportStatusSoapIn" />
+      <wsdl:output message="tns:GSO_GetReportStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetCommentsDates">
+      <wsdl:input message="tns:GSO_GetCommentsDatesSoapIn" />
+      <wsdl:output message="tns:GSO_GetCommentsDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetComments">
+      <wsdl:input message="tns:GSO_GetCommentsSoapIn" />
+      <wsdl:output message="tns:GSO_GetCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateComments">
+      <wsdl:input message="tns:GSO_InsertOrUpdateCommentsSoapIn" />
+      <wsdl:output message="tns:GSO_InsertOrUpdateCommentsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacityDates">
+      <wsdl:input message="tns:GSO_GetIaasSpaceCapacityDatesSoapIn" />
+      <wsdl:output message="tns:GSO_GetIaasSpaceCapacityDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacity">
+      <wsdl:input message="tns:GSO_GetIaasSpaceCapacitySoapIn" />
+      <wsdl:output message="tns:GSO_GetIaasSpaceCapacitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasSpaceCapacity">
+      <wsdl:input message="tns:GSO_InsertOrUpdateIaasSpaceCapacitySoapIn" />
+      <wsdl:output message="tns:GSO_InsertOrUpdateIaasSpaceCapacitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstallDates">
+      <wsdl:input message="tns:GSO_GetIaasDecomInstallDatesSoapIn" />
+      <wsdl:output message="tns:GSO_GetIaasDecomInstallDatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstall">
+      <wsdl:input message="tns:GSO_GetIaasDecomInstallSoapIn" />
+      <wsdl:output message="tns:GSO_GetIaasDecomInstallSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasDecomInstall">
+      <wsdl:input message="tns:GSO_InsertOrUpdateIaasDecomInstallSoapIn" />
+      <wsdl:output message="tns:GSO_InsertOrUpdateIaasDecomInstallSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModels">
+      <wsdl:input message="tns:Eqst_GetModelsSoapIn" />
+      <wsdl:output message="tns:Eqst_GetModelsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntities">
+      <wsdl:input message="tns:Eqst_GetEntitiesSoapIn" />
+      <wsdl:output message="tns:Eqst_GetEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntitiesBase64">
+      <wsdl:input message="tns:Eqst_GetEntitiesBase64SoapIn" />
+      <wsdl:output message="tns:Eqst_GetEntitiesBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntity">
+      <wsdl:input message="tns:Eqst_GetModelForEntitySoapIn" />
+      <wsdl:output message="tns:Eqst_GetModelForEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntityBase64">
+      <wsdl:input message="tns:Eqst_GetModelForEntityBase64SoapIn" />
+      <wsdl:output message="tns:Eqst_GetModelForEntityBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelVariables">
+      <wsdl:input message="tns:Eqst_GetModelVariablesSoapIn" />
+      <wsdl:output message="tns:Eqst_GetModelVariablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRange">
+      <wsdl:input message="tns:Eqst_GetTMY3NormalizedReportingDateRangeSoapIn" />
+      <wsdl:output message="tns:Eqst_GetTMY3NormalizedReportingDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRangeBase64">
+      <wsdl:input message="tns:Eqst_GetTMY3NormalizedReportingDateRangeBase64SoapIn" />
+      <wsdl:output message="tns:Eqst_GetTMY3NormalizedReportingDateRangeBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAll">
+      <wsdl:input message="tns:Eqst_GetTMY3NormalizedExportAllSoapIn" />
+      <wsdl:output message="tns:Eqst_GetTMY3NormalizedExportAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAllBase64">
+      <wsdl:input message="tns:Eqst_GetTMY3NormalizedExportAllBase64SoapIn" />
+      <wsdl:output message="tns:Eqst_GetTMY3NormalizedExportAllBase64SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetRealizedSavingsReportingDateRange">
+      <wsdl:input message="tns:Eqst_GetRealizedSavingsReportingDateRangeSoapIn" />
+      <wsdl:output message="tns:Eqst_GetRealizedSavingsReportingDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetEntities">
+      <wsdl:input message="tns:Ipmvp_GetEntitiesSoapIn" />
+      <wsdl:output message="tns:Ipmvp_GetEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetIpmvpModelVariables">
+      <wsdl:input message="tns:Ipmvp_GetIpmvpModelVariablesSoapIn" />
+      <wsdl:output message="tns:Ipmvp_GetIpmvpModelVariablesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetTMY3NormalizedDateRange">
+      <wsdl:input message="tns:Ipmvp_GetTMY3NormalizedDateRangeSoapIn" />
+      <wsdl:output message="tns:Ipmvp_GetTMY3NormalizedDateRangeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingSelections">
+      <wsdl:input message="tns:GetInvoicingSelectionsSoapIn" />
+      <wsdl:output message="tns:GetInvoicingSelectionsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingDataWithSqFtgById">
+      <wsdl:input message="tns:GetInvoicingDataWithSqFtgByIdSoapIn" />
+      <wsdl:output message="tns:GetInvoicingDataWithSqFtgByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalInvoicesById">
+      <wsdl:input message="tns:GetHistoricalInvoicesByIdSoapIn" />
+      <wsdl:output message="tns:GetHistoricalInvoicesByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicePreview">
+      <wsdl:input message="tns:GetInvoicePreviewSoapIn" />
+      <wsdl:output message="tns:GetInvoicePreviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetHourlyInvoicePreview">
+      <wsdl:input message="tns:GetHourlyInvoicePreviewSoapIn" />
+      <wsdl:output message="tns:GetHourlyInvoicePreviewSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <wsdl:input message="tns:UpdateInvoiceSoapIn" />
+      <wsdl:output message="tns:UpdateInvoiceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceDescription">
+      <wsdl:input message="tns:UpdateInvoiceDescriptionSoapIn" />
+      <wsdl:output message="tns:UpdateInvoiceDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDescription">
+      <wsdl:input message="tns:GetInvoiceDescriptionSoapIn" />
+      <wsdl:output message="tns:GetInvoiceDescriptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntity">
+      <wsdl:input message="tns:Utb_GetEntitySoapIn" />
+      <wsdl:output message="tns:Utb_GetEntitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntities">
+      <wsdl:input message="tns:Utb_GetEntitiesSoapIn" />
+      <wsdl:output message="tns:Utb_GetEntitiesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetConfiguration">
+      <wsdl:input message="tns:Utb_GetConfigurationSoapIn" />
+      <wsdl:output message="tns:Utb_GetConfigurationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntries">
+      <wsdl:input message="tns:Utb_GetEntriesSoapIn" />
+      <wsdl:output message="tns:Utb_GetEntriesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_AddEntry">
+      <wsdl:input message="tns:Utb_AddEntrySoapIn" />
+      <wsdl:output message="tns:Utb_AddEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_DeleteEntry">
+      <wsdl:input message="tns:Utb_DeleteEntrySoapIn" />
+      <wsdl:output message="tns:Utb_DeleteEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_UpdateEntry">
+      <wsdl:input message="tns:Utb_UpdateEntrySoapIn" />
+      <wsdl:output message="tns:Utb_UpdateEntrySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Utb_ProcessImportFile">
+      <wsdl:input message="tns:Utb_ProcessImportFileSoapIn" />
+      <wsdl:output message="tns:Utb_ProcessImportFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IBISIntelligenceSoap" type="tns:IBISIntelligenceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadInitialSettings">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadInitialSettings" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntitiesByType">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetEntitiesByType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReport">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportBase64">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReportBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportUncompressed">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReportUncompressed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEffectiveRateHistoryByEntityId">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetEffectiveRateHistoryByEntityId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEffectiveRate">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateEffectiveRate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReports">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReports" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetSites">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportSites">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReportSites" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportStatus">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReportStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetCommentsDates">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetCommentsDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetComments">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateComments">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateComments" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacityDates">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasSpaceCapacityDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacity">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasSpaceCapacity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasSpaceCapacity">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateIaasSpaceCapacity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstallDates">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasDecomInstallDates" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstall">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasDecomInstall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasDecomInstall">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateIaasDecomInstall" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModels">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModels" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntities">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntitiesBase64">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetEntitiesBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntity">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelForEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntityBase64">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelForEntityBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelVariables">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRange">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedReportingDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRangeBase64">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedReportingDateRangeBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAll">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedExportAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAllBase64">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedExportAllBase64" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetRealizedSavingsReportingDateRange">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetRealizedSavingsReportingDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetEntities">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetIpmvpModelVariables">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetIpmvpModelVariables" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetTMY3NormalizedDateRange">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetTMY3NormalizedDateRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingSelections">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicingSelections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingDataWithSqFtgById">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicingDataWithSqFtgById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalInvoicesById">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetHistoricalInvoicesById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicePreview">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicePreview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHourlyInvoicePreview">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetHourlyInvoicePreview" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceDescription">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateInvoiceDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDescription">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoiceDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntity">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntities">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntities" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetConfiguration">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntries">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_AddEntry">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_AddEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_DeleteEntry">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_DeleteEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_UpdateEntry">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_UpdateEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_ProcessImportFile">
+      <soap:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_ProcessImportFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IBISIntelligenceSoap12" type="tns:IBISIntelligenceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="LoadInitialSettings">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadInitialSettings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEntitiesByType">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetEntitiesByType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReport">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportBase64">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReportBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LoadBaseEntityReportUncompressed">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/LoadBaseEntityReportUncompressed" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEffectiveRateHistoryByEntityId">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetEffectiveRateHistoryByEntityId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEffectiveRate">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateEffectiveRate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReports">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReports" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetSites">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportSites">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReportSites" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetReportStatus">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetReportStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetCommentsDates">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetCommentsDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetComments">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateComments">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateComments" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacityDates">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasSpaceCapacityDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasSpaceCapacity">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasSpaceCapacity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasSpaceCapacity">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateIaasSpaceCapacity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstallDates">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasDecomInstallDates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_GetIaasDecomInstall">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_GetIaasDecomInstall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GSO_InsertOrUpdateIaasDecomInstall">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GSO_InsertOrUpdateIaasDecomInstall" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModels">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntities">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetEntitiesBase64">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetEntitiesBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntity">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelForEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelForEntityBase64">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelForEntityBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetModelVariables">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetModelVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRange">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedReportingDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedReportingDateRangeBase64">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedReportingDateRangeBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAll">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedExportAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetTMY3NormalizedExportAllBase64">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetTMY3NormalizedExportAllBase64" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Eqst_GetRealizedSavingsReportingDateRange">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Eqst_GetRealizedSavingsReportingDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetEntities">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetIpmvpModelVariables">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetIpmvpModelVariables" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Ipmvp_GetTMY3NormalizedDateRange">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Ipmvp_GetTMY3NormalizedDateRange" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingSelections">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicingSelections" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicingDataWithSqFtgById">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicingDataWithSqFtgById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHistoricalInvoicesById">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetHistoricalInvoicesById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoicePreview">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoicePreview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetHourlyInvoicePreview">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetHourlyInvoicePreview" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoice">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateInvoice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateInvoiceDescription">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/UpdateInvoiceDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDescription">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/GetInvoiceDescription" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntity">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntities">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetConfiguration">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetConfiguration" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_GetEntries">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_GetEntries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_AddEntry">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_AddEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_DeleteEntry">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_DeleteEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_UpdateEntry">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_UpdateEntry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Utb_ProcessImportFile">
+      <soap12:operation soapAction="http://ibis.reporting.ibs-cal.com/Utb_ProcessImportFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IBISIntelligence">
+    <wsdl:port name="IBISIntelligenceSoap" binding="tns:IBISIntelligenceSoap">
+      <soap:address location="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IBISIntelligenceSoap12" binding="tns:IBISIntelligenceSoap12">
+      <soap12:address location="http://ibs-vm-01:8082/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

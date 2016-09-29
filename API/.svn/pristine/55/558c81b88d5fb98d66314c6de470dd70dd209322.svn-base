@@ -1,0 +1,189 @@
+﻿using System;
+using System.Linq;
+using System.Xml.Linq;
+using System.Xml.XPath;
+using IBIS.Infrastructure.Compression;
+using Newtonsoft.Json.Linq;
+using WebApiBia.Common.Assert;
+using WebApiBia.Data.Reports.FlexService;
+
+namespace WebApiBia.Web.Api.Core.Processors.Controllers.IBISRealTime
+{
+    class NodeXmlProcessor : INodeXmlProcessor
+    {
+        private readonly AssertUtil _assertUtil = new AssertUtil();
+
+        public string Get(string path)
+        {
+
+            /*
+               RETURN OBJECT
+
+            {
+  "processedLinks": [
+    {
+      "hasMatch": true,
+      "hasData": false,
+      "link_parent_relationship_path": "6 16 9038",
+      "element": "parameter",
+      "linkName": "bottom_mc.weather_mc:ibisSetTemperature",
+      "data": {
+        "link_map_id": "",
+        "dp_relationship_id": "",
+        "link_to_data_id": "",
+        "link_from_relationship_path": "",
+        "link_to_relationship_path": "",
+        "link_relationship_id": "",
+        "relationship_path": "",
+        "parent_relationship_path": "",
+        "link_recursive": "",
+        "linkPathString": ""
+      }
+    }
+  ],
+  "nodeXmlLinks": [
+    {
+      "link_parent_relationship_path": "6 16 9038",
+      "element": "parameter",
+      "linkName": "bottom_mc.weather_mc:ibisSetTemperature"
+    }
+  ],
+  "properties": {
+    "componentType": "HTMLComponent",
+    "path": ""
+  }
+}
+             
+            */
+            JObject returnObject = new JObject();
+            JArray linksArray = new JArray();
+
+
+            FlexServiceSoapClient client = new FlexServiceSoapClient();
+            string rawNodeXml = client.GetNodeXMLFromPath(path);
+            rawNodeXml = CompressionUtil.UnCompress(rawNodeXml);
+
+            XElement mergedXml = XElement.Parse(rawNodeXml).Element("MergeXML");
+
+            if (mergedXml != null)
+            {
+
+                var linksFromNodeXml = mergedXml.Descendants().Where(x => x.Attribute("linkID") != null);
+
+                string rawLinks = client.GetNodePathLinks(null, path);
+                rawLinks = CompressionUtil.UnCompress(rawLinks);
+
+
+                XElement rawLinksXml = null;
+                if (rawLinks != string.Empty)
+                {
+                    rawLinksXml = XElement.Parse(rawLinks);
+                }
+                    
+                    foreach (var linkFromNodeXml in linksFromNodeXml)
+                    {
+
+                        XElement linkElement = rawLinksXml?.Descendants()
+                            .FirstOrDefault(
+                                x =>
+                                    x.Attribute("link_name") != null &&
+                                    x.Attribute("link_name").Value == linkFromNodeXml.Attribute("linkID").Value);
+
+                        JObject linkObj = new JObject();
+
+
+                        linkObj["hasMatch"] = true;
+                        linkObj["hasDataOriginal"]  = linkObj["hasData"] = false;
+                        linkObj["link_parent_relationship_path"] = path;
+                        linkObj["element"] = linkFromNodeXml.Name.ToString();
+                        linkObj["linkName"] = linkFromNodeXml.Attribute("linkID").Value;
+
+                        if (linkElement != null)
+                        {
+                        linkObj["hasDataOriginal"] = linkObj["hasData"] = true;
+                            JObject data = new JObject();
+                            linkObj["data"] = data;
+                            AddLinkData(linkElement, data);
+                        }
+                        else
+                        {
+                        linkObj["hasDataOriginal"] = linkObj["hasData"] = false;
+                            JObject data = new JObject();
+                            linkObj["data"] = data;
+
+                            AddLinkData(new XElement("empty"), data);
+                        }
+                        linksArray.Add(linkObj);
+                    }
+
+
+                var xNodes = rawLinksXml?.Nodes();
+                if (xNodes != null)
+                    foreach (var xNode in xNodes)
+                    {
+                        var linkNode = (XElement)xNode;
+                        XElement linkFromNodeXmlElement = mergedXml
+                            .Descendants()
+                            .FirstOrDefault(x => x.Attribute("linkID") != null && x.Attribute("linkID").Value == linkNode.Attribute("link_name").Value);
+
+
+                        if (linkFromNodeXmlElement == null)
+                        {
+                            JObject linkObj = new JObject();
+                            linkObj["hasMatch"] = false;
+                            linkObj["link_parent_relationship_path"] = path;
+                            linkObj["element"] = string.Empty;
+                            linkObj["linkName"] = linkNode.Attribute("link_name").Value;
+
+                            linkObj["hasDataOriginal"] = linkObj["hasData"] = true;
+                            JObject data = new JObject();
+                            linkObj["data"] = data;
+
+                            AddLinkData(linkNode, data);
+                            linksArray.Add(linkObj);
+
+                        }
+                    }
+            }
+
+            returnObject["processedLinks"] = linksArray;
+            return returnObject.ToString();
+
+        }
+
+        private void AddLinkData(XElement linkNode, JObject data)
+        {
+            data["link_map_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_map_id"));
+            data["dp_relationship_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("dp_relationship_id"));
+            data["link_to_data_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_to_data_id"));
+            data["link_from_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_from_relationship_path"));
+            data["link_to_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_to_relationship_path"));
+            data["link_relationship_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_relationship_id"));
+            data["relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("relationship_path"));
+            data["parent_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("parent_relationship_path"));
+            data["link_recursive"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_recursive"));
+            data["linkPathString"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("LinkPathString"));
+
+        }
+
+      //  private void AddNodeXmlLink(XElement linkNode, JObject data, string path)
+      //  {
+      //      data["link_parent_relationship_path"] = path;
+      //      data["dp_relationship_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("dp_relationship_id")); linkFromNodeXml.Name.ToString();
+      //      data["link_to_data_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_to_data_id"));
+
+
+      //      data["link_from_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_from_relationship_path"));
+      //      data["link_to_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_to_relationship_path"));
+      //      data["link_relationship_id"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_relationship_id"));
+      //      data["relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("relationship_path"));
+      //      data["parent_relationship_path"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("parent_relationship_path"));
+      //      data["link_recursive"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("link_recursive"));
+      //      data["linkPathString"] = _assertUtil.AssertIsNullOrEmptyReturnEmptyString(linkNode.Attribute("LinkPathString"));
+
+      //      "": "6 16 9038",
+      //"element": "parameter",
+      //"linkName": "bottom_mc.weather_mc:ibisSetTemperature"
+      //  }
+    }
+}

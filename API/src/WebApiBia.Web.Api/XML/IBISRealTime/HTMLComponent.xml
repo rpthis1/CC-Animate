@@ -1,0 +1,10 @@
+﻿<HTMLomponent uid="7574937475949373858956uy75">
+  <componentProperties>
+    <componentType>HTMLomponent</componentType>
+    <path>http://localhost:3000/app/oracle/250Details.html</path>
+  </componentProperties>
+  <links>
+    <link type="IBIS.DataTypes::DataPoint" linkID="bottom_mc.weather_mc:ibisSetTemperature"/>
+    <link type="IBIS.DataTypes::DataPoint" linkID="abottom_mc.weather_mc:ibisSetTemperature"/>
+  </links>
+</HTMLomponent>

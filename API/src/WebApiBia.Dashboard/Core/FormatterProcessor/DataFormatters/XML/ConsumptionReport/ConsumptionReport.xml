@@ -1,0 +1,21 @@
+﻿
+  
+<datum>
+  <trend date="8/30/2015-9/5/2015">
+    <parent name="Iron Horse Middle School" id="8">
+      <item id="8" name="Iron Horse Middle School" type="School2" value="12630" />
+    </parent>
+  </trend>
+  <trend date="9/6/2015-9/12/2015">
+    <parent name="Iron Horse Middle School" id="8">
+      <item id="8" name="Iron Horse Middle School" type="School2" value="10371.5" />
+    </parent>
+  </trend>
+  <trend date="9/13/2015-9/19/2015">
+    <parent name="Iron Horse Middle School" id="8">
+      <item id="8" name="Iron Horse Middle School" type="School2" value="1948.6999999999534" />
+    </parent>
+  </trend>
+</datum>
+
+  

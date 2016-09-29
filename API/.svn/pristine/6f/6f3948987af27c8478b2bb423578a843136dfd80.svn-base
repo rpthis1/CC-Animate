@@ -1,0 +1,4 @@
+@using WebApiBia.Web.Api.Areas.HelpPage
+@model WebApiBia.Web.Api.Areas.HelpPage.SampleGeneration.ImageSample
+
+<img src="@Model.Src" />

@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6F52C34-1910-49A2-9D40-5873BE2A5327}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Dashboard</RootNamespace>
+    <AssemblyName>WebApiBia.Dashboard</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\ContentTreeFetchAllVertexPropertiesListExtractor\ContentTreeFetchAllVertexParametersListExtractor.cs" />
+    <Compile Include="Core\ContentTreeFetchAllVertexPropertiesListExtractor\ContentTreeFetchAllVertexPropertiesListExtractor.cs" />
+    <Compile Include="Core\ContentTreeFetchMobileExtractor\ContentTreeFetchMobileExtractor.cs" />
+    <Compile Include="Core\ContentTreeFetchMobileExtractor\IContentTreeFetchMobileExtractor.cs" />
+    <Compile Include="Core\ContentTreeTemplateOwnerPostProcessor\ContentTreeTemplateOwnerPostProcessor.cs" />
+    <Compile Include="Core\ContentTreeTemplateOwnerPostProcessor\IContentTreeTemplateOwnerPostProcessor.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDecoratorMonthOverYearDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDecoratorYearlyDeltaDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDecoratorYearsColorCodedDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\PieChartDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\MvDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\ContinuousCommissioningDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\AreaChartDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDecoratorMobile.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\BarChartDemandDetailDecoratorDesktop.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\Decorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\Chart\ControlsDecoratorProcessor.cs" />
+    <Compile Include="Core\DecoratorProcessor\Controls\MobilePlatformControlsDecorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\Controls\DesktopPlatformControlsDecorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\Controls\DesktopPlatformContentTreeFetchControlsDecorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\Controls\IControllsDecorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\Controls\IDesktopPlatformContentTreeFetchControlsDecorator.cs" />
+    <Compile Include="Core\DecoratorProcessor\DecoratorProcessor.cs" />
+    <Compile Include="Core\DecoratorProcessor\IControlsDecoratorProcessor.cs" />
+    <Compile Include="Core\DecoratorProcessor\IDecoratorProcessor.cs" />
+    <Compile Include="Core\Dto\NavigationTree\TreeNode.cs" />
+    <Compile Include="Core\Dto\NavigationTree\TreeParent.cs" />
+    <Compile Include="Core\Dto\Parent\IParent.cs" />
+    <Compile Include="Core\Dto\Parent\Parent.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\OccupancyPercentageByHourFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\ConsumptionYearlyDeltaFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\ConsumptionOverYearFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\HourFilterReportFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\MvOptionCFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\ContinuousCommissioningFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\ConsumptionFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\DemandDetailFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\DataFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\DataFormatters\LoadDurationFormatter.cs" />
+    <Compile Include="Core\FormatterProcessor\FormatterProcessor.cs" />
+    <Compile Include="Core\FormatterProcessor\IFormatterProcessor.cs" />
+    <Compile Include="Core\NavigationTreeFetchExtractor\INavigationTreeFetchExtractor.cs" />
+    <Compile Include="Core\NavigationTreeFetchExtractor\NavigationTreeFetchExtractor.cs" />
+    <Compile Include="Core\NavigationTreePostProcessor\NavigationTreePostProcessor.cs" />
+    <Compile Include="Core\NavigationTreePostProcessor\INavigationTreePostProcessor.cs" />
+    <Compile Include="Core\ContentTreeFetchExtractor\IContentTreeFetchExtractor.cs" />
+    <Compile Include="Core\ContentTreeFetchExtractor\ContentTreeFetchExtractor.cs" />
+    <Compile Include="Core\PropertyValuesProcessor\AnaylizeProperyValueProcessor.cs" />
+    <Compile Include="Core\PropertyValuesProcessor\MvProperitesProcessor.cs" />
+    <Compile Include="Core\PropertyValuesProcessor\ContinuousCommissioningPropertiesProcessor.cs" />
+    <Compile Include="Core\PropertyValuesProcessor\IReportPropertyValuesProcessor.cs" />
+    <Compile Include="Core\PropertyValuesProcessor\ReportPropertyValuesProcessor.cs" />
+    <Compile Include="Core\Dto\Report\ConfigBase.cs" />
+    <Compile Include="Core\Dto\Report\DateItem.cs" />
+    <Compile Include="Core\Dto\Report\DecoratorItem.cs" />
+    <Compile Include="Core\Dto\Report\DecoratorSubItem.cs" />
+    <Compile Include="Core\Dto\Report\ReportConfig.cs" />
+    <Compile Include="Core\Dto\Report\ReportItem.cs" />
+    <Compile Include="Core\Dto\Report\ReportNode.cs" />
+    <Compile Include="Core\Dto\Report\ThresholdItem.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiBia.Common\WebApiBia.Common.csproj">
+      <Project>{ea91976d-b6f1-4a73-8bd8-a4ff354edd54}</Project>
+      <Name>WebApiBia.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Dashboard.UiControls\WebApiBia.Dashboard.UiControls.csproj">
+      <Project>{e2986c9c-e154-431b-87af-5c59c737ee20}</Project>
+      <Name>WebApiBia.Dashboard.UiControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Data\WebApiBia.Data.csproj">
+      <Project>{0e76d07b-baf0-42d7-8096-45bff65411ec}</Project>
+      <Name>WebApiBia.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApiBia.Web.Models\WebApiBia.Web.Models.csproj">
+      <Project>{c7c8e5e5-2f1e-4206-bf6d-c9f2f3ac26bf}</Project>
+      <Name>WebApiBia.Web.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportMultipleEntitiesNoDepth.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportWithStopDepthAndDDAxis.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportWithStopDepth.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportOverYear.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportWithDDAxis.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReport.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportYearlyDeltaMultipleEntity.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ConsumptionReport\ConsumptionReportYearlyDeltaSingleEntity.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\RealTimeTrend.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\Type1.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\Type4.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\demo.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\Type9.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\ContinuosCommissioning\Type4_wExtra.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\DemandDetailReport.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\IBIS\FcGetAvailableDates.xml" />
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\MV\OptionC.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Core\FormatterProcessor\DataFormatters\XML\Occupancy\Occupancy Percentage By Hour Report.xml" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

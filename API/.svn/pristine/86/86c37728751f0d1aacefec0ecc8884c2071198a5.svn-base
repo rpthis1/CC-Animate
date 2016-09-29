@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+    <system.serviceModel>
+        <bindings>
+            <basicHttpBinding>
+                <binding name="IBISIntelligenceSoap" />
+            </basicHttpBinding>
+        </bindings>
+        <client>
+            <endpoint address="http://10.90.0.49/IBISReporting/Services/Intelligence/IBISIntelligence.asmx"
+                binding="basicHttpBinding" bindingConfiguration="IBISIntelligenceSoap"
+                contract="ReportingServices.IBISIntelligenceSoap" name="IBISIntelligenceSoap" />
+        </client>
+    </system.serviceModel>
+</configuration>

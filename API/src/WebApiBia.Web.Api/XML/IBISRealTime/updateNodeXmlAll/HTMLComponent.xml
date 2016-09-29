@@ -1,0 +1,3 @@
+﻿<HTMLomponent source="Assets/Flash/Dougherty/Dougherty_Home.swf">
+  <parameter type="IBIS.DataTypes::DataPoint" linkID="bottom_mc.weather_mc:ibisSetTemperature"/>
+</HTMLomponent>

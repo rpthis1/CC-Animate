@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2986C9C-E154-431B-87AF-5C59C737EE20}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Dashboard.UiControls</RootNamespace>
+    <AssemblyName>WebApiBia.Dashboard.UiControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\lib\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Button\UiSegmentedButton.cs" />
+    <Compile Include="Chart\Axes\AxisPositionType.cs" />
+    <Compile Include="Chart\Axes\AxisTypes.cs" />
+    <Compile Include="Chart\Axes\ChartAxisLabel.cs" />
+    <Compile Include="Chart\Axes\ChartAxisStyle.cs" />
+    <Compile Include="Chart\Axes\ChartAxis.cs" />
+    <Compile Include="Chart\Axes\Renderers\JavaScriptFunftionDemandDetailRightAxesRenderer.cs" />
+    <Compile Include="Chart\Axes\Renderers\JavaScriptFunftionMvCategoryAxesRenderer.cs" />
+    <Compile Include="Chart\Axes\Renderers\JavaScriptFunftionLeftAxesYearlyDeltaRenderer.cs" />
+    <Compile Include="Chart\Axes\Renderers\JavaScriptFunftionRightAxesRenderer.cs" />
+    <Compile Include="Chart\Background\ColorBackground.cs" />
+    <Compile Include="Chart\Background\GradientBackground.cs" />
+    <Compile Include="Chart\Background\ImageBackground.cs" />
+    <Compile Include="Chart\ChartTypes.cs" />
+    <Compile Include="Chart\GenericChart.cs" />
+    <Compile Include="Chart\CartesianChartOptions.cs" />
+    <Compile Include="Chart\Interactions\ChartBaseInteractionsJobject.cs" />
+    <Compile Include="Chart\Interactions\InteractionsBase.cs" />
+    <Compile Include="Chart\Legend.cs" />
+    <Compile Include="Chart\Listeners\ListenerBase.cs" />
+    <Compile Include="Chart\Series\ChartSeries.cs" />
+    <Compile Include="Chart\Series\Gradients\SeriesGradientStop.cs" />
+    <Compile Include="Chart\Series\Gradients\SeriesGradientFill.cs" />
+    <Compile Include="Chart\Series\Gradients\SeriesGradient.cs" />
+    <Compile Include="Chart\Series\Gradients\Triplets\SeriesColorTriplet.cs" />
+    <Compile Include="Chart\Series\Gradients\Util\GradientUtil.cs" />
+    <Compile Include="Chart\Series\HighlightCfg\LineSeriesHighlightCfgJobject.cs" />
+    <Compile Include="Chart\Series\HighlightCfg\AreaSeriesHighlightCfgJobject.cs" />
+    <Compile Include="Chart\Series\Marker\LineSeriesPowerDemandDetailMarkerJobject.cs" />
+    <Compile Include="Chart\Series\Marker\LineSeriesMvCMarkerJobject.cs" />
+    <Compile Include="Chart\Series\Marker\LineSeriesMarkerJobject.cs" />
+    <Compile Include="Chart\Series\Marker\AreaSeriesMarkerJobject.cs" />
+    <Compile Include="Chart\Series\Renderers\JavaScriptFunftionBarSeriesYearsColorCodedRenderer.cs" />
+    <Compile Include="Chart\Series\Renderers\JavaScriptFunftionBarSeriesRenderer.cs" />
+    <Compile Include="Chart\Series\SeriesTypes.cs" />
+    <Compile Include="Chart\Series\Style\AreaSeriesStyleJobject.cs" />
+    <Compile Include="Chart\Series\Style\LineSeriesPowerDemandDetailStyleJobject.cs" />
+    <Compile Include="Chart\Series\Style\LineSeriesMvStyleJobject .cs" />
+    <Compile Include="Chart\Series\Style\LineSeriesStyleJobject.cs" />
+    <Compile Include="Chart\Series\Style\BarSeriesStyleJObject.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionContinuousCommissioningLeftAxisUsageSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionLineSeriesDemandDetailToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionPowerDemandToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionMvLineSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionRightSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionContinuousCommissioningRightAxisSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionContinuousCommissioningMinMaxSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionMvBarSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionPieSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionSeriesToolYearlyDeltaTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\Renderers\JavaScriptFunftionSeriesToolTipRenderer.cs" />
+    <Compile Include="Chart\Series\ToolTip\SeriesToolTip.cs" />
+    <Compile Include="Chart\Series\Style\AreaSeriesStyleContinuousCommissioningJobject.cs" />
+    <Compile Include="container\UIContainer.cs" />
+    <Compile Include="Field\UiFieldDatePicker.cs" />
+    <Compile Include="Field\UiFieldRadio.cs" />
+    <Compile Include="Form\UiFieldSet.cs" />
+    <Compile Include="Functions\JavaScripFunctionSeriesLabelRenderer.cs" />
+    <Compile Include="Functions\JavaScripFunctionAxisRenderer.cs" />
+    <Compile Include="Functions\JavaScriptFunction.cs" />
+    <Compile Include="Functions\JavaScriptFunctionItemInfoInteraction.cs" />
+    <Compile Include="Functions\JavaScriptFunftionCategoryAxesRenderer.cs" />
+    <Compile Include="Functions\JavaScriptFunftionSeriesLabelForPieRenderer.cs" />
+    <Compile Include="Functions\JavaScriptFunftionRightAxesRenderer.cs" />
+    <Compile Include="Functions\JavaScriptFunftionLeftAxesRenderer.cs" />
+    <Compile Include="Layout\Container\UiLayoutBox.cs" />
+    <Compile Include="Layout\Container\UiLayoutFit.cs" />
+    <Compile Include="Layout\Container\UiLayoutHBox.cs" />
+    <Compile Include="Layout\Container\UiLayoutVBox.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reporting\UiDecoratorPopUp.cs" />
+    <Compile Include="Reporting\UiTabNavigator.cs" />
+    <Compile Include="Reporting\UiReport.cs" />
+    <Compile Include="UiButton.cs" />
+    <Compile Include="UiComponent.cs" />
+    <Compile Include="UiControlType.cs" />
+    <Compile Include="UiFormFactorType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Chart\Style\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiBia.Data\WebApiBia.Data.csproj">
+      <Project>{0E76D07B-BAF0-42D7-8096-45BFF65411EC}</Project>
+      <Name>WebApiBia.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

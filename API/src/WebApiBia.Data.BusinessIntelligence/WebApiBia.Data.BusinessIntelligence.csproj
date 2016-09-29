@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3940594-591C-46C0-8E88-5051FE306DD0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApiBia.Data.BusinessIntelligence</RootNamespace>
+    <AssemblyName>WebApiBia.Data.BusinessIntelligence</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Core\DataProcessor\IReportDataProcessor.cs" />
+    <Compile Include="Core\DataProcessor\ReportDataProcessor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\ReportingServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Service References\ReportingServices\IBISIntelligence.wsdl" />
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetModelForEntityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetModelsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetModelVariablesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetRealizedSavingsReportingDateRangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetTMY3NormalizedExportAllResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Eqst_GetTMY3NormalizedReportingDateRangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetEffectiveRateHistoryByEntityIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetEntitiesByTypeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetHistoricalInvoicesByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetHourlyInvoicePreviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetInvoiceDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetInvoicePreviewResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetInvoicingDataWithSqFtgByIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GetInvoicingSelectionsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetCommentsDatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetCommentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetIaasDecomInstallDatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetIaasDecomInstallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetIaasSpaceCapacityDatesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetIaasSpaceCapacityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetReportSitesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetReportsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetReportStatusResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_GetSitesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_InsertOrUpdateCommentsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_InsertOrUpdateIaasDecomInstallResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.GSO_InsertOrUpdateIaasSpaceCapacityResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Ipmvp_GetEntitiesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Ipmvp_GetIpmvpModelVariablesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.Ipmvp_GetTMY3NormalizedDateRangeResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.LoadBaseEntityReportResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.LoadBaseEntityReportUncompressedResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.LoadInitialSettingsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.UpdateEffectiveRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.UpdateInvoiceDescriptionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ReportingServices\WebApiBia.Data.BusinessIntelligence.ReportingServices.UpdateInvoiceResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ReportingServices\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingServices\IBISIntelligence.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingServices\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingServices\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ReportingServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApiBia.Dashboard\WebApiBia.Dashboard.csproj">
+      <Project>{e6f52c34-1910-49a2-9d40-5873be2a5327}</Project>
+      <Name>WebApiBia.Dashboard</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

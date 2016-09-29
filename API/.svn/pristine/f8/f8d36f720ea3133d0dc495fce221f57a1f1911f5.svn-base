@@ -1,0 +1,60 @@
+﻿<root>
+<parameters>
+  <parameter id='mode' value='Financial'/>
+  <parameter id='parentEntities' value='2'/>
+  <parameter id='normalization' value='None'/>
+  <parameter id='hourFilter' value='None'/>
+  <parameter id='stopDepth' value='2'/>
+  <parameter id='Energy' value='Gas'/>
+  <parameter id='location' value='5'/>
+  <parameter id='type' value='1'/>
+  <parameter id='leftAxisUnits' value='kW'/>
+  <parameter id='rightAxisUnits' value='°F'/>
+  <parameter id='outputFunction' value=''/>
+  <parameter id='granularity' value='4'/>
+  <parameter id='overUnits' value='kW'/>
+  <parameter id='daysAttribute' value='max_value'/>
+  <parameter id='showDays' value='true'/>
+  <parameter id='daysHeader' value='Max Temperature'/>
+  <parameter id='startDate' value=''/>
+  <parameter id='endDate' value=''/>
+  <parameter id='date' value='10/12/2015'/>
+</parameters>
+
+<values input_value="89" date="10/12/2015" entityId="8" location_name="Iron Horse Middle School" zip_code="94583" over_use_energy="0" input_rp="46 47 48" output_rp="2930 3836 3837 3838 3842 3874">
+  <corridor>
+    <row minimum="1.655028259844137" maximum="35.392310432503066" variance="16.868641086329465" delta="33.737282172658929" hours="0" offset="-420" dst="true"/>
+    <row minimum="3.2732701575849532" maximum="29.706226909548633" variance="13.21647837598184" delta="26.43295675196368" hours="1" offset="-420" dst="true"/>
+    <row minimum="4.5430127662266582" maximum="27.060696120873558" variance="11.258841677323451" delta="22.5176833546469" hours="2" offset="-420" dst="true"/>
+    <row minimum="4.33739750857027" maximum="27.699061683069949" variance="11.68083208724984" delta="23.36166417449968" hours="3" offset="-420" dst="true"/>
+    <row minimum="4.4066635230542222" maximum="26.325765615765157" variance="10.959551046355466" delta="21.919102092710936" hours="4" offset="-420" dst="true"/>
+    <row minimum="6.5287245141725894" maximum="38.073807665977768" variance="15.772541575902588" delta="31.54508315180518" hours="5" offset="-420" dst="true"/>
+    <row minimum="15.047291146946858" maximum="57.895891559886024" variance="21.424300206469585" delta="42.848600412939163" hours="6" offset="-420" dst="true"/>
+    <row minimum="38.513974805870781" maximum="117.41460439741698" variance="39.4503147957731" delta="78.900629591546192" hours="7" offset="-420" dst="true"/>
+    <row minimum="41.911965143700428" maximum="136.18339109816156" variance="47.135712977230568" delta="94.271425954461137" hours="8" offset="-420" dst="true"/>
+    <row minimum="43.736104611943908" maximum="158.92895619433051" variance="57.596425791193305" delta="115.1928515823866" hours="9" offset="-420" dst="true"/>
+    <row minimum="25.961862138139253" maximum="234.94756258008178" variance="104.49285022097126" delta="208.98570044194253" hours="10" offset="-420" dst="true"/>
+    <row minimum="38.41005279115042" maximum="267.99068700580597" variance="114.79031710732777" delta="229.58063421465556" hours="11" offset="-420" dst="true"/>
+    <row minimum="41.471246247291731" maximum="298.8318444204329" variance="128.68029908657059" delta="257.36059817314117" hours="12" offset="-420" dst="true"/>
+    <row minimum="22.684469423377635" maximum="370.45425865482878" variance="173.88489461572559" delta="347.76978923145111" hours="13" offset="-420" dst="true"/>
+    <row minimum="33.543327609523487" maximum="387.70793174920044" variance="177.08230206983848" delta="354.16460413967695" hours="14" offset="-420" dst="true"/>
+    <row minimum="47.013676244055034" maximum="315.49889420068786" variance="134.24260897831641" delta="268.48521795663282" hours="15" offset="-420" dst="true"/>
+    <row minimum="38.020213751508578" maximum="262.75107365795589" variance="112.36542995322367" delta="224.73085990644731" hours="16" offset="-420" dst="true"/>
+    <row minimum="25.285856607240348" maximum="194.07790790132486" variance="84.396025647042265" delta="168.7920512940845" hours="17" offset="-420" dst="true"/>
+    <row minimum="22.888117177738039" maximum="175.77693288380578" variance="76.444407853033866" delta="152.88881570606776" hours="18" offset="-420" dst="true"/>
+    <row minimum="21.756633389255356" maximum="156.61601148023112" variance="67.429689045487891" delta="134.85937809097578" hours="19" offset="-420" dst="true"/>
+    <row minimum="20.3294907040182" maximum="143.93406927319535" variance="61.802289284588582" delta="123.60457856917715" hours="20" offset="-420" dst="true"/>
+    <row minimum="7.9897377253718069" maximum="67.910817026978037" variance="29.960539650803117" delta="59.921079301606227" hours="21" offset="-420" dst="true"/>
+    <row minimum="4.5771539131825243" maximum="60.60001165866602" variance="28.01142887274175" delta="56.022857745483492" hours="22" offset="-420" dst="true"/>
+    <row minimum="0.96316243159056825" maximum="42.512511927413136" variance="20.774674747911284" delta="41.549349495822568" hours="23" offset="-420" dst="true"/>
+  </corridor>
+  <days>
+    <row score="96.924524590163969" max_value="89.294" date="10/7/2015"/>
+    <row score="93.31154912568303" max_value="89.203995" date="9/18/2015"/>
+    <row score="88.235628415300539" max_value="87.44" date="10/2/2015"/>
+    <row score="86.8213114754098" max_value="87.35" date="9/28/2015"/>
+    <row score="83.203038251366152" max_value="89.978" date="8/24/2015"/>
+  </days>
+</values>
+
+</root>

@@ -1,0 +1,35 @@
+﻿<SWFComponent source="Assets/Flash/Dougherty/Dougherty_Home.swf">
+  <object name="bottom_mc">
+    <object name="bottom_mc.weather_mc">
+      <variable name="ibis_weather"/>
+      <method name="ibisSetTemperature">
+        <parameter type="IBIS.DataTypes::DataPoint" linkID="bottom_mc.weather_mc:ibisSetTemperature"/>
+      </method>
+      <object name="bottom_mc.weather_mc.point_hit_temperature">
+        <variable name="ibisDataPoint"/>
+      </object>
+    </object>
+  </object>
+  <object name="total_mc">
+    <object name="total_mc.link_details">
+      <event type="click" linkID="total_mc.link_details" action="jump"/>
+    </object>
+    <object name="total_mc.kW">
+      <method name="ibisSetText">
+        <parameter type="IBIS.DataTypes::DataPoint" linkID="total_mc.kW:ibisSetText"/>
+      </method>
+      <object name="total_mc.kW.pointHit">
+        <variable name="ibisDataPoint"/>
+      </object>
+    </object>
+    <object name="total_mc.link_box_mc">
+      <event type="click" linkID="total_mc.link_box_mc" action="jump"/>
+    </object>
+    <object name="total_mc.icon_water_mc">
+      <event type="click" linkID="total_mc.icon_water_mc" action="jump"/>
+    </object>
+    <object name="total_mc.icon_gas_mc">
+      <event type="click" linkID="total_mc.icon_gas_mc" action="jump"/>
+    </object>
+  </object>
+</SWFComponent>

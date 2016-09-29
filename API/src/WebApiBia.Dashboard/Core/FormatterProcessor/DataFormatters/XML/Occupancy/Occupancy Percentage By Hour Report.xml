@@ -1,0 +1,67 @@
+﻿
+
+<parameter id="parentEntities" value="301"/>
+<parameter id="stopDepth" value="0"/>
+<parameter id="mode" value="Energy"/>
+<parameter id="granularity" value="day"/>
+<parameter id="normalization" value="None"/>
+<parameter id="hourFilter" value="BusinessHour"/>
+<parameter id="Energy" value="None"/>
+<parameter id="EntityValueType" value="occupancy"/>
+
+
+Occupancy Percentage By Hour Report
+
+Parameters:
+
+<parameters>
+  <parameter id='parentEntities' value='301'/>
+  <parameter id='stopDepth' value='0'/>
+  <parameter id='mode' value='Energy'/>
+  <parameter id='granularity' value='day'/>
+  <parameter id='normalization' value='None'/>
+  <parameter id='hourFilter' value='BusinessHour'/>
+  <parameter id='Energy' value='None'/>
+  <parameter id='EntityValueType' value='occupancy'/>
+  <parameter id='startDate' value='03/01/2016'/>
+  <parameter id='endDate' value='03/03/2016'/>
+</parameters>
+
+Raw Result:
+
+<datum>
+  <trend date="3/1/2016-3/3/2016">
+    <parent name="Zone01" id="301">
+      <item name="Zone01" id="301">
+        <item hour="0" value="0"/>
+        <item hour="1" value="0"/>
+        <item hour="2" value="0"/>
+        <item hour="3" value="0"/>
+        <item hour="4" value="0"/>
+        <item hour="5" value="0"/>
+        <item hour="6" value="5.5555555555555554"/>
+        <item hour="7" value="5.5555555555555554"/>
+        <item hour="8" value="19.444444444444443"/>
+        <item hour="9" value="22.222222222222221"/>
+        <item hour="10" value="38.888888888888893"/>
+        <item hour="11" value="47.222222222222229"/>
+        <item hour="12" value="25"/>
+        <item hour="13" value="0"/>
+        <item hour="14" value="47.222222222222214"/>
+        <item hour="15" value="13.888888888888888"/>
+        <item hour="16" value="36.111111111111107"/>
+        <item hour="17" value="11.111111111111111"/>
+        <item hour="18" value="0"/>
+        <item hour="19" value="0"/>
+        <item hour="20" value="0"/>
+        <item hour="21" value="0"/>
+        <item hour="22" value="0"/>
+        <item hour="23" value="0"/>
+      </item>
+    </parent>
+  </trend>
+</datum>
+
+WSDL:
+
+http://sdprdibias01.corp.intuit.net/IBISIntelligence/Services/Intelligence/IBISIntelligence.asmx?wsdl

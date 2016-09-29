@@ -1,0 +1,70 @@
+﻿<datum>
+  <trend date="3/1/2016">
+    <parent name="Floor 3" id="300">
+      <item id="300" name="Floor 3" type="Territory" value="">
+        <item id="301" name="Zone01" type="Meter" value="18.446969696969695" />
+        <item id="302" name="Zone02" type="Meter" value="9.7500000000000018" />
+        <item id="303" name="Zone03" type="Meter" value="47.333333333333329" />
+        <item id="304" name="Zone04" type="Meter" value="20.409090909090903" />
+        <item id="305" name="Zone05" type="Meter" value="30.378787878787879" />
+        <item id="306" name="Zone06" type="Meter" value="40.249999999999993" />
+        <item id="307" name="Zone07" type="Meter" value="44.666666666666664" />
+        <item id="308" name="Zone08" type="Meter" value="39.333333333333336" />
+        <item id="309" name="Zone09" type="Meter" value="38.750000000000007" />
+        <item id="310" name="Zone10" type="Meter" value="34.219696969696976" />
+        <item id="311" name="Zone11" type="Meter" value="44.75" />
+        <item id="312" name="Zone12" type="Meter" value="19.833333333333336" />
+        <item id="313" name="Zone13" type="Meter" value="35.666666666666671" />
+        <item id="314" name="Zone14" type="Meter" value="45.333333333333321" />
+        <item id="315" name="Zone15" type="Meter" value="48.5" />
+        <item id="316" name="Zone16" type="Meter" value="34.166666666666671" />
+        <item id="317" name="Zone17" type="Meter" value="44.166666666666664" />
+        <item id="318" name="Zone18" type="Meter" value="42.5" />
+        <item id="319" name="Zone19" type="Meter" value="49.916666666666664" />
+        <item id="320" name="Zone20" type="Meter" value="40.666666666666664" />
+        <item id="321" name="Zone21" type="Meter" value="45.666666666666657" />
+        <item id="322" name="Zone22" type="Meter" value="38.916666666666664" />
+        <item id="323" name="Zone23" type="Meter" value="51.083333333333329" />
+        <item id="324" name="Zone24" type="Meter" value="26.500000000000004" />
+        <item id="325" name="Zone25" type="Meter" value="36.75" />
+        <item id="326" name="Zone26" type="Meter" value="45.75" />
+        <item id="327" name="Zone27" type="Meter" value="50.083333333333336" />
+        <item id="328" name="Zone28" type="Meter" value="46.499999999999993" />
+        <item id="329" name="Zone29" type="Meter" value="27.560606060606062" />
+        <item id="330" name="Zone30" type="Meter" value="7.25" />
+        <item id="331" name="Zone31" type="Meter" value="31" />
+        <item id="332" name="Zone32" type="Meter" value="42.166666666666664" />
+        <item id="333" name="Zone33" type="Meter" value="47.75" />
+        <item id="334" name="Zone34" type="Meter" value="43.249999999999993" />
+        <item id="335" name="Zone35" type="Meter" value="0" />
+        <item id="336" name="Zone36" type="Meter" value="52.750000000000007" />
+        <item id="337" name="Zone37" type="Meter" value="31.000000000000004" />
+        <item id="338" name="Zone38" type="Meter" value="0" />
+        <item id="339" name="Zone39" type="Meter" value="0" />
+        <item id="340" name="Zone40" type="Meter" value="56.750000000000007" />
+        <item id="341" name="Zone41" type="Meter" value="50.249999999999993" />
+        <item id="342" name="Zone42" type="Meter" value="41.250000000000007" />
+        <item id="343" name="Zone43" type="Meter" value="54.333333333333336" />
+        <item id="344" name="Zone44" type="Meter" value="30.878787878787879" />
+        <item id="345" name="Zone45" type="Meter" value="43.583333333333336" />
+        <item id="346" name="Zone46" type="Meter" value="40.083333333333329" />
+        <item id="347" name="Zone47" type="Meter" value="38.13636363636364" />
+        <item id="348" name="Zone48" type="Meter" value="42.166666666666664" />
+        <item id="349" name="Zone49" type="Meter" value="43.5" />
+        <item id="350" name="Zone50" type="Meter" value="44.666666666666664" />
+        <item id="351" name="Zone51" type="Meter" value="43.583333333333336" />
+        <item id="352" name="Zone52" type="Meter" value="43.75" />
+        <item id="353" name="Zone53" type="Meter" value="51.666666666666664" />
+        <item id="354" name="Zone54" type="Meter" value="51.666666666666664" />
+        <item id="355" name="Zone55" type="Meter" value="51.75" />
+        <item id="356" name="Zone56" type="Meter" value="51.666666666666664" />
+        <item id="357" name="Zone57" type="Meter" value="51.666666666666664" />
+        <item id="358" name="Zone58" type="Meter" value="50.333333333333321" />
+        <item id="359" name="Zone59" type="Meter" value="50.333333333333336" />
+        <item id="360" name="Zone60" type="Meter" value="39.5" />
+        <item id="361" name="Zone61" type="Meter" value="38.583333333333336" />
+        <item id="362" name="Zone62" type="Meter" value="41.333333333333336" />
+      </item>
+    </parent>
+  </trend>
+</datum>

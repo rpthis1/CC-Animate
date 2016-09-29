@@ -1,0 +1,17 @@
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\WebApiBia.Data.SQ.dll.config
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\WebApiBia.Data.SQ.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\WebApiBia.Data.SQ.pdb
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\EntityFramework.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\EntityFramework.SqlServer.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\MySql.Data.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\mysql.data.entity.EF6.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\MySql.Web.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\WebApiBia.Data.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\Newtonsoft.Json.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\WebApiBia.Data.pdb
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\EntityFramework.xml
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\EntityFramework.SqlServer.xml
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\bin\Debug\Newtonsoft.Json.xml
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\obj\Debug\WebApiBia.Data.MySql.csprojResolveAssemblyReference.cache
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\obj\Debug\WebApiBia.Data.SQ.dll
+C:\SVN\DOTNET_SQL\WebApiBiaMS\src\WebApiBia.Data.SQ\obj\Debug\WebApiBia.Data.SQ.pdb

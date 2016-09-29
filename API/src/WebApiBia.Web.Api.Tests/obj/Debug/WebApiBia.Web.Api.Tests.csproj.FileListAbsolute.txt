@@ -1,0 +1,2 @@
+C:\ConsoleApps\WebApiBia2015\src\WebApiBia.Web.Api.Tests\obj\Debug\WebApiBia.Web.Api.Tests.csprojResolveAssemblyReference.cache
+C:\SVN\DOTNET\WebApiBia\src\WebApiBia.Web.Api.Tests\obj\Debug\WebApiBia.Web.Api.Tests.csprojResolveAssemblyReference.cache
