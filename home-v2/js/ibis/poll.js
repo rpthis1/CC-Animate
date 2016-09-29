@@ -56,8 +56,8 @@ function executePollInterval(scope) {
 			links++;
 		}
 		update();
-		//setInterval(update, parseInt(IBISPoller.settings.environment.realTimePollInterval));
-		setInterval(update, 1000);
+		setInterval(update, parseInt(IBISPoller.settings.environment.realTimePollInterval));
+		//setInterval(update, 1000);
 
 		function update() {
 

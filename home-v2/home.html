@@ -71,17 +71,33 @@ function handleComplete(evt) {
 		function resizeCanvas() {			
 			var w = lib.properties.width, h = lib.properties.height;			
 			var iw = window.innerWidth, ih=window.innerHeight;			
-			var pRatio = window.devicePixelRatio, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			var pRatio = window.devicePixelRatio, xRatio=iw/w, yRatio=ih/h, sRatio=1;		
+			pRatio = 1;
+			console.log(pRatio);
+			console.log(scaleType);
 			if(isResp) {                
-				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {    
+					console.log('respDim ' + respDim);	                
 					sRatio = lastS;                
 				}				
-				else if(!isScale) {					
-					if(iw<w || ih<h)						
-						sRatio = Math.min(xRatio, yRatio);				
+				else if(!isScale) {	
+
+					console.log('isScale ' + isScale);	 				
+					if(iw<w || ih<h)	
+					
+										
+						sRatio = Math.min(xRatio, yRatio);		
+
+						console.log('sRatio iw<w ' + sRatio);	 			
 				}				
-				else if(scaleType==1) {					
-					sRatio = Math.min(xRatio, yRatio);				
+				else if(scaleType==1) {		
+
+						console.log('xRatio ' + xRatio);		
+							console.log('yRatio ' + yRatio);		
+
+					sRatio = Math.min(xRatio, yRatio);		
+
+					console.log('sRatio ' + sRatio);		
 				}				
 				else if(scaleType==2) {					
 					sRatio = Math.max(xRatio, yRatio);				
@@ -89,6 +105,11 @@ function handleComplete(evt) {
 			}			
 			canvas.width = w*pRatio*sRatio;			
 			canvas.height = h*pRatio*sRatio;
+
+
+				console.log('canvas.width ' + canvas.width);		
+				console.log('canvas.height ' + canvas.height);	
+
 			canvas.style.width = preloaderDiv.style.width = w*sRatio+'px';			
 			canvas.style.height = preloaderDiv.style.height = h*sRatio+'px';
 			stage.scaleX = pRatio*sRatio;			
