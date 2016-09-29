@@ -43,6 +43,8 @@ function getChildren(clip, parentName, functions) {
 						clip[key].ibisName = parentName + "." + key;
 					}
 					
+					console.log(clip[key].ibisName);
+					
 					addIbisFunctions(clip[key], functions);
 					getChildren(clip[key], clip[key].ibisName, functions);
 					break;

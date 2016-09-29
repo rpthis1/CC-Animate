@@ -31,11 +31,14 @@ lib.properties = {
 		{src:"images/textbuildingsgassummary.png", id:"textbuildingsgassummary"},
 		{src:"images/textbuildingsgasusage.png", id:"textbuildingsgasusage"},
 		{src:"images/textbuildingspowersummary.png", id:"textbuildingspowersummary"},
+		{src:"images/textbuildingswatersummary.png", id:"textbuildingswatersummary"},
+		{src:"images/textbuildingswaterusage.png", id:"textbuildingswaterusage"},
 		{src:"images/textcampussubmeteredloads.png", id:"textcampussubmeteredloads"},
 		{src:"images/textcampusutilitysummary.png", id:"textcampusutilitysummary"},
 		{src:"images/textdemand.png", id:"textdemand"},
 		{src:"images/texteui12months.png", id:"texteui12months"},
 		{src:"images/texthvac.png", id:"texthvac"},
+		{src:"images/textkitchen.png", id:"textkitchen"},
 		{src:"images/textlabs.png", id:"textlabs"},
 		{src:"images/textmtd.png", id:"textmtd"},
 		{src:"images/textother.png", id:"textother"},
@@ -43,7 +46,9 @@ lib.properties = {
 		{src:"images/textperson.png", id:"textperson"},
 		{src:"images/textsite.png", id:"textsite"},
 		{src:"images/textsorce.png", id:"textsorce"},
+		{src:"images/textsubmeteredgasusage.png", id:"textsubmeteredgasusage"},
 		{src:"images/textsubmeteredtotals.png", id:"textsubmeteredtotals"},
+		{src:"images/textsubmeteredwaterusage.png", id:"textsubmeteredwaterusage"},
 		{src:"images/texttoday.png", id:"texttoday"},
 		{src:"images/texttotalcampusgasusage.png", id:"texttotalcampusgasusage"},
 		{src:"images/texttotalcampuspower.png", id:"texttotalcampuspower"},
@@ -181,6 +186,18 @@ p.nominalBounds = new cjs.Rectangle(0,0,238,33);
 p.nominalBounds = new cjs.Rectangle(0,0,330,42);
 
 
+(lib.textbuildingswatersummary = function() {
+	this.initialize(img.textbuildingswatersummary);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,339,42);
+
+
+(lib.textbuildingswaterusage = function() {
+	this.initialize(img.textbuildingswaterusage);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,238,33);
+
+
 (lib.textcampussubmeteredloads = function() {
 	this.initialize(img.textcampussubmeteredloads);
 }).prototype = p = new cjs.Bitmap();
@@ -209,6 +226,12 @@ p.nominalBounds = new cjs.Rectangle(0,0,422,33);
 	this.initialize(img.texthvac);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,136,73);
+
+
+(lib.textkitchen = function() {
+	this.initialize(img.textkitchen);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,112,37);
 
 
 (lib.textlabs = function() {
@@ -253,10 +276,22 @@ p.nominalBounds = new cjs.Rectangle(0,0,83,38);
 p.nominalBounds = new cjs.Rectangle(0,0,120,54);
 
 
+(lib.textsubmeteredgasusage = function() {
+	this.initialize(img.textsubmeteredgasusage);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,238,33);
+
+
 (lib.textsubmeteredtotals = function() {
 	this.initialize(img.textsubmeteredtotals);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,315,33);
+
+
+(lib.textsubmeteredwaterusage = function() {
+	this.initialize(img.textsubmeteredwaterusage);
+}).prototype = p = new cjs.Bitmap();
+p.nominalBounds = new cjs.Rectangle(0,0,238,33);
 
 
 (lib.texttoday = function() {
@@ -296,7 +331,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,237,33);
 
 	// actions
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#666666").ss(1,1,1).p("Egr6gAPMAjUAAAAjAgiMA9SAAAEhCdAE/MCE6AAAEhCegE+MCE9AAA");
+	this.shape.graphics.f().s("#666666").ss(1,1,1).p("Egr6gAPMAjUAAAEhCegE+MCE9AAAEhCdAE/MCE6AAAAjAgiMA9SAAA");
 	this.shape.setTransform(464.5,33.1);
 
 	this.shape_1 = new cjs.Shape();
@@ -314,11 +349,11 @@ p.nominalBounds = new cjs.Rectangle(0,0,891,66.1);
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#666666").ss(1,1,1).p("ECB0AE6MicDAAAIgUAAAx4hBMBGvAAAEhNUgAkMAukAAAA6oE6IkFAAMhFJAAAI99AAEh+egE5IaoAAMDlqAAAEA+LgA1MA3eAAA");
+	this.shape.graphics.f().s("#666666").ss(1,1,1).p("ECB0AE6MicDAAAIgUAAAx4gdMBGvAAAEhNUgAkMAukAAAEh+egE5IaoAAMDlqAAAA6oE6IkFAAMhFJAAAI99AAEA+LgARMA3eAAA");
 	this.shape.setTransform(830.9,31.6);
 
 	this.shape_1 = new cjs.Shape();
-	this.shape_1.graphics.f("rgba(191,192,225,0.098)").s().p("EgtsAE/IAAgJIEFAAIkFAAMhFIAAAIAApzIAAgCMDlqAAAIAAACMjlqAAAMDlqAAAIAAJzMicEAAAIgUAAIAUAAIAAAJgEgtvgAoMgukAAAgEBmqgA5Mg3eAAAgEAl4gBFMhGvAAAgEgpOAE2gEBy2gE9g");
+	this.shape_1.graphics.f("rgba(191,192,225,0.098)").s().p("EgtsAE/IAAgJIEFAAIkFAAMhFIAAAIAApzIAAgCMDlqAAAIAAACMjlqAAAMDlqAAAIAAJzMicEAAAIgUAAIAUAAIAAAJgEBmqgAVMg3eAAAgEAl4gAhMhGvAAAgEgtvgAoMgukAAAgEBy2gE9g");
 	this.shape_1.setTransform(926.8,32);
 
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.shape_1},{t:this.shape}]}).wait(1));
@@ -879,7 +914,7 @@ p.nominalBounds = new cjs.Rectangle(0,0,256.8,45.2);
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#FFFFFF").ss(1,1,1).p("AhgnTIDBAAIAADDIjBAAgABhoFIjBAAIAAjDIDBAAgABhjcIAADCIjBAAIAAjCgABhEQIAADBIjBAAIAAjBgABhDbIjBAAIAAjCIDBAAgAhgIGIDBAAIAADDIjBAAg");
+	this.shape.graphics.f().s("#FFFFFF").ss(1,1,1).p("AhgnTIDBAAIAADDIjBAAgABhoFIjBAAIAAjDIDBAAgABhjcIAADCIjBAAIAAjCgABhDbIjBAAIAAjCIDBAAgABhEQIAADBIjBAAIAAjBgAhgIGIDBAAIAADDIjBAAg");
 	this.shape.setTransform(9.7,71.4);
 
 	this.shape_1 = new cjs.Shape();
@@ -1047,7 +1082,7 @@ p.nominalBounds = new cjs.Rectangle(-11.4,-24.6,95,206.8);
 
 	// Layer 1
 	this.shape = new cjs.Shape();
-	this.shape.graphics.f().s("#FFFFFF").ss(1,1,1).p("ABmogIjLAAIAAjNIDLAAgABmkdIjLAAIAAjOIDLAAgAhlgaIAAjNIDLAAIAADNgAhlAbIDLAAIAADMIjLAAgABmEoIAADOIjLAAIAAjOgABmLuIjLAAIAAjNIDLAAg");
+	this.shape.graphics.f().s("#FFFFFF").ss(1,1,1).p("ABmkdIjLAAIAAjOIDLAAgABmogIjLAAIAAjNIDLAAgAhlAbIDLAAIAADMIjLAAgAhlgaIAAjNIDLAAIAADNgABmLuIjLAAIAAjNIDLAAgABmEoIAADOIjLAAIAAjOg");
 	this.shape.setTransform(10.2,75.1);
 
 	this.shape_1 = new cjs.Shape();
@@ -1381,6 +1416,77 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 p.nominalBounds = new cjs.Rectangle(-0.6,-0.2,124.2,23.8);
 
 
+(lib.ibis_text_short_units_param_0_mc = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		var me = this;
+		
+		
+		IBISDataPointHit.createPointHit(me, me.hitArea_mc)
+		
+		function ibisSetText(dp) {
+		
+			me.value_txt.text = dp.getCurrentValueFormatted();
+			me.units_txt.text = dp.getUnits();
+		
+			me.ibisDataPoint = dp;
+		
+		
+			IBISDataPointHit.updateCache(me, me.hitArea_mc, dp);
+			IBISDataPointHit.updatePointHit(me, me.hitArea_mc, dp);
+		
+		}
+		
+		
+		function ibisSetDataPoint(dp) {
+		
+		
+		}
+		
+		
+		
+		var dataModel = [{
+			funcName: "ibisSetText",
+			func: ibisSetText
+		}, {
+			funcName: "ibisSetDataPoint",
+			func: ibisSetDataPoint
+		}]
+		
+		return dataModel;
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// actions
+	this.units_txt = new cjs.Text("units", "14px 'Arial'", "#FFFFFF");
+	this.units_txt.name = "units_txt";
+	this.units_txt.lineHeight = 36;
+	this.units_txt.lineWidth = 34;
+	this.units_txt.setTransform(87.5,2.3);
+
+	this.value_txt = new cjs.Text("Loading... ", "17px 'Arial'", "#FFFFFF");
+	this.value_txt.name = "value_txt";
+	this.value_txt.textAlign = "right";
+	this.value_txt.lineHeight = 39;
+	this.value_txt.lineWidth = 78;
+	this.value_txt.setTransform(80.6,1.8);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.value_txt},{t:this.units_txt}]}).wait(1));
+
+	// pointHit
+	this.hitArea_mc = new lib.point_hit_short_units_mc();
+	this.hitArea_mc.setTransform(85.5,12.9,1,1,0,0,0,85.9,10.8);
+
+	this.timeline.addTween(cjs.Tween.get(this.hitArea_mc).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-0.6,-0.2,124.2,23.8);
+
+
 (lib.ibis_text_short_units_mc = function(mode,startPosition,loop) {
 if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
@@ -1608,6 +1714,74 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(0,0,180,267.9);
+
+
+(lib.GAS_MTD_ALL_BUILDINGS_KITCHE_OTHER = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldgOPL_gas_MTD.setTransform(53.8,256.5,1.01,1.01,0,0,0,52.6,15.8);
+
+	this.bldg600_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg600_gas_MTD.setTransform(53.8,233.8,1.01,1.01,0,0,0,52.6,15.4);
+
+	this.bldg500_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg500_gas_MTD.setTransform(53.8,190.3,1.01,1.01,0,0,0,52.6,15.5);
+
+	this.bldg401_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg401_gas_MTD.setTransform(53.8,168.6,1.01,1.01,0,0,0,52.6,15.6);
+
+	this.bldg400_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg400_gas_MTD.setTransform(53.8,146.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg350_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg350_gas_MTD.setTransform(53.8,125.1,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg300_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg300_gas_MTD.setTransform(53.8,81.5,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg200_gas_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg200_gas_MTD.setTransform(53.8,37.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg200_gas_MTD},{t:this.bldg300_gas_MTD},{t:this.bldg350_gas_MTD},{t:this.bldg400_gas_MTD},{t:this.bldg401_gas_MTD},{t:this.bldg500_gas_MTD},{t:this.bldg600_gas_MTD},{t:this.bldgOPL_gas_MTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,21.8,125.5,242.5);
+
+
+(lib.GAS_DTD_ALL_BUILDINGS_KITCHE_OTHER = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldgOPL_gas_DTD.setTransform(53.8,256.5,1.01,1.01,0,0,0,52.6,15.8);
+
+	this.bldg600_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg600_gas_DTD.setTransform(53.8,233.8,1.01,1.01,0,0,0,52.6,15.4);
+
+	this.bldg500_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg500_gas_DTD.setTransform(53.8,190.3,1.01,1.01,0,0,0,52.6,15.5);
+
+	this.bldg401_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg401_gas_DTD.setTransform(53.8,168.6,1.01,1.01,0,0,0,52.6,15.6);
+
+	this.bldg400_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg400_gas_DTD.setTransform(53.8,146.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg350_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg350_gas_DTD.setTransform(53.8,125.1,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg300_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg300_gas_DTD.setTransform(53.8,81.5,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg200_gas_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg200_gas_DTD.setTransform(53.8,37.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg200_gas_DTD},{t:this.bldg300_gas_DTD},{t:this.bldg350_gas_DTD},{t:this.bldg400_gas_DTD},{t:this.bldg401_gas_DTD},{t:this.bldg500_gas_DTD},{t:this.bldg600_gas_DTD},{t:this.bldgOPL_gas_DTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,21.8,125.5,242.5);
 
 
 (lib.charts = function(mode,startPosition,loop) {
@@ -2062,6 +2236,166 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 p.nominalBounds = new cjs.Rectangle(-38.1,-2.9,243.5,30.3);
 
 
+(lib.WATER_MTD_ALL_BUILDINGS = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldgOPL_water_MTD.setTransform(80.2,255.7,0.709,0.709,0,0,0,52.8,15.9);
+
+	this.bldg600_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg600_water_MTD.setTransform(80.2,233.4,0.709,0.709,0,0,0,52.8,15.5);
+
+	this.bldg501_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg501_water_MTD.setTransform(80.2,211.8,0.709,0.709,0,0,0,52.8,15.9);
+
+	this.bldg500_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg500_water_MTD.setTransform(80.2,189.8,0.709,0.709,0,0,0,52.8,15.6);
+
+	this.bldg401_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg401_water_MTD.setTransform(80.2,168.1,0.709,0.709,0,0,0,52.8,15.7);
+
+	this.bldg400_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg400_water_MTD.setTransform(80.2,146.3,0.709,0.709,0,0,0,52.8,15.7);
+
+	this.bldg350_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg350_water_MTD.setTransform(80.2,124.5,0.709,0.709,0,0,0,52.8,15.7);
+
+	this.bldg301_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg301_water_MTD.setTransform(80.2,102.9,0.709,0.709,0,0,0,52.8,16);
+
+	this.bldg300_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg300_water_MTD.setTransform(80.2,81,0.709,0.709,0,0,0,52.8,15.8);
+
+	this.bldg250_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg250_water_MTD.setTransform(80.2,59.2,0.709,0.709,0,0,0,52.8,15.9);
+
+	this.bldg200_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg200_water_MTD.setTransform(80.2,37.3,0.709,0.709,0,0,0,52.8,15.7);
+
+	this.bldg100_water_MTD = new lib.ibis_text_long_units_mc();
+	this.bldg100_water_MTD.setTransform(80,15.5,0.706,0.693,0,0,0,52.8,16);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg100_water_MTD},{t:this.bldg200_water_MTD},{t:this.bldg250_water_MTD},{t:this.bldg300_water_MTD},{t:this.bldg301_water_MTD},{t:this.bldg350_water_MTD},{t:this.bldg400_water_MTD},{t:this.bldg401_water_MTD},{t:this.bldg500_water_MTD},{t:this.bldg501_water_MTD},{t:this.bldg600_water_MTD},{t:this.bldgOPL_water_MTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0.1,170.8,266.5);
+
+
+(lib.WATER_DTD_ALL_BUILDINGS = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldgOPL_water_DTD.setTransform(45.2,244.6,0.748,0.748,0,0,0,0.3,0.3);
+
+	this.bldg600_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg600_water_DTD.setTransform(45.2,222.6,0.748,0.748,0,0,0,0.3,0.3);
+
+	this.bldg501_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg501_water_DTD.setTransform(45.2,200.9,0.748,0.748,0,0,0,0.3,0.4);
+
+	this.bldg500_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg500_water_DTD.setTransform(45.2,179.1,0.748,0.748,0,0,0,0.3,0.4);
+
+	this.bldg401_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg401_water_DTD.setTransform(45.2,157.4,0.748,0.748,0,0,0,0.3,0.4);
+
+	this.bldg400_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg400_water_DTD.setTransform(45.2,135.5,0.748,0.748,0,0,0,0.3,0.3);
+
+	this.bldg350_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg350_water_DTD.setTransform(45.2,113.7,0.748,0.748,0,0,0,0.3,0.3);
+
+	this.bldg301_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg301_water_DTD.setTransform(45.2,92,0.748,0.748,0,0,0,0.3,0.4);
+
+	this.bldg300_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg300_water_DTD.setTransform(45.2,70.2,0.748,0.748,0,0,0,0.3,0.5);
+
+	this.bldg250_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg250_water_DTD.setTransform(45.2,48.4,0.748,0.748,0,0,0,0.3,0.4);
+
+	this.bldg200_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg200_water_DTD.setTransform(45.2,26.7,0.748,0.748,0,0,0,0.3,0.5);
+
+	this.bldg100_water_DTD = new lib.ibis_text_long_units_mc();
+	this.bldg100_water_DTD.setTransform(45.2,5,0.748,0.748,0,0,0,0.3,0.6);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg100_water_DTD},{t:this.bldg200_water_DTD},{t:this.bldg250_water_DTD},{t:this.bldg300_water_DTD},{t:this.bldg301_water_DTD},{t:this.bldg350_water_DTD},{t:this.bldg400_water_DTD},{t:this.bldg401_water_DTD},{t:this.bldg500_water_DTD},{t:this.bldg501_water_DTD},{t:this.bldg600_water_DTD},{t:this.bldgOPL_water_DTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,0,180,267.9);
+
+
+(lib.WATER_MTD_ALL_BUILDINGS_KITCHE_OTHER = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldgOPL_water_MTD.setTransform(53.8,256.5,1.01,1.01,0,0,0,52.6,15.8);
+
+	this.bldg600_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg600_water_MTD.setTransform(53.8,233.8,1.01,1.01,0,0,0,52.6,15.4);
+
+	this.bldg500_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg500_water_MTD.setTransform(53.8,190.3,1.01,1.01,0,0,0,52.6,15.5);
+
+	this.bldg401_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg401_water_MTD.setTransform(53.8,168.6,1.01,1.01,0,0,0,52.6,15.6);
+
+	this.bldg400_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg400_water_MTD.setTransform(53.8,146.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg350_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg350_water_MTD.setTransform(53.8,125.1,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg300_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg300_water_MTD.setTransform(53.8,81.5,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg200_water_MTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg200_water_MTD.setTransform(53.8,37.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg200_water_MTD},{t:this.bldg300_water_MTD},{t:this.bldg350_water_MTD},{t:this.bldg400_water_MTD},{t:this.bldg401_water_MTD},{t:this.bldg500_water_MTD},{t:this.bldg600_water_MTD},{t:this.bldgOPL_water_MTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,21.8,125.5,242.5);
+
+
+(lib.WATER_DTD_ALL_BUILDINGS_KITCHE_OTHER = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// Layer 1
+	this.bldgOPL_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldgOPL_water_DTD.setTransform(53.8,256.5,1.01,1.01,0,0,0,52.6,15.8);
+
+	this.bldg600_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg600_water_DTD.setTransform(53.8,233.8,1.01,1.01,0,0,0,52.6,15.4);
+
+	this.bldg500_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg500_water_DTD.setTransform(53.8,190.3,1.01,1.01,0,0,0,52.6,15.5);
+
+	this.bldg401_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg401_water_DTD.setTransform(53.8,168.6,1.01,1.01,0,0,0,52.6,15.6);
+
+	this.bldg400_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg400_water_DTD.setTransform(53.8,146.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg350_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg350_water_DTD.setTransform(53.8,125.1,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg300_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg300_water_DTD.setTransform(53.8,81.5,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.bldg200_water_DTD = new lib.ibis_text_short_units_param_0_mc();
+	this.bldg200_water_DTD.setTransform(53.8,37.9,1.01,1.01,0,0,0,52.6,15.7);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg200_water_DTD},{t:this.bldg300_water_DTD},{t:this.bldg350_water_DTD},{t:this.bldg400_water_DTD},{t:this.bldg401_water_DTD},{t:this.bldg500_water_DTD},{t:this.bldg600_water_DTD},{t:this.bldgOPL_water_DTD}]}).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(0,21.8,125.5,242.5);
+
+
 (lib.submetered_loads_kW_total = function(mode,startPosition,loop) {
 	this.initialize(mode,startPosition,loop,{});
 
@@ -2410,6 +2744,207 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 }).prototype = p = new cjs.MovieClip();
 p.nominalBounds = new cjs.Rectangle(-91,-52,964.1,560);
+
+
+(lib.buildings_water_slider_left_mc = function(mode,startPosition,loop) {
+if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
+
+	// timeline functions:
+	this.frame_0 = function() {
+		var me = this;
+		
+		
+		me.Bldg_100_link.link_label_txt.text="100OP";
+		me.Bldg_200_link.link_label_txt.text="200OP";
+		me.Bldg_250_link.link_label_txt.text="250OP";
+		me.Bldg_300_link.link_label_txt.text="300OP";
+		me.Bldg_301_link.link_label_txt.text="301IP";
+		me.Bldg_350_link.link_label_txt.text="350OP";
+		me.Bldg_400_link.link_label_txt.text="400OP";
+		me.Bldg_401_link.link_label_txt.text="401IP";
+		me.Bldg_500_link.link_label_txt.text="500OP";
+		me.Bldg_501_link.link_label_txt.text="501IP";
+		me.Bldg_600_link.link_label_txt.text="600OP";
+		me.Bldg_OPL_link.link_label_txt.text="OPL";
+	}
+
+	// actions tween:
+	this.timeline.addTween(cjs.Tween.get(this).call(this.frame_0).wait(1));
+
+	// icons
+	this.instance = new lib.iconwater();
+	this.instance.setTransform(29,14);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
+
+	// chart-links
+	this.Bldg_100_charts_link = new lib.building_details_link_dynamic_chart_mc();
+	this.Bldg_100_charts_link.setTransform(1529.3,137.5,1,1,0,0,0,102.7,11.5);
+	this.Bldg_100_charts_link.cache(-2,-2,73,27);
+
+	this.timeline.addTween(cjs.Tween.get(this.Bldg_100_charts_link).wait(1));
+
+	// links
+	this.Bldg_OPL_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_OPL_link.setTransform(182.8,380.6,1,1,0,0,0,102.7,11.5);
+	this.Bldg_OPL_link.cache(-2,-2,109,27);
+
+	this.Bldg_600_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_600_link.setTransform(182.8,358.3,1,1,0,0,0,102.7,11.5);
+	this.Bldg_600_link.cache(-2,-2,109,27);
+
+	this.Bldg_501_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_501_link.setTransform(182.8,336.3,1,1,0,0,0,102.7,11.5);
+	this.Bldg_501_link.cache(-2,-2,109,27);
+
+	this.Bldg_500_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_500_link.setTransform(182.8,314.4,1,1,0,0,0,102.7,11.5);
+	this.Bldg_500_link.cache(-2,-2,109,27);
+
+	this.Bldg_401_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_401_link.setTransform(182.8,292.4,1,1,0,0,0,102.7,11.5);
+	this.Bldg_401_link.cache(-2,-2,109,27);
+
+	this.Bldg_400_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_400_link.setTransform(182.8,270.5,1,1,0,0,0,102.7,11.5);
+	this.Bldg_400_link.cache(-2,-2,109,27);
+
+	this.Bldg_350_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_350_link.setTransform(182.8,248.5,1,1,0,0,0,102.7,11.5);
+	this.Bldg_350_link.cache(-2,-2,109,27);
+
+	this.Bldg_301_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_301_link.setTransform(182.8,226.6,1,1,0,0,0,102.7,11.5);
+	this.Bldg_301_link.cache(-2,-2,109,27);
+
+	this.Bldg_300_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_300_link.setTransform(182.8,204.6,1,1,0,0,0,102.7,11.5);
+	this.Bldg_300_link.cache(-2,-2,109,27);
+
+	this.Bldg_250_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_250_link.setTransform(182.8,182.7,1,1,0,0,0,102.7,11.5);
+	this.Bldg_250_link.cache(-2,-2,109,27);
+
+	this.Bldg_200_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_200_link.setTransform(182.8,160.7,1,1,0,0,0,102.7,11.5);
+	this.Bldg_200_link.cache(-2,-2,109,27);
+
+	this.Bldg_100_link = new lib.building_details_link_dynamic_mc();
+	this.Bldg_100_link.setTransform(182.8,138.8,1,1,0,0,0,102.7,11.5);
+	this.Bldg_100_link.cache(-2,-2,109,27);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Bldg_100_link},{t:this.Bldg_200_link},{t:this.Bldg_250_link},{t:this.Bldg_300_link},{t:this.Bldg_301_link},{t:this.Bldg_350_link},{t:this.Bldg_400_link},{t:this.Bldg_401_link},{t:this.Bldg_500_link},{t:this.Bldg_501_link},{t:this.Bldg_600_link},{t:this.Bldg_OPL_link}]}).wait(1));
+
+	// ibis-values
+	this.OTHER_WATER_MTD = new lib.WATER_MTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.OTHER_WATER_MTD.setTransform(1343.3,265.4,1,1,0,0,0,62.7,132.2);
+
+	this.OTHER_WATER_DTD = new lib.WATER_DTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.OTHER_WATER_DTD.setTransform(1172.7,265.4,1,1,0,0,0,62.7,132.2);
+
+	this.KITCHEN_WATER_MTD = new lib.WATER_MTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.KITCHEN_WATER_MTD.setTransform(826.9,262.3,1,1,0,0,0,62.7,132.2);
+
+	this.KITCHEN_WATER_DTD = new lib.WATER_DTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.KITCHEN_WATER_DTD.setTransform(656.3,262.3,1,1,0,0,0,62.7,132.2);
+
+	this.TOTAL_WATER_MTD = new lib.WATER_MTD_ALL_BUILDINGS();
+	this.TOTAL_WATER_MTD.setTransform(435.6,262.9,0.996,0.994,0,0,0,85.4,133.3);
+
+	this.TOTAL_WATER_DTD = new lib.WATER_DTD_ALL_BUILDINGS();
+	this.TOTAL_WATER_DTD.setTransform(256.2,265.3,1,1,0,0,0,90,133.9);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.TOTAL_WATER_DTD},{t:this.TOTAL_WATER_MTD},{t:this.KITCHEN_WATER_DTD},{t:this.KITCHEN_WATER_MTD},{t:this.OTHER_WATER_DTD},{t:this.OTHER_WATER_MTD}]}).wait(1));
+
+	// stars
+	this.instance_1 = new lib.energystar();
+	this.instance_1.setTransform(52,364,0.969,0.966);
+
+	this.instance_2 = new lib.energystar();
+	this.instance_2.setTransform(52,342,0.969,0.966);
+
+	this.instance_3 = new lib.energystar();
+	this.instance_3.setTransform(52,320,0.969,0.966);
+
+	this.instance_4 = new lib.energystar();
+	this.instance_4.setTransform(52,299,0.969,0.966);
+
+	this.instance_5 = new lib.energystar();
+	this.instance_5.setTransform(52,277,0.969,0.966);
+
+	this.instance_6 = new lib.energystar();
+	this.instance_6.setTransform(52,256,0.969,0.966);
+
+	this.instance_7 = new lib.energystar();
+	this.instance_7.setTransform(52,213,0.969,0.966);
+
+	this.instance_8 = new lib.energystar();
+	this.instance_8.setTransform(52,191,0.969,0.966);
+
+	this.instance_9 = new lib.energystar();
+	this.instance_9.setTransform(52,149,0.969,0.966);
+
+	this.instance_10 = new lib.energystar();
+	this.instance_10.setTransform(52,127,0.969,0.966);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_10},{t:this.instance_9},{t:this.instance_8},{t:this.instance_7},{t:this.instance_6},{t:this.instance_5},{t:this.instance_4},{t:this.instance_3},{t:this.instance_2},{t:this.instance_1}]}).wait(1));
+
+	// labels
+	this.instance_11 = new lib.textbuildingswaterusage();
+	this.instance_11.setTransform(191,39);
+
+	this.text = new cjs.Text("", "17px 'Arial-BoldMT'", "#CCCCCC");
+	this.text.textAlign = "center";
+	this.text.lineHeight = 19;
+	this.text.setTransform(364.8,45.4);
+
+	this.instance_12 = new lib.textsubmeteredwaterusage();
+	this.instance_12.setTransform(922,44);
+
+	this.instance_13 = new lib.textbuildingswatersummary();
+	this.instance_13.setTransform(95,2);
+
+	this.instance_14 = new lib.texttoday();
+	this.instance_14.setTransform(1140,73);
+
+	this.instance_15 = new lib.textmtd();
+	this.instance_15.setTransform(1302,75);
+
+	this.instance_16 = new lib.textother();
+	this.instance_16.setTransform(1241,39);
+
+	this.instance_17 = new lib.textkitchen();
+	this.instance_17.setTransform(707,40);
+
+	this.instance_18 = new lib.texttoday();
+	this.instance_18.setTransform(630,66);
+
+	this.instance_19 = new lib.textmtd();
+	this.instance_19.setTransform(796,68);
+
+	this.instance_20 = new lib.texttoday();
+	this.instance_20.setTransform(232,68);
+
+	this.instance_21 = new lib.textmtd();
+	this.instance_21.setTransform(398,70);
+
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.text},{t:this.instance_11}]}).wait(1));
+
+	// lines
+	this.instance_22 = new lib.VG_MC_buildings_power_summ_back();
+	this.instance_22.setTransform(671.1,75.7,1,1,0,0,0,830.9,31.9);
+	this.instance_22.cache(-3,-3,1668,69);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(1));
+
+	// gradient
+	this.instance_23 = new lib.buildings_power_slider_back();
+	this.instance_23.setTransform(-24,-34,1.584,1.147);
+
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(1));
+
+}).prototype = p = new cjs.MovieClip();
+p.nominalBounds = new cjs.Rectangle(-160.3,-34,1753.8,527.5);
 
 
 (lib.buildings_power_details = function(mode,startPosition,loop) {
@@ -2782,7 +3317,7 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 	// icons
 	this.instance = new lib.iconfire();
-	this.instance.setTransform(44,17);
+	this.instance.setTransform(26,17);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
 
@@ -2845,100 +3380,25 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.Bldg_100_link},{t:this.Bldg_200_link},{t:this.Bldg_250_link},{t:this.Bldg_300_link},{t:this.Bldg_301_link},{t:this.Bldg_350_link},{t:this.Bldg_400_link},{t:this.Bldg_401_link},{t:this.Bldg_500_link},{t:this.Bldg_501_link},{t:this.Bldg_600_link},{t:this.Bldg_OPL_link}]}).wait(1));
 
 	// ibis-values
+	this.OTHER_GAS_MTD = new lib.GAS_MTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.OTHER_GAS_MTD.setTransform(1329,259.4,1,1,0,0,0,62.7,132.2);
+
+	this.OTHER_GAS_DTD = new lib.GAS_DTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.OTHER_GAS_DTD.setTransform(1172.7,259.4,1,1,0,0,0,62.7,132.2);
+
+	this.KITCHEN_GAS_MTD = new lib.GAS_MTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.KITCHEN_GAS_MTD.setTransform(826.9,262.3,1,1,0,0,0,62.7,132.2);
+
+	this.KITCHEN_GAS_DTD = new lib.GAS_DTD_ALL_BUILDINGS_KITCHE_OTHER();
+	this.KITCHEN_GAS_DTD.setTransform(656.3,262.3,1,1,0,0,0,62.7,132.2);
+
 	this.TOTAL_GAS_MTD = new lib.GAS_MTD_ALL_BUILDINGS();
 	this.TOTAL_GAS_MTD.setTransform(435.6,262.9,0.996,0.994,0,0,0,85.4,133.3);
 
 	this.TOTAL_GAS_DTD = new lib.GAS_DTD_ALL_BUILDINGS();
 	this.TOTAL_GAS_DTD.setTransform(256.2,265.3,1,1,0,0,0,90,133.9);
 
-	this.other_kW = new lib.submetered_loads_kw_other_mc();
-	this.other_kW.setTransform(1302.5,126.8);
-
-	this.HVAC_kW = new lib.submetered_loads_kw_HVAC();
-	this.HVAC_kW.setTransform(1174.5,126.8);
-
-	this.labs_kW = new lib.submetered_loads_kw_mc();
-	this.labs_kW.setTransform(1047,127);
-
-	this.kW_per_person = new lib.kw_per_squared_feet_mc();
-	this.kW_per_person.setTransform(917.2,128.2);
-
-	this.kW_per_sq_ft = new lib.kw_per_squared_feet_mc();
-	this.kW_per_sq_ft.setTransform(789.9,129.2);
-
-	this.bldgOPL_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldgOPL_total_kW.setTransform(711.3,386.4,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg600_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg600_total_kW.setTransform(711.3,364.2,1.01,1.01,0,0,0,52.6,15.4);
-
-	this.bldg501_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg501_total_kW.setTransform(711.3,342.6,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg500_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg500_total_kW.setTransform(711.3,320.6,1.01,1.01,0,0,0,52.6,15.5);
-
-	this.bldg401_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg401_total_kW.setTransform(711.3,298.9,1.01,1.01,0,0,0,52.6,15.6);
-
-	this.bldg400_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg400_total_kW.setTransform(711.3,276.9,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg350_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg350_total_kW.setTransform(711.3,255.2,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg301_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg301_total_kW.setTransform(711.3,233.5,1.01,1.01,0,0,0,52.6,15.9);
-
-	this.bldg300_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg300_total_kW.setTransform(711.3,211.6,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg250_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg250_total_kW.setTransform(711.3,189.8,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg200_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg200_total_kW.setTransform(711.3,168.1,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg100_total_kW = new lib.ibis_text_short_units_mc();
-	this.bldg100_total_kW.setTransform(711.3,146.1,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldgOPL_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldgOPL_total_kWh.setTransform(583.4,385.8,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg600_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg600_total_kWh.setTransform(583.4,363.1,1.01,1.01,0,0,0,52.6,15.4);
-
-	this.bldg501_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg501_total_kWh.setTransform(583.4,341.7,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg500_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg500_total_kWh.setTransform(583.4,319.6,1.01,1.01,0,0,0,52.6,15.5);
-
-	this.bldg401_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg401_total_kWh.setTransform(583.4,297.9,1.01,1.01,0,0,0,52.6,15.6);
-
-	this.bldg400_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg400_total_kWh.setTransform(583.4,276.2,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg350_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg350_total_kWh.setTransform(583.4,254.4,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg301_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg301_total_kWh.setTransform(583.4,232.8,1.01,1.01,0,0,0,52.6,15.9);
-
-	this.bldg300_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg300_total_kWh.setTransform(583.4,210.8,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg250_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg250_total_kWh.setTransform(583.4,189.1,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.bldg200_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg200_total_kWh.setTransform(583.4,167.2,1.01,1.01,0,0,0,52.6,15.7);
-
-	this.bldg100_total_kWh = new lib.ibis_text_short_units_param_1_mc();
-	this.bldg100_total_kWh.setTransform(583.4,145.5,1.01,1.01,0,0,0,52.6,15.8);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.bldg100_total_kWh},{t:this.bldg200_total_kWh},{t:this.bldg250_total_kWh},{t:this.bldg300_total_kWh},{t:this.bldg301_total_kWh},{t:this.bldg350_total_kWh},{t:this.bldg400_total_kWh},{t:this.bldg401_total_kWh},{t:this.bldg500_total_kWh},{t:this.bldg501_total_kWh},{t:this.bldg600_total_kWh},{t:this.bldgOPL_total_kWh},{t:this.bldg100_total_kW},{t:this.bldg200_total_kW},{t:this.bldg250_total_kW},{t:this.bldg300_total_kW},{t:this.bldg301_total_kW},{t:this.bldg350_total_kW},{t:this.bldg400_total_kW},{t:this.bldg401_total_kW},{t:this.bldg500_total_kW},{t:this.bldg501_total_kW},{t:this.bldg600_total_kW},{t:this.bldgOPL_total_kW},{t:this.kW_per_sq_ft},{t:this.kW_per_person},{t:this.labs_kW},{t:this.HVAC_kW},{t:this.other_kW},{t:this.TOTAL_GAS_DTD},{t:this.TOTAL_GAS_MTD}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.TOTAL_GAS_DTD},{t:this.TOTAL_GAS_MTD},{t:this.KITCHEN_GAS_DTD},{t:this.KITCHEN_GAS_MTD},{t:this.OTHER_GAS_DTD},{t:this.OTHER_GAS_MTD}]}).wait(1));
 
 	// stars
 	this.instance_1 = new lib.energystar();
@@ -2975,61 +3435,55 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 
 	// labels
 	this.instance_11 = new lib.texttoday();
-	this.instance_11.setTransform(232,68);
+	this.instance_11.setTransform(1140,73);
 
-	this.instance_12 = new lib.textbuildingsgasusage();
-	this.instance_12.setTransform(198,44);
+	this.instance_12 = new lib.textmtd();
+	this.instance_12.setTransform(1302,75);
 
-	this.instance_13 = new lib.textbuildingsgassummary();
-	this.instance_13.setTransform(95,-7);
+	this.instance_13 = new lib.textother();
+	this.instance_13.setTransform(1241,39);
 
-	this.instance_14 = new lib.textsite();
-	this.instance_14.setTransform(500,-101);
+	this.instance_14 = new lib.textkitchen();
+	this.instance_14.setTransform(707,40);
 
-	this.instance_15 = new lib.textbuildingpower();
-	this.instance_15.setTransform(592,44);
+	this.instance_15 = new lib.texttoday();
+	this.instance_15.setTransform(630,66);
 
-	this.instance_16 = new lib.textsubmeteredtotals();
-	this.instance_16.setTransform(1102,43);
+	this.instance_16 = new lib.textmtd();
+	this.instance_16.setTransform(796,68);
 
-	this.instance_17 = new lib.textother();
-	this.instance_17.setTransform(1334,72);
+	this.instance_17 = new lib.textsubmeteredgasusage();
+	this.instance_17.setTransform(924,40);
 
-	this.instance_18 = new lib.texthvac();
-	this.instance_18.setTransform(1170,48);
+	this.instance_18 = new lib.textbuildingsgasusage();
+	this.instance_18.setTransform(202,43);
 
-	this.instance_19 = new lib.textlabs();
-	this.instance_19.setTransform(1077,70);
+	this.instance_19 = new lib.texttoday();
+	this.instance_19.setTransform(232,68);
 
-	this.instance_20 = new lib.textperson();
-	this.instance_20.setTransform(940,61);
+	this.instance_20 = new lib.textbuildingsgassummary();
+	this.instance_20.setTransform(95,-1);
 
-	this.instance_21 = new lib.textpersqft();
-	this.instance_21.setTransform(809,62);
+	this.instance_21 = new lib.textmtd();
+	this.instance_21.setTransform(398,70);
 
-	this.instance_22 = new lib.textdemand();
-	this.instance_22.setTransform(658,68);
-
-	this.instance_23 = new lib.textmtd();
-	this.instance_23.setTransform(398,70);
-
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_23},{t:this.instance_22},{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_21},{t:this.instance_20},{t:this.instance_19},{t:this.instance_18},{t:this.instance_17},{t:this.instance_16},{t:this.instance_15},{t:this.instance_14},{t:this.instance_13},{t:this.instance_12},{t:this.instance_11}]}).wait(1));
 
 	// lines
-	this.instance_24 = new lib.VG_MC_buildings_power_summ_back();
-	this.instance_24.setTransform(671.1,75.7,1,1,0,0,0,830.9,31.9);
-	this.instance_24.cache(-3,-3,1668,69);
+	this.instance_22 = new lib.VG_MC_buildings_power_summ_back();
+	this.instance_22.setTransform(671.1,75.7,1,1,0,0,0,830.9,31.9);
+	this.instance_22.cache(-3,-3,1668,69);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_24).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_22).wait(1));
 
 	// gradient
-	this.instance_25 = new lib.buildings_power_slider_back();
-	this.instance_25.setTransform(-24,-34,1.584,1.147);
+	this.instance_23 = new lib.buildings_power_slider_back();
+	this.instance_23.setTransform(-24,-34,1.584,1.147);
 
-	this.timeline.addTween(cjs.Tween.get(this.instance_25).wait(1));
+	this.timeline.addTween(cjs.Tween.get(this.instance_23).wait(1));
 
 }).prototype = p = new cjs.MovieClip();
-p.nominalBounds = new cjs.Rectangle(-160.3,-101,1753.8,594.5);
+p.nominalBounds = new cjs.Rectangle(-160.3,-34,1753.8,527.5);
 
 
 // stage content:
@@ -3134,13 +3588,16 @@ if (loop == null) { loop = false; }	this.initialize(mode,startPosition,loop,{});
 	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.instance_3},{t:this.instance_2},{t:this.instance_1},{t:this.instance}]}).wait(1));
 
 	// buidlings-slider
+	this.buildings_water_slider_left_mc = new lib.buildings_water_slider_left_mc();
+	this.buildings_water_slider_left_mc.setTransform(812.6,359.4,0.755,0.755,0,0,0,510.2,225.2);
+
 	this.buildings_gas_slider_left_mc = new lib.buildings_gas_details();
-	this.buildings_gas_slider_left_mc.setTransform(857.7,604.7,0.755,0.755,0,0,0,510.2,225.2);
+	this.buildings_gas_slider_left_mc.setTransform(810.3,718.7,0.755,0.755,0,0,0,510.2,225.2);
 
 	this.buildings_power_slider_left_mc = new lib.buildings_power_details();
 	this.buildings_power_slider_left_mc.setTransform(-958.2,195.6,0.755,0.755,0,0,0,509.9,225);
 
-	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.buildings_power_slider_left_mc},{t:this.buildings_gas_slider_left_mc}]}).wait(1));
+	this.timeline.addTween(cjs.Tween.get({}).to({state:[{t:this.buildings_power_slider_left_mc},{t:this.buildings_gas_slider_left_mc},{t:this.buildings_water_slider_left_mc}]}).wait(1));
 
 	// campus-power-slider
 	this.map_mc = new lib.map_background_right();
