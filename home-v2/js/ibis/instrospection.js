@@ -16,6 +16,7 @@
 		Library.lowerFrameRate = lowerFrameRate;
         Library.assetsLoaded = assetsLoaded;
 		Library.stageIsReady = stageIsReady;
+		Library.mode = 'data mode';
 
 		return Library;
 	}
@@ -82,11 +83,13 @@ function getCompressedObjectData(url, callBack) {
 function increaseFrameRate() {
 	createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.fastFrameRate));
 	createjs.Ticker.addEventListener("tick", stage);
+	IBISLibrary.mode = 'animation mode';
 }
 
 function lowerFrameRate() {
- 	createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.slowFrameRate));
+ //   createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.slowFrameRate));
 	createjs.Ticker.removeEventListener("tick", stage);
+	IBISLibrary.mode = 'data mode';
 }
 
 function assetsLoaded(windowObj) {
