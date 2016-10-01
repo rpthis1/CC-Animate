@@ -43,9 +43,9 @@ function getChildren(clip, parentName, functions) {
 					} else {
 						clip[key].ibisName = parentName + "." + key;
 					}
-					
+
 					console.log(clip[key].ibisName);
-					
+
 					addIbisFunctions(clip[key], functions);
 					getChildren(clip[key], clip[key].ibisName, functions);
 					break;
@@ -81,13 +81,21 @@ function getCompressedObjectData(url, callBack) {
 }
 
 function increaseFrameRate() {
-	createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.fastFrameRate));
+	//createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.fastFrameRate));
+	//createjs.Ticker.setFPS(60);
+	//createjs.Ticker.useRAF = true;
+
+
+    createjs.Ticker.timingMode = createjs.Ticker.RAF ;
+	//createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED ;
+	//createjs.Ticker.timingMode = createjs.Ticker.TIMEOUT;
+
 	createjs.Ticker.addEventListener("tick", stage);
 	IBISLibrary.mode = 'animation mode';
 }
 
 function lowerFrameRate() {
- //   createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.slowFrameRate));
+	//   createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.slowFrameRate));
 	createjs.Ticker.removeEventListener("tick", stage);
 	IBISLibrary.mode = 'data mode';
 }
