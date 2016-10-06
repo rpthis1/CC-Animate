@@ -82,11 +82,13 @@ function getCompressedObjectData(url, callBack) {
 
 function increaseFrameRate() {
 	//createjs.Ticker.setFPS(parseInt(IBISPoller.settings.environment.fastFrameRate));
-	//createjs.Ticker.setFPS(60);
+	//createjs.Ticker.setFPS(40);
 	//createjs.Ticker.useRAF = true;
 
 
     createjs.Ticker.timingMode = createjs.Ticker.RAF ;
+
+
 	//createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED ;
 	//createjs.Ticker.timingMode = createjs.Ticker.TIMEOUT;
 
